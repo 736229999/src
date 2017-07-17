@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--忽略数字自动识别为电话号码-->
+		<meta name = "format-detection" content="telephone = no" />
+		<!--iphone 允许全屏模式浏览-->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!--iphone中safari顶端的状态条的样式-->
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>星钻</title>
+		<!--<link rel="stylesheet" href="css/blingRecharge.css " />-->
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="css/twoStagePages.css" />
+		<script type="text/javascript" src="../js/self_adaption.js" ></script>
+	</head>
+	<body>
+		<div class="blingRechargeable">
+			<div class="blingRechargeable-box">
+				<!--<header class="header">
+					<a class="goback fleft" onclick="history.go(-1)"></a>
+					<p>星钻余额</p>
+				</header>-->
+				<div class="presentBling">
+					<p>当前星钻</p>
+					<p>456465464</p>
+				</div>
+				<div class="rechargeAmount_list">
+					<ul>
+						<li>
+							<p>60星钻</p>
+							<p>售价：6元</p>
+						</li>
+						<li>
+							<p>388星钻</p>
+							<p>售价：38元</p>
+						</li>
+						<li>
+							<p>1980星钻</p>
+							<p>售价：198元</p>
+						</li>
+					</ul>
+				</div>
+				<div class="rechargeAmount_list">
+					<ul>
+						<li>
+							<p>5980星钻</p>
+							<p>售价：598元</p>
+						</li>
+						<li>
+							<p>15980星钻</p>
+							<p>售价：1598元</p>
+						</li>
+						<li>
+							<p>输入星钻：</p>
+							<p class="input_rechargeAmount">
+								<input type="number" />
+							</p>
+						</li>
+					</ul>
+				</div>
+					<ul class="modeOfpayment">
+						<li>
+							<label class="select_payment_method" for="select_payment_method-weixin">
+								<i class="fleft">
+									<img src="img/weixin@2x.png" />
+								</i>
+								<i class="fleft">微信支付</i>
+								<span class="fright">
+									<input type="radio" name="paymode" id="select_payment_method-weixin" checked="checked"/>
+								</span>
+							</label>
+							
+						</li>
+						<li class="borderNone">
+							<label class="select_payment_method" for="select_payment_method-balance">
+								<i class="fleft">
+									<img src="img/balance@2x.png" />
+								</i>
+								<i class="fleft">余额支付</i>
+								<span class="fright">
+									<input type="radio" name="paymode" id="select_payment_method-balance"/>
+								</span>
+							</label>
+						</li>
+					</ul>
+					<button type="button" class="payment_btn">确认充值</button>
+			</div>
+		</div>
+		
+		
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>	
+	<script>
+		$(".rechargeAmount_list ul li").click(function(){
+			$(".rechargeAmount_list ul li").removeClass("active");
+			$(this).addClass("active");
+		});
+	</script>
+	</body>
+</html>

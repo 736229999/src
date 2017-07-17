@@ -1,0 +1,246 @@
+body {
+  background: #F5F5F5;
+}
+.personalCenterwarp{
+    overflow-y: auto;
+    /*height: calc(100% - 0.8rem);*/
+   height: 100%;
+}
+.goback{
+	position: absolute;
+	width: 0.6rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	background: url(../img/icon_goBack.png) center left no-repeat;
+	background-size: 30%;
+	left: 2%;
+	outline: none;
+}
+/*个人中心头部*/
+/*.personalCenter{
+	width: 100%;
+	text-align: center;
+	padding: 0.1rem 2%;
+	max-width: 768px;
+	background: #446ba6;
+	z-index: 500;
+	top: 0;
+	box-sizing: border-box;
+}
+.personalCenter p{
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	font-size: 0.3rem;
+	color: #fff;
+}*/
+
+/*个人中心头部---////*/
+
+/*二维码弹窗*/
+.qr-code_popup{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	z-index: 9999;
+	display: none;
+	left: 0;
+	top: 0;
+}
+.code_popupBox{
+	margin: 50% auto;
+	width: 4rem;
+	height: auto;
+	background: #FFF;
+	padding: 0.3rem 0.05rem;
+}
+.code_popupBox .spreadLink{
+	text-align: center;
+	margin: 0 auto;
+}
+.code_popupBox .spreadLink span{
+	font-size: 0.2rem;
+	color: #446ba6;
+}
+.code_popupBox .spreadLink span input{
+	text-align: center;
+	width: 1.5rem;
+	background: none;
+	border: none;
+	display: inline-block;
+	font-size: 0.2rem;
+	font-style: italic;
+	color: #446ba6;
+	text-decoration: underline;
+	outline: none;
+	-webkit-appearance: none;
+}
+.code_popupBox .spreadLink span.copyBtn{
+	color: #fff;
+	background: #446ba6;
+	display: inline-block;
+	border-radius: 0.08rem;
+	line-height: 0.4rem;
+	padding: 0 0.08rem;
+	margin-left: 0.2rem;
+}
+.codeImage{
+	width: 3.5rem;
+	height: 3.5rem;
+	margin: 0.3rem auto;
+}
+.codeImage img{
+	max-width: 3.5rem;
+	max-height: 3.5rem;
+}
+/*二维码弹窗---///*/
+
+/*用户信息*/
+.user_inforBox{
+	width: 96%;
+	padding: 0.2rem 2%;
+	margin: 0 auto 14px auto;
+	background: #fff;
+	overflow: hidden;
+	position: relative;
+}
+.user_Header{
+	display: block;
+	outline: none;
+	width: 1.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	border-radius: 100%;
+	border: 3px solid #446ba6;
+}
+.user_Header img{
+	width: 100%;
+	vertical-align: middle;
+	border-radius: 100%;
+}
+.user_msg{
+	margin-left: 0.12rem;
+	width: auto;
+	height: 1.5rem;
+}
+.user_msg>p{
+	max-width: 3rem;
+	line-height: 0.5rem;
+	color: #333;
+	text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.user_msg>p.user_msg-name{
+	font-size: 0.25rem;
+}
+.user_msg>p.user_msg-name{
+	font-size: 0.25rem;
+}
+.user_msg>p.user_msg-popularity{
+	overflow: visible;
+}
+.user_msg>p.user_msg-popularity span{
+	font-size: 0.23rem;
+	color: #333;
+	position: relative;
+}
+.user_msg>p.user_msg-popularity span a{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.user_msg>p.user_msg-id{
+	font-size: 0.23rem;
+	color: #333;
+}
+.user_msg>p.user_msg-basic span{
+	font-size: 0.23rem;
+	color: #333;
+	background: #7f4c00;
+	padding: 0.05rem;
+	border-radius: 0.05rem;
+}
+.qr-code{
+	position: absolute;
+	right: 0;
+	width: 0.3rem;
+	line-height: 1.5rem;
+	margin-right: 20px;
+}
+.qr-code img{
+	width: 0.35rem;
+	height: 0.35rem;
+}
+/*用户信息---///*/
+
+/*列表*/
+.personal-list{
+	width: 100%;
+	margin: 10px auto;
+}
+.personal-list li{
+	width: 100%;
+	margin: 0 auto;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	position: relative;
+	background: #fff;
+}
+.personal-list li.marginBottom{
+	margin-bottom: 24px;
+}
+.personal-list li>a.personal-list-a{
+	font-size: 0.26rem;
+	display: inline-block;
+	position: relative;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	width: 96%;
+	top: -1px;
+	margin: 0 2%;
+	border-bottom: 1px solid #D4D4D4;
+}
+.personal-list li a.borderNone{
+	border: none;
+}
+.personal-list li a span.personal-list-img{
+	display: inline-block;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	width: 0.5rem;
+	text-align: center;
+}
+.personal-list li a span.personal-list-img img{
+	width: 80%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.personal-list li a span.personal-list-text{
+	color: #333;
+	font-weight: 400;
+	font-size: 0.25rem;
+	display: inline-block;
+	vertical-align: middle;
+	margin: auto 10px ;
+}
+.personal-list li span.gonewpage{
+	display: inline-block;
+	position: absolute;
+	width: 0.25rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	top: 0;
+	right: 0%;
+	background: url(../img/gonewpage.png) center no-repeat;
+	background-size: 68%;
+}
+/*列表***/
+
