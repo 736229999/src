@@ -1,0 +1,216 @@
+syntax = "proto3";
+package dbproto;
+
+message Balls {
+  repeated int32 list = 1;
+}
+
+message BuycaiScheme {
+  string type = 1; // 玩法类型，例如五星直选
+  map<string, Balls> select_balls = 2; // 选择的球
+  int32 num = 3; // 注数
+  double money = 4; // 金额
+}
+
+message IssueMultiple {
+  string issue = 1;
+  int32 multiple = 2;
+}
+
+// 追号订单
+message BuycaiUserOrder {
+  int64 id = 1; // 唯一id
+  int64 account_id = 2; // 账户id
+  int32 lottery_id = 3; // 彩种id
+  int64 order_time = 4; // 下单时间
+  int32 issue_num = 5; // 购买期数
+  int32 chase_no = 6; // 当前追期序号
+  double cai = 7; // 冻结彩金
+  double balance = 8; // 冻结余额
+  double sum_money = 9; // 总金额(未抵扣金额)
+  repeated IssueMultiple issues = 10; // 各期倍数
+  int64 ticket_id = 11; // 使用的购彩券id
+  double ticket_sub_money = 12; // 购彩券抵扣金额
+  repeated BuycaiScheme scheme_list = 13; // 购彩方案
+  int32 status = 14; // 订单状态(0: 进行中 | 1: 完成停止 | 2: 用户取消停止 | 3: 中奖停止 | 4: 投注失败停止)
+  bool is_win_stop = 15;
+  double cost_cai = 16;
+  double cost_balance = 17;
+  double total_win_money = 18;
+}
+
+message BuycaiVendorOrder {
+  int64 id = 1;  // 唯一id
+  int64 account_id = 2;
+  int64 user_order_id = 3;
+  int32 lottery_id = 4; // 彩种id
+  string issue = 5;
+  int32 sum_num = 6;
+  int32 multiple = 7;
+  double money = 8; // 订单金额
+  double cai = 9; // 使用的彩金
+  double balance = 10; // 使用的余额
+  int32 chase_no = 11; // 当前追期序号
+  string vendor = 12; // 投注站
+  repeated BuycaiScheme scheme_list = 13; // 购彩方案
+  int64 add_time = 14; // 投注订单生成时间
+  int32 status = 15; // 投注状态(0: 未投注 | 1: 投注成功 | 2: 投注失败 | 3: 未中奖  | 4: 已中奖)
+  string status_desc = 16; // 状态描述
+  int64 vendor_req_time = 17; // 委托投注站时间
+  int64 vendor_resp_time = 18; // 投注站响应时间
+  string vendor_resp_id = 19; // 投注站响应id
+  double win_money = 20; // 中奖金额
+}
+
+message BuycaiVendorResp {
+  int64 account_id = 1;
+  int64 vendor_order_id = 2;
+  int64 resp_time = 3;
+  string resp_status = 4;
+  string resp_id = 5;
+  bool is_success = 6;
+}
+
+message QueryBuycaiOrderArg {
+  int64 account_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+enum UserOrderStatus {
+  UO_Doing       = 0; // 进行中
+  UO_FinishStop = 1; // 完成停止
+  UO_CancelStop = 2; // 用户取消停止
+  UO_WinStop    = 3; // 中奖停止
+  UO_FailStop   = 4; // 投注失败停止
+}
+
+enum VendorOrderStatus {
+  VO_NotBet     = 0; // 未投注
+  VO_BetFail    = 1; // 投注失败
+  VO_BetSuccess = 2; // 投注成功
+  VO_NotWin     = 3; // 未中奖
+  VO_Win        = 4; // 已中奖
+}
+
+message BuycaiOrderStatusArg {
+  int64 id = 1;
+  int32 status = 2;
+}
+
+message BuycaiSaleIssue {
+  int64 id = 1;
+  string issue = 2;
+  int64 start_time = 3;
+  int64 end_time = 4;
+  int64 open_time = 5;
+  string open_balls = 6;
+}
+
+message BuycaiQueryIssueArg {
+  string code = 1;
+  string issue = 2;
+}
+
+message BuycaiSaleList {
+  repeated BuycaiSaleIssue list = 1;
+}
+
+message BuycaiUpsertIssueArg {
+  string code = 1;
+  BuycaiSaleIssue sale_issue = 2;
+}
+
+message BuycaiQueryUserOrderArg {
+  int32 lottery_id = 1;
+  repeated UserOrderStatus status_list = 2;
+}
+
+message BuycaiQueryAccountUserOrderArg {
+  int64 account_id = 1;
+  int32 lottery_id = 2;
+  repeated UserOrderStatus status_list = 3;
+  int32 limit = 4;
+  int32 offset = 5;
+}
+
+message BuycaiQueryVendorOrderArg {
+  int32 lottery_id = 1;
+  repeated VendorOrderStatus status_list = 2;
+}
+
+message BuycaiUpdateUserStatusArg {
+  int64 user_order_id = 1;
+  UserOrderStatus status = 2;
+}
+
+message BuycaiUpdateVendorStatusArg {
+  int64 vendor_order_id = 1;
+  VendorOrderStatus status = 2;
+  int64 vendor_req_time = 3;
+  int64 vendor_resp_time = 4;
+  string vendor_resp_id = 5;
+  double win_money = 6;
+}
+
+message VendorOrderRecord {
+  int64 id = 1;
+  int32 lottery_id = 2;
+  string issue = 3;
+  double money = 4;
+  VendorOrderStatus status = 5;
+  int32 issue_num = 6;
+  int32 chase_no = 7;
+  double win_money = 8;
+  int64 add_time = 9;
+}
+
+message UserOrderRecord {
+  int64 id = 1;
+  int32 lottery_id = 2;
+  double money = 3;
+  UserOrderStatus status = 4;
+  int32 issue_num = 5;
+  int32 chase_no = 6;
+  double win_money = 7;
+  int64 add_time = 8;
+  string cur_issue = 9;
+}
+
+message QueryVendorOrderHistoryArg {
+  int64 account_id = 1;
+  int32 lottery_id = 2;
+  int64 start_time = 3;
+  int64 end_time = 4;
+  repeated int32 status_list = 5;
+  /* VendorOrderStatus status = 5; */
+  int32 limit = 6;
+  int32 offset = 7;
+}
+
+message QueryUserOrderHistoryArg {
+  int64 account_id = 1;
+  int32 lottery_id = 2;
+  int64 start_time = 3;
+  int64 end_time = 4;
+  repeated int32 status_list = 5;
+  /* UserOrderStatus status = 5; */
+  int32 limit = 6;
+  int32 offset = 7;
+  bool is_chase = 9;
+}
+
+message BuycaiIssueInfo {
+  string issue = 1;
+  int32 multiple = 2;
+  double money = 3;
+  double win_money = 4;
+  VendorOrderStatus status = 5;
+  int32 chase_no = 6;
+  int64 vendor_order_id = 7;
+}
+
+message UserOrderAllIssues{
+  repeated BuycaiIssueInfo list = 1;
+}
+

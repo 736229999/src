@@ -1,0 +1,53 @@
+syntax = "proto3";
+package dbproto;
+
+message GiftPackageArg {
+    int64 id = 1;
+    string title = 2;
+    string content_desc = 3;
+    string content = 4;
+    int64 total_exchange_num = 5;
+    int64 add_time = 6;
+    int64 gift_type = 7;
+    bool status = 8; //礼包的状态 0 => 未被使用, 1 => 使用中.
+}
+
+//礼包列表.
+message GiftList {
+    string title = 1;                   //标题.
+    int64 page = 2;                     //当前第几页.
+    int64 size = 3;                     //每页显示条数.
+    int64 total = 4;                    //总的分页条数.
+    repeated GiftPackageArg list = 5;   //分页的数据.
+}
+
+//ticket.
+message Ticket {
+    int64 use_base = 1;         //满减基数(例如满50减2，此处为50)
+    int64 use_sub = 2;          //满减额(例如满50减2，此处为2)
+    int64 restrict_type = 3;    //使用限制彩种类型(0:通用, n:仅可用于指定彩种类型, -n:不可用于指定彩种类型
+    int64 restrict_id = 4;      //使用限制彩种id(0:通用，n:仅可用于指定彩种id, -n:不可用于指定彩种id)
+    int64 valid_start = 5;      //开始时间
+    int64 valid_end = 6;        //结束时间
+}
+
+message Gift {
+    int64 credits = 1;              //积分.
+    repeated Ticket tickets = 2;    //礼包.
+}
+
+//礼包.
+message GiftPackageRequest {
+    string title = 1;               //标题
+    string content_desc = 2;        //使用描述
+    int64 gift_type = 3;            //礼包类型.
+    string content = 5;             //json字符串.
+    Gift gift = 6;                  //礼包.
+    int64 add_time = 7;             //添加时间.
+    int64 id = 8;                   //礼包id.
+}
+
+message GiftListByType {
+    int64 type = 1;                             //礼包类型.
+    repeated GiftPackageArg gift_list= 2;       //礼包列表.
+}

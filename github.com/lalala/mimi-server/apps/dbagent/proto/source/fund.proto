@@ -1,0 +1,152 @@
+syntax = "proto3";
+package dbproto;
+
+message Fund {
+  double balance = 1; // 余额
+  double cai = 2; // 彩金
+  double freeze_balance = 3; // 冻结余额
+  double freeze_cai = 4; // 冻结彩金
+  double total_recharge = 5; // 累计充值
+  double total_win = 6; // 累计中奖
+  double total_withdraw = 7; // 累计提现
+  double total_cai = 8; // 累计获得彩金
+  double total_buycai = 9; // 累计购彩
+}
+
+message AccountBankcard {
+  int64 id = 1; // 唯一id
+  int64 account_id = 2; // 绑定账户Id
+  string cardno = 3; // 卡号
+  int32 bankname = 4; // 开户行
+  string cardtype = 5; // 卡类型
+  string phone = 6; // 银行预留手机号
+  string idno = 7; // 持卡人身份证号码
+  string realname = 8; // 持卡人姓名
+  int64 add_time = 9; // 添加时间
+}
+
+message BuycaiTicket {
+  int64 id = 1;
+  int32 use_base = 2;
+  int32 use_sub = 3;
+  int32 max_stack = 4;
+  int64 valid_start = 5;
+  int64 valid_end = 6;
+  int64 add_time = 7;
+  string title = 8;
+  int64 account_id = 9;
+  int32 restrict_type = 10;
+  int32 restrict_id = 11;
+  int64 order_id = 12;
+}
+
+message InsertBuycaiTicketArg {
+  repeated BuycaiTicket list = 1;
+}
+
+message DeleteBuycaiTicketArg {
+  repeated int64 list = 1;
+}
+
+//--------------------------------------------------------------------------------------------------------
+// 资金变动类型
+enum FundChangeType {
+  UNKNOWN = 0;
+  RECHARGE = 1; // 充值
+  WIN = 2; // 派奖
+  WITHDRAW = 3; // 提现
+  FREEZE = 4; // 冻结    
+  UNFREEZE = 5; // 解冻
+  BUYCAI = 6; // 购彩 
+  ACTIVITY = 7; // 运营活动
+} 
+
+// 资金变动记录
+message FundChangeRecord {
+  int64 id = 1;
+  int64 account_id = 2;
+  FundChangeType change_type = 3;
+  double balance = 4; // 变动后余额
+  double freeze_balance = 5; // 变动后冻结余额
+  double cai = 6; // 变动后彩金
+  double freeze_cai = 7; // 变动后冻结彩金
+  double var_balance = 8; // 余额变动额
+  double var_freeze_balance = 9; // 冻结余额变动额
+  double var_cai = 10; // 彩金变动额
+  double var_freeze_cai = 11; // 冻结彩金变动额
+  string recharge_order_no = 12; // 充值订单号
+  int64 vendor_order_id = 13; // 购彩订单id
+  int64 user_order_id = 14; // 用户订单id
+  int64 withdraw_apply_id = 15; // 提现申请id
+  int64 change_time = 16; // 改变时间
+  string change_comment = 17; // 备注
+}
+
+message FundChangeHistory {
+  repeated FundChangeRecord list = 1;
+}
+
+message QueryHistoryArg {
+  int64 account_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message RechargeResult {
+  int64 account_id = 1; // 账户id
+  string order_no = 2; // 充值订单号
+  double money = 3; // 元为单位
+  string method = 4;
+}
+
+message ChangeVirtualFundArg{
+  int64 account_id = 1;
+  int32 reason = 2; // 变化原因
+  int32 var = 3; // 变化量
+  string detail = 4; // 
+}
+
+message VirtualFundChangeRecord {
+  int32 reason = 1;
+  int64 change_time = 2;
+  int32 remain = 3; 
+  int32 var = 4;
+  string detail = 5;
+}
+
+message VirtualFund {
+  int32 credits = 1;
+  int32 kxd = 2;
+}
+
+message QueryFundHistoryArg {
+  int64 account_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+  FundChangeType change_type = 4; // 0: 所有类型
+  int64 time_start = 5;
+  int64 time_end = 6;
+}
+
+message FundHistoryStats {
+  double recharge = 1;
+  double withdraw = 2;
+  double win = 3;
+  double buycai = 4; // 购彩  
+}
+
+message QueryFundHistoryStatsArg {
+  int64 account_id = 1;
+  int64 time_start = 2;
+  int64 time_end = 3;
+}
+
+message CreditsTask {
+  int32 sum_var = 1;
+  int32 reason = 2;
+}
+
+message CreditsTaskInfo {
+  int32 credits = 1;
+  repeated CreditsTask task_list = 2;
+}

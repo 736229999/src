@@ -1,0 +1,15 @@
+syntax = "proto3";
+package usercenter;
+
+message Nil{}
+
+message RechargeResult {
+  int64 account_id = 1; // 账户id
+  int64 money = 2; // 金额，单位分
+  string order_no = 3; // 充值订单号
+  string method = 4; // 充值方式
+}
+
+service Usercenter {
+  rpc NotifyRecharged(RechargeResult) returns (Nil) {}
+}

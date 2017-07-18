@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cqss</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style type="text/css">
+    *{
+        margin:0;
+        padding: 0;
+    }
+    body{
+        margin-left:5pt;
+        margin-right:5pt;
+    }
+    .title1{
+        height: 15pt;
+        margin-top: 20pt;
+        font-size: 15pt;
+        font-weight: bold;
+        color:#333333;
+    }
+    .title2{
+        height: 14pt;
+        margin-top: 16pt;
+        margin-bottom: 0;
+        font-size: 14pt;
+        color:#151515;
+        font-weight: bold;
+    }
+    .content{
+        font-size: 14pt;
+        margin-top: 12pt;
+        margin-bottom: 0;
+        color: #484848;
+        text-indent: 2em;
+        line-height: 22pt;
+    }
+    .content2{
+    	margin-top: 12pt;
+        margin-bottom: 0;
+        font-size: 14pt;
+        color: #484848;
+        line-height: 22pt;
+    }
+    table{
+        width: 100%;
+        height:2893pt;
+        font-size: 11pt;
+        margin: 13pt 0 0 0;
+        text-align: center;
+        border: 1pt solid #D4D6D6;
+    }
+    tr th{
+        height: 34pt;
+        text-align: center;
+        background-color: #F9F9F9;
+        color: #333333;
+        border: 1pt solid #D4D6D6;
+    }
+    tr td{
+        text-align: center;
+        background-color: #FFFFFF;
+        color: #666666;
+        border: 1pt solid #D4D6D6;
+        padding-left: 2pt;
+        padding-right: 2pt;
+    }
+    .firstcl{
+        width: 20%;
+    }
+    .secondcl{
+        width: 60%;
+    }
+    </style>
+</head>
+<body>
+
+<p class="title1">1 投注</p>
+<p class="content">每期开出一个5位数作为开奖号码，万、千、百、十、个位每位号码为0-9。</p>
+<p class="title1">2 开奖</p>
+<p class="content2">白天10:00-22:00，每10分钟一期，共72期；<br>夜间22:00-01:55，每5分钟一期，共48期。</p>
+<p class="title1">3 设奖</p>
+
+<table cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <th class="firstcl">玩法</th>
+            <th class="secondcl">开奖条件</th>
+            <th >奖金(元)</th>
+        </tr>
+        <tr>
+            <td class="firstcl">五星直选</td>
+            <td class="secondcl">5个号码开奖号码完全按位全部相符</td>
+            <td >100000</td>
+        </tr>
+        <tr>
+        	<td class="firstcl" rowspan="3" >五星直选</td>
+            <td class="secondcl ">5个号码与中奖号码数字相同且排列一致</td>
+            <td class="bg">20440</td>
+        </tr>
+        <tr>
+            <td class="secondcl">5个号码与开奖号码前三位或后三位按位相符</td>
+            <td >220</td>
+        </tr>
+        <tr class="bg">
+            <td class="secondcl ">5个号码与开奖号码前二位或后二位按位相符</td>
+            <td class="bg">20</td>
+        </tr>
+        <tr>
+            <td class="firstcl">组选120</td>
+            <td class="secondcl">选5个号码，开奖号码完全相符（无重号），顺序不限</td>
+            <td >833.33</td>
+        </tr>
+        <tr>
+            <td class="firstcl">组选60</td>
+            <td class="secondcl">选4个号码，组成“2重3单”，若与开奖号码全部相符，顺序不限</td>
+            <td >1666.67</td>
+        </tr>
+        <tr>
+            <td class="firstcl">组选30</td>
+            <td class="secondcl">选3个号码，组成“2重1单”，若与开奖号码全部相符，顺序不限</td>
+            <td >5000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">组选20</td>
+            <td class="secondcl">选1个号，猜中开奖号码的第1个号</td>
+            <td >13元</td>
+        </tr>
+        <tr>
+            <td class="firstcl">组选10</td>
+            <td class="secondcl">选2个号码，组成“3重2单”，若与开奖号码全部相符，顺序不限</td>
+            <td >10000</td>
+        </tr>
+        <tr>
+            <td class="firstcl">组选5</td>
+            <td class="secondcl">选4个号码，与开奖号码连续后四位按位相符</td>
+            <td >20000</td>
+        </tr>
+        <tr>
+            <td class="firstcl">后四直选</td>
+            <td class="secondcl">选3个号与开奖号码前3个相同，且顺序一致</td>
+            <td >10000</td>
+        </tr>
+        <tr>
+            <td class="firstcl">前四直选</td>
+            <td class="secondcl">选4个号码，与开奖号码连续前四位按位相符</td>
+            <td >10000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后四组选24</td>
+            <td class="secondcl">选4个号码，若与开奖号码的后四位相同，顺序不限</td>
+            <td >416.67</td>
+        </tr>
+        <tr>
+            <td class="firstcl">后四组选12</td>
+            <td class="secondcl">选3个号码，组成“2重2单”，若与开奖号码的后四位相同，顺序不限</td>
+            <td >833.330</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后四组选6</td>
+            <td class="secondcl">选3个号码，组成“2重2单”，若与开奖号码的后四位相同，顺序不限 </td>
+            <td >833.33</td>
+        </tr>
+        <tr>
+            <td class="firstcl">后四组选4</td>
+            <td class="secondcl">选2个号码，组成“3重1单”，若与开奖号码的后四位相同，顺序不限</td>
+            <td >2500</td>
+        </tr>
+        <tr >
+            <td class="firstcl">前三直选</td>
+            <td class="secondcl">选3个号码，与开奖号码连续前三位按位相符</td>
+            <td >1000</td>
+        </tr>
+        <tr>
+            <td class="firstcl">前三组三</td>
+            <td class="secondcl">选3个号码，开出组三且投注号与开奖号码的数字相同，顺序不限(组三是指开奖号码前三位任意两位号码相同)</td>
+            <td >320</td>
+        </tr>
+        <tr class="bg">
+            <td class="firstcl">前三组六</td>
+            <td class="secondcl">选3个号码，开出组六且投注号与开奖号码前三位相同，顺序不限(组六是指开奖号码前三位三个号码各不相同)</td>
+            <td >160</td>
+        </tr>
+        <tr>
+            <td class="firstcl" rowspan="2">前三组选和值</td>
+            <td class="secondcl">所选数值等于开奖号码万位、千位、百位三个数字相加之和(不含豹子号),且开组三号</td>
+            <td >320</td>
+        </tr>
+        <tr>
+            <td class="secondcl">所选数值等于开奖号码万位、千位、百位三个数字相加之和(不含豹子号),且开组六号 </td>
+            <td >160</td>
+        </tr>
+        <tr>
+            <td class="firstcl">前三直选和值</td>
+            <td class="secondcl">选3个号码，与开奖号码连续前三位按位相符</td>
+            <td >1000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三直选</td>
+            <td class="secondcl">选3个号码，与开奖号码中间三位按位相符</td>
+            <td >1000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三组三</td>
+            <td class="secondcl">选2个号码，开出组三且投注号与开奖号码的数字相同，顺序不限</td>
+            <td >320</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三组六</td>
+            <td class="secondcl">选3个号码，开出组六且投注号与开奖号码前三位相同，顺序不限</td>
+            <td >160</td>
+        </tr>
+        <tr >
+            <td class="firstcl" rowspan="2">中三组选和值</td>
+            <td class="secondcl">所选数值等于开奖号码千位、百位、十位三个数字相加之和(不含豹子号)，开组三号</td>
+            <td >320</td>
+        </tr>
+        <tr >
+            <td class="secondcl">所选数值等于开奖号码千位、百位、十位三个数字相加之和(不含豹子号)，开组六号</td>
+            <td >160</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三直选和值</td>
+            <td class="secondcl">所选数值等于开奖号码千位、百位、十位三个数字相加之和(不含豹子号)</td>
+            <td >1000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后三直选</td>
+            <td class="secondcl">选3个号码，与开奖号码连续后三位按位相符</td>
+            <td >1000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三直选和值</td>
+            <td class="secondcl">所选数值等于开奖号码千位、百位、十位三个数字相加之和(不含豹子号)</td>
+            <td >1000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后三组三</td>
+            <td class="secondcl">选2个号码，开出组三且投注号与开奖号码的数字相同，顺序不限</td>
+            <td >320</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后三组六</td>
+            <td class="secondcl">选3个号码，开出组六且投注号与开奖号码前三位相同，顺序不限</td>
+            <td >160</td>
+        </tr>
+        <tr >
+            <td class="firstcl" rowspan="2">后三组选和值</td>
+            <td class="secondcl">所选数值等于开奖号码百位、十位、个位三个数字相加之和(不含豹子号)，开组三号</td>
+            <td >320</td>
+        </tr>
+        <tr >
+            <td class="secondcl">所选数值等于开奖号码百位、十位、个位三个数字相加之和(不含豹子号)，开组六号</td>
+            <td >160</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后三直选和值</td>
+            <td class="secondcl">所选数值等于开奖号码百位、十位、个位三个数字相加之和(不含豹子号)</td>
+            <td >1000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">前三一码</td>
+            <td class="secondcl">从0-9中选择1个号码，每注由1个号码组成，只要开奖号码的万位、千位、百位中包含所选号码，即为中奖 3.66元</td>
+            <td >3.66</td>
+        </tr>
+        <tr >
+            <td class="firstcl">前三二码</td>
+            <td class="secondcl">开奖号码前三位中包含所选的2个号码</td>
+            <td >19.58</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三一码</td>
+            <td class="secondcl">从0-9中选择1个号码，每注由1个号码组成，只要开奖号码的千位、百位、十位中包含所选号码，即为中奖</td>
+            <td >3.66</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三二码</td>
+            <td class="secondcl">开奖号码中间三位中包含所选的2个号码</td>
+            <td >19.58</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后三一码</td>
+            <td class="secondcl">从0-9中选择1个号码，每注由1个号码组成，只要开奖号码的百位、十位、个位中包含所选号码，即为中奖</td>
+            <td >3.66</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后三二码</td>
+            <td class="secondcl">开奖号码后三位中包含所选的2个号码</td>
+            <td >19.58</td>
+        </tr>
+        <tr >
+            <td class="firstcl">中三一码</td>
+            <td class="secondcl">所选数值等于开奖号码千位、百位、十位三个数字相加之和(不含豹子号)</td>
+            <td >3.66</td>
+        </tr>
+        <tr >
+            <td class="firstcl">四星一码</td>
+            <td class="secondcl">每注由1个号码组成，只要开奖号码的千位、百位、十位、个位中包含所选号码，即为中奖</td>
+            <td >3</td>
+        </tr>
+        <tr >
+            <td class="firstcl">四星二码</td>
+            <td class="secondcl">选择2个号码，每注由2个号码组成，只要开奖号码的千位、百位、十位、个位中包含所选的2个号码，即为中奖</td>
+            <td >10</td>
+        </tr>
+        <tr >
+            <td class="firstcl">五星二码</td>
+            <td class="secondcl">每注由2个号码组成，只要开奖号码的万位、千位、百位、十位、个位中包含所选的2个号码，即为中奖</td>
+            <td >7</td>
+        </tr>
+        <tr >
+            <td class="firstcl">五星三码</td>
+            <td class="secondcl">每注由3个号码组成，只要开奖号码的万位、千位、百位、十位、个位中包含所选的3个号码，即为中奖</td>
+            <td >22.5</td>
+        </tr>
+        <tr >
+            <td class="firstcl">前二直选</td>
+            <td class="secondcl">选2个号码，与开奖号码连续前二位按位相符，即中奖</td>
+            <td >100</td>
+        </tr>
+        <tr >
+            <td class="firstcl">前二组选</td>
+            <td class="secondcl">选2个号码，与开奖号码连续前二位相符（顺序不限），即中奖</td>
+            <td >50</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后二直选</td>
+            <td class="secondcl">选2个号码，与开奖号码连续后二位按位相符，即中奖</td>
+            <td >100</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后二组选</td>
+            <td class="secondcl">选2个号码，与开奖号码连续后二位相符（顺序不限）</td>
+            <td >50</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后二组选胆拖</td>
+            <td class="secondcl">选1个胆码或多个拖码，与开奖号码连续后二位相符（顺序不限）</td>
+            <td >50</td>
+        </tr>
+        <tr >
+            <td class="firstcl">定位胆</td>
+            <td class="secondcl">选1个号码，与开奖号码按位相符</td>
+            <td >10</td>
+        </tr>
+        <tr >
+            <td class="firstcl">一星直选</td>
+            <td class="secondcl">选1个号码，与开奖号码个位相符</td>
+            <td >10</td>
+        </tr>
+        <tr >
+            <td class="firstcl">前二大大小单双</td>
+            <td class="secondcl">从万、千位中的大小单双4种属性中各选1种属性，所选属性与开奖号码的属性相同</td>
+            <td >4</td>
+        </tr>
+        <tr >
+            <td class="firstcl">后二大大小单双</td>
+            <td class="secondcl">从十、个位中的大小单双4种属性中各选1种属性，所选属性与开奖号码的属性相同，即中奖</td>
+            <td >4</td>
+        </tr>
+        <tr >
+            <td class="firstcl">任选三</td>
+            <td class="secondcl">选3个号码，与开奖号码按位相符</td>
+            <td >1000</td>
+        </tr>
+        <tr >
+            <td class="firstcl">任选二</td>
+            <td class="secondcl">选2个号码，与开奖号码按位相符</td>
+            <td >100</td>
+        </tr>
+        <tr >
+            <td class="firstcl">一帆风顺</td>
+            <td class="secondcl">选择1个号码组成一注，只要开奖号码的万位、千位、百位、十位、个位中包含所选号码</td>
+            <td >100</td>
+        </tr>
+        <tr >
+            <td class="firstcl">好事成双</td>
+            <td class="secondcl">开奖号码中任意两位或两位以上的数字与所投注的数字相同</td>
+            <td >100</td>
+        </tr>
+        <tr >
+            <td class="firstcl">三星报喜</td>
+            <td class="secondcl">开奖号码中任意两位或两位以上的数字与所投注的数字相同</td>
+            <td >100</td>
+        </tr>
+        <tr >
+            <td class="firstcl">四季发财</td>
+            <td class="secondcl">开奖号码中任意四位或四位以上的数字与所投注的数字相同</td>
+            <td >100</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

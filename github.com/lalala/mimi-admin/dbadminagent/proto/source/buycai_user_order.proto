@@ -1,0 +1,38 @@
+syntax = "proto3";
+package dbproto;
+import "buycai_vendor_order.proto";
+import "gift_package.proto";
+
+message BuycaiUserOrder {
+    int64 id = 1; // 唯一id
+    int64 account_id = 2; // 账户id
+    int32 lottery_id = 3; // 彩种id
+    int64 order_time = 4; // 下单时间
+    int32 issue_num = 5; // 购买期数
+    int32 chase_no = 6; // 当前追期序号
+    double cai = 7; // 冻结彩金
+    double balance = 8; // 冻结余额
+    double sum_money = 9; // 总金额(未抵扣金额)
+    string issues = 10; // 各期倍数
+    int64 ticket_id = 11; // 使用的购彩券id
+    double ticket_sub_money = 12; // 购彩券抵扣金额
+    string scheme_list = 13; // 购彩方案
+    int32 status = 14; // 订单状态(0: 进行中 | 1: 完成停止 | 2: 用户取消停止 | 3: 中奖停止 | 4: 投注失败停止)
+    bool is_win_stop = 15;
+    double cost_cai = 16;
+    double cost_balance = 17;
+    double total_win_money = 18;
+
+    string user_name = 19;  //用户id，方便后台看
+    Ticket ticket = 20;
+}
+
+
+//用户购彩订单列表
+message UserOrderList{
+    int64 total = 1;
+    int64 size = 2;
+    int64 page = 3;
+    repeated BuycaiUserOrder list = 4;
+    string condition = 5;
+}

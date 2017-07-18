@@ -1,0 +1,93 @@
+syntax = "proto3";
+package dbproto;
+import "gift_template.proto";
+//用于添加活动
+message Activity{
+    string title = 1;
+    string des = 2;
+    string logo =3;
+    int64 num = 4;
+    int64 package_id=5;
+    int64 starttime = 6;
+    int64 endtime = 7;
+    repeated int64 taskLists = 8;
+    string package_name = 9;
+    int64 id = 10;
+}
+//活动列表
+message ActivityList{
+    repeated Activity activity_list = 1;
+}
+
+
+//返回给管理后台用的
+message ActivityReply{
+    int64 id = 1;
+    string title = 2;
+    string des = 3;
+    string logo =4;
+    int64 num = 5;          //活动限制参与人数
+//    int64 left_num = 6;
+    string package_name = 6;
+    int64 starttime = 7;
+    int64 endtime = 8;
+    string create_admin = 9; //创建活动的管理员
+    int64 create_time = 10; //创建活动的管理员
+}
+//返回活动列表
+message ActivityReplyList{
+    int64 total = 1;
+    int64 size = 2;
+    int64 page = 3;
+    repeated ActivityReply list = 4;
+}
+
+//某个活动详情
+message ActivityDetail{
+    int64 id = 1;
+    string title = 2;
+    string des = 3;
+    string logo =4;
+    int64 num = 5;
+    int64 left_num = 6;
+    int64 starttime = 7;
+    int64 endtime = 8;
+    enum HasJoin {
+        already=0;    //已经参与活动
+        has_not=1;    //未参与活动
+    }
+    repeated Task task_list = 9;
+    repeated string get_user_img = 10;  //已参与了活动的用户头像
+}
+
+
+//返回给管理后台用的
+message Task{
+    int64 id = 1;
+    string name = 2;
+    string des = 3;
+    string addtime =4;
+    int64 is_finish = 5;
+    string type = 6;
+    float money = 7;
+
+}
+message TaskTypeList{
+    repeated string type_list = 1;
+}
+//任务列表（不带分页）
+message TaskList{
+    repeated Task list = 1;
+}
+//返回任务列表（带分页）
+message TaskReplyList{
+    int64 total = 1;
+    int64 size = 2;
+    int64 page = 3;
+    repeated Task list = 4;
+}
+
+//礼包模板列表（添加活动时要用）
+message TemplateList{
+    repeated GiftTemplate list = 1;
+}

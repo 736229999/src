@@ -1,0 +1,44 @@
+syntax = "proto3";
+package dbproto;
+
+message Sms {
+  int64 id = 1; 
+  int32 sms_type = 2;
+  string content = 3;
+  string vendor = 4;
+  int64 send_time = 5;
+  bool is_success = 6;
+  string result = 7;
+  string code = 8;
+  int64 expire_time = 9;
+  string sign = 10;
+  repeated string phone_list = 11;
+}
+
+message SmsStats {
+  int64 id = 1;
+  string phone = 2;
+  int64 count_time = 3;
+  int64 latest_time = 4;
+  int32 hourly_count = 5;
+  int32 daily_count = 6;
+  int32 total_count = 7;
+}
+
+message Idcard {
+  int64 id = 1;
+  string cardno = 2;
+  string realname = 3;
+  int64 add_time = 4;
+}
+
+message Bankcard {
+  int64 id = 1;
+  string idcard_no = 2;
+  string realname = 3;
+  string bankcard_no = 4;
+  string card_type = 5;
+  string bankname = 6;
+  string phone = 7;
+  int64 add_time = 8;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+package dbproto;
+import "fund.proto";
+
+message UserGift {
+    int64 id = 1;
+    int64 act_activity_id = 3;
+    int64 account_id = 4;
+    string content = 5;
+    enum UserGiftStatus {
+        WIIT_RECEIVE = 0;
+        RECEIVE_SUCCESS = 1;
+    }
+    UserGiftStatus status = 6;
+    int32 create_time = 7;
+    int32 receive_time = 8;
+}
+
+message UserGiftPackage {
+    int64 account_id = 1;
+    int64 act_activity_id = 2;
+    UserGiftPackageContent gift = 4;
+}
+
+message UserGiftPackageContent {
+    int32 credits = 1;
+    repeated BuycaiTicket tickets = 2;
+}

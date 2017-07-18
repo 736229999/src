@@ -1,0 +1,208 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+import "admin.proto";
+import "discover_news.proto";
+import "buycai.proto";
+import "log.proto";
+import "banner.proto";
+import "role.proto";
+import "lottery_options.proto";
+import "football.proto";
+import "usercenter.proto";
+import "recharge_history.proto";
+import "feedback.proto";
+import "contact.proto";
+import "faq.proto";
+import "withdraw.proto";
+import "cdkey_batch.proto";
+import "gift_package.proto";
+import "opencai.proto";
+import "data_statistics.proto";
+import "recharge_order.proto";
+import "activity.proto";
+import "privilege.proto";
+import "gift_template.proto";
+import "buycai_user_order.proto";
+
+service DbAdminAgent {
+    rpc QueryUserInfoByEmail(StringValue) returns (AdminUserInfoArg) {}
+    rpc SetUserInfoById(AdminUserInfoArg) returns (AdminUserInfoArg) {}
+    rpc QueryUserList(Nil) returns (AdminUserList) {}
+    rpc QueryRoleList(Nil) returns (RoleList) {}
+    rpc QueryPrivilegeList(Nil) returns (PrivilegeList) {}
+    rpc InsertPrivilege(Privilege) returns (Nil) {}
+    rpc SetPrivileges(AdminPrivileges) returns (Nil) {}
+    rpc DeletePrivileges(IntValue) returns (Nil) {}
+//    rpc GiftPackage(GiftCdkeyArg) returns (Nil) {}
+
+    // 新闻相关
+    // 添加一条新闻
+    rpc CreateNews (News) returns (IntValue) {}
+    // 后台查询新闻列表
+    rpc QueryNewsList (QueryNewsArg) returns (NewsList) {}
+    // 获取一条新闻
+    rpc QueryNewsById (NewsId) returns (News) {}
+    // 修改一条新闻
+    rpc UpdateNews (News) returns (IntValue) {}
+    // 获取后台新闻select框查询内容
+    rpc QueryBakendSelectOfNews (QueryNewsOfSelect) returns (NewsList){}
+
+    // 平台配置相关
+    // 创建一条Banner信息
+    rpc CreateBanner(Banner) returns (IntValue) {}
+    // 后台查询Banner列表
+    rpc QueryBannerList (QueryBannerArg) returns (BannerList) {}
+    // 查询一条Banner信息
+    rpc QueryBannerById (BannerId) returns (Banner) {}
+    // 修改一条Banner信息
+    rpc UpdateBanner (Banner) returns (IntValue) {}
+    // 获取Banner预览
+    rpc QueryPreBanner (QueryBannerArg) returns (BannerList) {}
+    // 创建一条常见问题
+    rpc CreateFaq (Faq) returns (IntValue) {}
+    // 查询Faq列表
+    rpc QueryFaqList (QueryFaqArg) returns (FaqList) {}
+    // 查询一条Faq信息
+    rpc QueryFaqById (FaqId) returns (Faq) {}
+    // 修改一条Faq信息
+    rpc UpdateFaq (Faq) returns (IntValue) {}
+    //日志.
+    rpc InsertLog(Log) returns (Nil) {}
+    rpc QueryLog(LogReply) returns (LogReply) {}
+
+    //彩票.
+    rpc QueryBuycaiOptions(BuycaiOptionsReply) returns (BuycaiOptionsReply) {}
+    rpc QueryLotteryIssue(StringValue) returns (BuycaiOptions) {}
+    rpc InsertLotteryOptions(BuycaiOptionsIssue) returns (Nil) {}
+    rpc QueryPlayTimeSettingList(Nil) returns (PlayTimeSettingsList) {}
+    rpc InsertPlayTimeSettings(PlayTimeSettings) returns (Nil) {}
+    rpc UpdatePlayTimeSettings(PlayTimeSettings) returns (Nil) {}
+    rpc InsertLotteryOption(LotteryOptions) returns (Nil) {}
+    rpc QueryLotteryOptionsList(Nil) returns (LotteryOptionsList) {}
+    rpc GetLotteryOptionsById(IntValue) returns (LotteryOptions) {}
+    rpc UpdateLotteryOptionsById(LotteryOptions) returns (Nil) {}
+    rpc DeleteIssueById(BuycaiOptionsIssue) returns (Nil) {}
+    rpc QueryLotteryBuycaiOptionsById(BuycaiOptionsIssue) returns (BuycaiOptions) {}
+    rpc UpdateLotteryBuycaiOptionsById(BuycaiOptionsUpdateIssue) returns (Nil) {}
+    rpc InsertLotteryBuycaiOptions(BuycaiOptionsUpdateIssue) returns (Nil) {}
+    rpc QueryWinningLotteryList(WinningLotteryList) returns (LotteryWinningNoList) {}
+    rpc QueryWinningByIssue(LotteryWinningNo) returns (LotteryWinningNoList) {}
+    rpc QueryWinningHistoryListByLottery(WinningListByLottery) returns (WinningListByLottery) {}
+
+    //活动.
+    rpc QueryGiftList(GiftList) returns (GiftList) {}
+    rpc InsertGift(GiftPackageRequest) returns (Nil) {}
+    rpc QueryGiftDetailById(IntValue) returns (GiftPackageRequest) {}
+    rpc DeleteGiftById(IntValue) returns (Nil) {}
+    rpc UpdateGiftById(GiftPackageRequest) returns (Nil) {}
+    rpc QueryCdkeyList(CdkeyReply) returns (CdkeyReply) {}
+    rpc InsertCdkeyBatch(CdkeyBatch) returns (Nil) {}
+    rpc QueryCdkeyDetailById(IntValue) returns (CdkeyDetail) {}
+    rpc UpdateCdkeyById(CdkeyDetail) returns (Nil) {}
+    rpc DeleteCdkeyById(IntValue) returns (Nil) {}
+
+    //平台配置.
+    rpc UpdateContact(Contact) returns (Nil) {}
+    rpc QueryContact(Nil) returns (Contact) {}
+    rpc QueryFeedbackList(FeedbackList) returns (FeedbackList) {}
+    rpc DeleteFeedbackById(IntValue) returns (Nil) {}
+    rpc QueryFeedbackById(IntValue) returns (Feedback) {}
+    rpc UpdateFeedbackById(Feedback) returns (Nil) {}
+
+    //足彩相关
+    rpc CreateFbGame (GameInfo) returns (IntValue) {}
+    rpc CreatePlayOdds (PlayOdds) returns (IntValue) {}
+    rpc UpdatePlayOdds(PlayOdds) returns (IntValue){}
+    rpc CreateFbResult(FbGameresult) returns (IntValue){}
+    rpc CreateFbTeam(FbTeamInfo) returns (IntValue){}
+    rpc CreateFbLeague(FbLeagueInfo) returns (IntValue){}
+    rpc QueryFbGame(QueryFbGameArg) returns (FbGameList){}
+    rpc QueryFbGameById(IntValue) returns (GameInfo){}
+    rpc QueryOddsById(IntValue) returns (PlayOdds){}
+    rpc QueryFbResult(QueryOpencaiArg) returns (FbOpencaiList){}
+    rpc QueryFbResultById(IntValue) returns (FbGameresult){}
+    rpc QueryFbTeamList (QueryFbTeamArg) returns (FbTeamList){}
+    rpc QueryFbTeamById(IntValue) returns (FbTeamInfo){}
+    rpc QueryFbLeague (QueryFbLeagueArg) returns (FbLeagueList){}
+
+    //usercenter.
+    rpc QueryUsercenterList(UsercenterList) returns (UsercenterList) {}
+    rpc QueryUsercenterDetail(IntValue) returns (Userinfo) {}
+    rpc QueryUsercenterFundById(IntValue) returns (FundHistory) {}
+    rpc QueryUsercenterRechargeById(IntValue) returns (FundHistory) {}
+    rpc QueryUsercenterWithdrawById(IntValue) returns (WithdrawApplyList) {}
+    // 获取提现申请列表
+    rpc QueryWithdrawApplyList (QueryWithdrawApplyArg) returns (WithdrawApplyList) {}
+    // 获取提现申请
+    rpc QueryWithdrawApplyById (WithdrawApplyId) returns (WithdrawApply) {}
+    // 修改提现申请状态
+    rpc UpdateWithdrawApplyStatus (UpdateWAStatusArg) returns (IntValue) {}
+    // 检查提现申请
+    rpc CheckWithdrawApply (CheckWAArg) returns (CheckWARes) {}
+    // 认领提现申请
+    rpc ClaimWithdrawApply (ClaimWAArg) returns (WithdrawApply) {}
+    // rpc  (Request) returns (Response);
+    // 添加提现申请审核权限
+    rpc CreateWithdrawAuditAuth (WithdrawAuditAuth) returns (IntValue) {}
+    // 获取提现申请审核权限列表
+    rpc QueryWithdrawAuditAuthList (QueryWithdrawAuditAuthArg) returns (WithdrawAuditAuthList) {}
+    // 获取提现申请审核权限
+    rpc QueryWithdrawAuditAuthById (IntValue) returns (WithdrawAuditAuth) {}
+    // 更新提现申请审核权限
+    rpc UpdateWithdrawAuditAuth (WithdrawAuditAuth) returns (IntValue) {}
+    // 添加提现转账信息
+    rpc CreateWithdrawTransfer (WithdrawTransfer) returns (IntValue) {}
+    // 获取提现转账列表
+    rpc QueryWithdrawTransferList (QueryWithdrawTransferArg) returns (WithdrawTransferList) {}
+    // 获取提现转账
+    rpc QueryWithdrawTransferById (IntValue) returns (WithdrawTransfer) {}
+    // 修改提现转账
+    rpc UpdateWithdrawTransfer (WithdrawTransfer) returns (IntValue) {}
+    //数据统计.
+    rpc QueryOrderAndIncome(Nil) returns (StatisticsOrderAndIncome) {}
+    rpc QueryRechargeList(RechargeOrderList) returns (RechargeOrderList) {}
+    rpc QueryRechargeListByMonth(Nil) returns (RechargeOrderList) {}
+    rpc QueryRechangeListByYear(Nil) returns (RechargeOrderList) {}
+    rpc QueryBuycaiListByDay(BuycaiStatisticsList) returns (BuycaiStatisticsList) {}
+    rpc QueryUserStatisticsNum(Nil) returns (UserStatisticsNum) {}
+
+    //活动相关
+    rpc InsertTask(Task) returns (Nil){}
+    //查询任务列表带分页
+    rpc QueryTaskList(TaskReplyList) returns (TaskReplyList){}
+    //查询任务列表不带分页
+    rpc QueryAllTaskList(Nil) returns (TaskList){}
+    //删除任务
+    rpc DeleteTask(IntValue) returns (Nil){}
+    //获取单个任务
+    rpc QueryTaskById(IntValue) returns (Task){}
+    //更新任务
+    rpc UpdateTask(Task) returns (Nil){}
+    //获取所有任务类型
+    rpc QueryAllTaskType(Nil) returns (TaskTypeList){}
+    //添加活动
+    rpc InsertActivity(Activity) returns (Nil){}
+    //查询所有活动
+    rpc QueryActivityList(ActivityReplyList) returns (ActivityReplyList){}
+    //查询礼包列表
+    rpc QueryAllGiftTemplateList(Nil) returns (TemplateList){}
+    //删除活动
+    rpc DeleteActivity(IntValue) returns (Nil){}
+    //查询单个活动
+    rpc QueryActivityById(IntValue) returns (Activity){}
+    //更新活动
+    rpc UpdateActivity(Activity) returns (Nil){}
+
+    //礼包模板.
+    rpc QueryGiftTemplateList(GiftTemplateList) returns (GiftTemplateList) {}
+    rpc InsertGiftTemplate(GiftTemplate) returns (Nil) {}
+    rpc QueryGiftTemplateById(IntValue) returns (GiftTemplate) {}
+    rpc UpdateGiftTemplateById(GiftTemplate) returns (Nil) {}
+    rpc DeleteGiftTemplateById(IntValue) returns (Nil) {}
+    rpc QueryGiftTemplateListAll(Nil) returns (GiftTemplateList) {}
+
+    //订单管理
+    rpc QueryUserOrderList(UserOrderList) returns (UserOrderList){}
+    rpc QueryUserOrderListWithCondition(UserOrderList) returns (UserOrderList){}
+}

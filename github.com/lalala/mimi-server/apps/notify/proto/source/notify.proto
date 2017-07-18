@@ -1,0 +1,40 @@
+syntax = "proto3";
+package notifyproto;
+
+message Nil {
+}
+
+// 推送一条公告通知参数
+message PushAnnounceArg {
+    string  content = 1;
+    int64   sender  = 2;
+    int64 target = 3;
+    string targetType = 4;
+    string action = 5;
+}
+
+// 返回的notifyId
+message NotifyId {
+    int64 value = 1;
+}
+
+message PushRemindArg {
+    string content = 1;
+    int64 toAccount = 2;
+    int64 sender = 3;
+    int64 target = 4;
+    string targetType = 5;
+    string action = 6;
+}
+
+service Notify {
+    // 推送一条公告
+    rpc PushAnnounce(PushAnnounceArg) returns (NotifyId) {};
+    // 推送一条提醒
+    rpc PushRemind(PushRemindArg) returns (NotifyId) {};
+    //    rpc CreateMessage(CreateMessageArg) returns (IntValue) {};
+}
+
+message IntValue {
+    int64 value = 1;
+}

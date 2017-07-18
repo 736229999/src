@@ -1,0 +1,42 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Withdraw";
+
+// 提现信息
+message WithdrawInfo {
+   double total_win = 1; // 累计中奖金额
+   double total_withdraw = 2; // 累计提现金额
+   double cur_withdraw = 3;   // 当前可提现金额
+}
+
+enum WithdrawType {
+  ToUnknown = 0;
+  ToBankcard = 1;
+  ToAlipay = 2;
+}
+
+enum WithdrawStatus {
+  NotRequestWithdraw = 0;
+  RequestWithdraw = 1;
+  AuditWithdraw = 2;
+  BankTransfer = 3;
+}
+
+message WithdrawRequest {
+  WithdrawType type = 1;  // 提现类型
+  double amount = 2; // 提现金额
+}
+
+message WithdrawProgress {
+  repeated string step_list = 1; // 所有步骤名称列表
+  int32 cur_step = 2; // 当前步骤（1/2/3)
+  bool is_success = 3; // 当前步骤是否成功
+  string desc = 4; // 当前步骤描述
+  message Detail {
+    string key = 1;
+    string value = 2;
+  }
+  repeated Detail detail_list = 5; // 详情列表
+}

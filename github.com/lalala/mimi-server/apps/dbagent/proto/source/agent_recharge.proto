@@ -1,0 +1,13 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+import "recharge.proto";
+
+service DbRechargeAgent {
+  rpc RechargeCreateOrder(RechargeOrder) returns (Nil) {} // 返回 订单id
+  rpc QueryRechargeInfoByOrderNo(StringValue) returns (RechargeOrder) {}
+  rpc SetRechargeSuccess(StringValue)  returns (Nil) {}
+  //rpc QueryRechargeNotCallbackOrder(StringValue) returns (stream CallbackOrderInfo) {}
+  rpc RechargeSetUcRespTime(RechargeOrder) returns (Nil) {}
+  rpc QueryOrderQuantityById(IntValue) returns (IntValue) {}
+}

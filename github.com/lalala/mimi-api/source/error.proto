@@ -1,0 +1,11 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Error";
+
+enum RespCode {
+  Success = 0; // 成功
+  Fail = -1; // 服务器错误
+  Upgrade = -2; // 需要升级客户端, 返回值为StringValue， 如果不为空则为App下载地址
+}

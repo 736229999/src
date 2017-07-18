@@ -1,0 +1,84 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+
+enum NotifyType {
+    Announce = 0; //公告
+    Remind = 1; //提醒
+    Message = 2; //私信
+    All = 3; //全部
+}
+
+message Notify {
+    int64 id = 1;
+    string content = 2;
+    NotifyType type = 3;
+    int64   target = 4;
+    string  targetType = 5;
+    string  action = 6;
+    int64   sender  = 7;
+    int64 created = 8;
+    int64 updated = 9;
+}
+
+message UserNotify {
+    int64 account = 1;
+    int64 notify = 2;
+    bool isRead = 3;
+    NotifyType notifyType = 4;
+    int64 created = 5;
+}
+
+message QueryUserMissedArg {
+    int64 account = 1;
+    NotifyType type = 2;
+}
+
+message QueryUserMissedRes {
+    repeated Notify notices = 1;
+}
+
+message QueryUserNotifyArg {
+    int64 account = 1;
+    NotifyType notifyType = 2;
+    int64 page = 3;
+    int64 pageSize = 4;
+}
+
+message QueryUserNotifyRes {
+    repeated UserNotifyInfo userNoticeInfos = 1;
+}
+
+message ReadUserNotifyArg {
+    int64 notifyId = 1;
+    int64 accountId = 2;
+}
+
+
+message UserNotifyInfo {
+    UserNotify userNotify = 1;
+    Notify  notify = 2;
+}
+
+// 创建一条公告通知参数
+message CreateAnnounceArg {
+    string  content = 1;
+    int64   sender  = 2;
+}
+
+// 创建一条提醒记录参数
+message CreateRemindArg {
+    int64   target = 1;
+    string  targetType = 2;
+    string  action = 3;
+    int64   sender  = 4;
+    string  content = 5;
+}
+
+//创建一条私信记录参数
+message CreateMessageArg {
+    string  content = 1;
+    int64   sender  = 2;
+    int64   receiver = 3;
+}
+

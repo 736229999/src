@@ -1,0 +1,98 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+import "user.proto";
+import "buycai.proto";
+import "fund.proto";
+import "gift.proto";
+import "withdraw.proto";
+import "gift_template.proto";
+import "cdkey_batch.proto";
+import "user_gift.proto";
+
+service DbUsercenterAgent {
+  rpc QueryUserInfo(IntValue) returns (UserInfo) {}
+  rpc CreateAccount(CreateAccountArg) returns (IntValue) {}
+  rpc QueryPhoneUser(StringValue) returns (PhoneUser) {}
+  rpc QueryQQUser(StringValue) returns (QQUser) {}
+  rpc QueryWeixinUser(StringValue) returns (WeixinUser) {}
+  rpc SetPhonePassword(PhonePassword) returns (Nil) {}
+  rpc ChangePhone(ChangePhoneArg) returns (Nil) {}
+  rpc SetAccountUser(SetUserArg) returns (Nil) {}
+  rpc SetAccountPayPassword(PayPasswordArg) returns (Nil) {}
+  rpc OpenAccountPayPassword(PayPasswordArg) returns (Nil) {}
+  rpc QueryAccountPaySettings(IntValue) returns (PaySettings) {}
+//  rpc SetPhoneRegistGiftReceived(IntValue) returns (Nil) {}
+  rpc QueryPhoneRegistGiftReceived(IntValue) returns (BoolValue) {}
+  //-----------------------------------------------------------------------------------------------------------------
+  rpc SetUserIcon(UserInfoArg) returns (Nil) {}
+  rpc SetUserNickname(UserInfoArg) returns (Nil) {}
+  rpc SetUserSex(UserInfoArg) returns (Nil) {}
+  //-----------------------------------------------------------------------------------------------------------------
+  rpc InsertAccountBankcard(AccountBankcard) returns (Nil) {}
+  rpc QueryAccountBankcard(IntValue) returns (AccountBankcard) {}
+  rpc InsertAccountIdcard(AccountIdcard) returns (Nil) {}
+  rpc QueryAccountIdcard(IntValue) returns (AccountIdcard) {}
+  rpc DeleteAccountBankcard(IntValue) returns (Nil) {}
+  //-----------------------------------------------------------------------------------------------------------------
+  rpc SetDailyCheck(DailyCheckArg) returns (Nil) {}
+  //-----------------------------------------------------------------------------------------------------------------
+  rpc QueryFund(IntValue) returns (Fund) {}
+  rpc QueryFundHistory(QueryFundHistoryArg) returns (FundChangeHistory) {}
+  rpc QueryFundHistoryStats(QueryFundHistoryStatsArg) returns (FundHistoryStats) {} 
+  rpc UpdateRechargeResult(RechargeResult) returns (Nil) {}
+  rpc InsertWithdrawApply(WithdrawApply) returns (WithdrawApply) {}
+  rpc QueryWithdrawApply(IntValue) returns (WithdrawApply) {}
+  rpc QueryCreditsHistory(QueryHistoryArg) returns (stream VirtualFundChangeRecord) {} 
+  rpc QueryKxdHistory(QueryHistoryArg) returns (stream VirtualFundChangeRecord) {} 
+  rpc ChangeCredits(ChangeVirtualFundArg) returns (VirtualFund) {} 
+  rpc ChangeKxd(ChangeVirtualFundArg) returns (VirtualFund) {} 
+  rpc QueryVirtualFund(IntValue) returns (VirtualFund) {} 
+  rpc QueryAccountCreditsTaskInfo(IntValue) returns (CreditsTaskInfo ) {}
+  rpc QueryBuycaiTicket(IntValue) returns (BuycaiTicket) {}  // 参数：购彩券id
+  rpc QueryBuycaiTickets(IntValue) returns (stream BuycaiTicket) {} // 参数：账户id
+  // 获取当前生效的购彩券
+  rpc QueryValidBuycaiTickets(IntValue) returns (stream BuycaiTicket) {} // 参数：账户id
+  rpc InsertBuycaiTickets(InsertBuycaiTicketArg) returns (Nil) {}
+  rpc DeleteBuycaiTickets(DeleteBuycaiTicketArg) returns (Nil) {}
+  //-----------------------------------------------------------------------------------------------------------------
+  rpc BuycaiInsertUserOrder(BuycaiUserOrder) returns (IntValue) {} // 返回 user_order id
+  rpc BuycaiInsertVendorOrder(BuycaiVendorOrder) returns (IntValue) {} // 返回 vendor_order id
+  rpc BuycaiQueryUserOrder(BuycaiQueryUserOrderArg) returns (stream BuycaiUserOrder) {}
+  rpc BuycaiQueryVendorOrder(BuycaiQueryVendorOrderArg) returns (stream BuycaiVendorOrder) {}
+  rpc BuycaiQueryUserOrderAllIssues(IntValue) returns (UserOrderAllIssues) {}
+  rpc BuycaiUpdateUserOrder(BuycaiUpdateUserStatusArg) returns (Nil) {}
+  rpc BuycaiUserCancelStopChase(IntValue) returns (Nil) {}
+  rpc BuycaiUpdateVendorOrder(BuycaiUpdateVendorStatusArg) returns (Nil) {}
+  rpc BuycaiQueryAccountUserOrder(BuycaiQueryAccountUserOrderArg) returns (stream BuycaiUserOrder) {}
+  rpc QueryVendorOrderHistory(QueryVendorOrderHistoryArg) returns (stream VendorOrderRecord) {}
+  rpc QueryUserOrderHistory(QueryUserOrderHistoryArg) returns (stream UserOrderRecord) {}
+  rpc QueryBuycaiUserOrderById(IntValue) returns (BuycaiUserOrder) {}
+  rpc QueryBuycaiVendorOrderById(IntValue) returns (BuycaiVendorOrder) {}
+  //------------------------------------------兑换码------------------------------------------------------------------
+  rpc QueryCountActivity(GiftPackage) returns (IntValue) {}
+  rpc CreateGiftPackage(GiftCdkeyArg) returns (Nil) {}
+  rpc QueryGiftByBatch(IntValue) returns (StringValue) {}
+  rpc InsertGiftUser(GiftArg) returns (Nil) {}
+  rpc QueryExchangeHistoryByAccountId(IntValue) returns (StringValue) {}
+  rpc QueryMaxExchangeByBatch(IntValue) returns (IntValue) {}
+  rpc QueryExchangeNumByBatch(IntValue) returns (IntValue) {}
+  rpc QueryCdkeyBatchByBatch(IntValue) returns (CdkeyBatch) {}
+  rpc QueryCdkeyStatus(StringValue) returns (BoolValue) {}
+
+  rpc QueryGiftTemplateById(IntValue) returns (GiftTemplate) {}
+  rpc ReceiveGift(UserGiftPackage) returns (Nil) {}
+
+  //---------------------------------------------邀请码---------------------------------------------------------------
+  rpc SetUserInviteRelation(Gift) returns (Nil) {}
+  rpc QueryUserAuthenticateByAccountId(IntValue) returns (BoolValue) {}
+  rpc QueryUserInfoByInvitationCode(StringValue) returns (IntValue) {}
+  rpc QueryUserInviteRelation(IntValue) returns (BoolValue) {}
+  rpc QueryInviteRelation(InviteRelationArg) returns (BoolValue) {}
+  rpc QueryInviteGift(Nil) returns (StringValue) {}
+  rpc QueryUserInviteInfo(IntValue) returns (UserInviteInfo) {}
+  rpc QueryUserInviteStatus(IntValue) returns (BoolValue) {}
+  //获取新用户的注册礼包.
+  rpc QueryPhoneUserRegisterGift(Nil) returns (StringValue) {}
+  rpc InsertPhoneRegistGiftReceived(PhoneRegistGift) returns (Nil) {}
+}

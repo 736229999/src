@@ -1,0 +1,118 @@
+syntax = "proto3";
+package apiproto;
+import "error.proto";
+
+option java_package = "Proto";
+option java_outer_classname = "Base";
+
+message Nil {}
+message StringList {
+  repeated string list = 1;
+}
+message IntValue {
+  int64 value = 1;
+}
+
+message StringValue {
+  string value = 1;
+}
+
+// 版本检测相关header字段： appVersion, reviewVersion, latestVersion
+
+message Response {
+  RespCode code = 1; // 执行状态码(见error.proto)
+  string desc = 2; // 状态描述
+  string api = 3; // 接口URI
+  bytes result = 4; // 执行结果
+}
+
+// http错误状态码:
+// 500: 服务器内部错误
+// 403: 禁止访问，授权认证失败
+//----------------------------------------- 短信相关 (sms.proto) ------------------------------------------
+// 发送短信验证码: /user/sendcode, SmsRequest, Nil
+//----------------------------------------- 用户相关 (user.proto) ------------------------------------------
+// 手机号注册: /user/regist, RegistRequest, Nil
+// 用户登陆: /user/login, LoginRequest, LoginReply (登陆成功设置header："Authorization", 后续请求附加该字段")
+// 忘记密码: /user/forgotpwd, ForgotPwdRequest, Nil 
+// 设置密码: /user/setpwd, SetPwdRequest, UserInfo 
+// 重置密码: /user/resetpwd, ResetPwdRequest, UserInfo 
+// 绑定手机号: /user/bindphone, BindPhoneRequest, UserInfo 
+// 更换手机号: /user/changephone, ChangePhoneRequest, UserInfo 
+// 绑定微信账号: /user/bindweixin, BindWeixinRequest, UserInfo
+// 解绑微信账号: /user/unbindweixin, BindWeixinRequest, UserInfo
+// 绑定QQ账号: /user/bindqq, BindQQRequest, UserInfo
+// 解绑QQ账号: /user/unbindqq, BindQQRequest, UserInfo
+// 设置头像图标: /user/seticon, SetIconRequest, UserInfo 
+// 设置昵称: /user/setnickname, SetNicknameRequest, UserInfo 
+// 设置性别: /user/setsex, SetSexRequest, UserInfo 
+// 设置支付密码: /user/setpaypwd, SetPwdRequest, UserInfo 
+// 重置支付密码: /user/resetpaypwd, ResetPwdRequest, UserInfo 
+// 开启/关闭支付密码: /user/openpaypwd, SetBoolRequest, UserInfo 
+// 忘记支付密码: /user/forgotpaypwd, ForgotPayPwdRequest, StringValue, 调用该接口后再调用设置支付密码接口
+// 验证支付密码: /user/verifypaypwd, VerifyPayPwdRequest, Nil
+// 实名认证: /user/authrealname, AuthRealnameRequest, UserInfo
+// 兑换码：/user/cdkey/redeem, GiftPackageRequest， GiftPackageReply
+// 邀请码：/user/invite, InviteUserRequest, InviteUserReply
+// 获取用户的邀请数据 /user/invite/info, UserInviteInfoReply
+// 每日签到 /user/dailycheck, Nil, DailyCheckReply 
+// 积分任务： /user/credits/taskinfo, Nil, CreditsTaskInfo(credits.proto)
+// 查看手机注册礼包: /user/phoneregistgift/open, Nil, RegistGiftPackage (gift.proto)
+// 领取手机注册礼包: /user/phoneregistgift/draw, Nil, RegistGiftPackage (gift.proto)
+
+
+// 获取用户信息: /user/info, Nil, UserInfo 
+// 获取资金信息: /user/fundinfo, Nil, FundInfo 
+// 获取资金变动历史记录: /user/fundhistory, Page, FundHistory
+// 获取提现信息: /user/withdraw/info, Nil, WithdrawInfo 
+// 获取提现进度: /user/withdraw/progress, IntValue, WithdrawProgress
+// 提现: /user/withdraw, WithdrawRequest, WithdrawProgress 
+// 获取银行卡信息: /user/bankcard, Nil, Bankcard(通过Bankcard.id判断是否为有效银行卡)
+// 添加/更换银行卡: /user/addbankcard, AddBankcardRequest, Bankcard 
+// 删除银行卡: /user/deletebankcard, Nil, Bankcard 
+// 获取购彩券信息: /user/ticketinfo, Nil, BuycaiTicketInfo 
+// 获取可用购彩券: /user/buycaitickets, ValidTicketsRequest, BuycaiTicketInfo
+//----------------------------------------- 开奖信息相关 (opencai.proto) ------------------------------------------
+// 获取最近开奖信息: /opencai/latest, Nil, LatestOpen
+// 获取开奖信息历史记录: /opencai/history/xxx, Nil, History | xxx 为彩种id (opencai.proto:LotteryId)
+// 获取摘要开奖信息历史记录: /opencai/dighistory/xxx, Nil, DigestHistory | xxx 为彩种id (opencai.proto:LotteryId)
+// 获取当前销售期号信息: /opencai/onsellinfo/xxx, Nil, OnSellInfo  xxx 为彩种id (opencai.proto:LotteryId), 若OnSellInfo Issue为"", Deadline为0,则为停售
+//----------------------------------------- 购彩相关 (buycai.proto) ------------------------------------------
+// 提交订单: /buycai/order/commit, BuycaiOrder, BuycaiUserOrder
+// 获取购彩信息: /buycai/info/xxx, xxx为彩种id, 返回BuycaiInfo
+// 获取订单记录: /buycai/history/uo, UserOrderHistoryRequest, 返回UserOrderHistory
+// 获取购彩记录: /buycai/history/vo, VendorOrderHistoryRequest, 返回VendorOrderHistory
+// 获取订单详情: /buycai/uo/detail, IntValue, 返回BuycaiUserOrder
+// 获取投注详情: /buycai/vo/detail, IntValue, 返回BuycaiVendorOrder
+// 停止追号: /buycai/stopchase, IntValue, Nil 参数传订单id
+// 玩法说明：/assets/playguid/pages/xxx.html (xxx: ssq, dlt, fc3d, pl3, pl5, cqssc, gd11x5, bjpk10), 内嵌webview，url合成方式和头像相同
+
+//----------------------------------------- 玩法规则相关 ------------------------------------------
+//
+//----------------------------------------- 静态资源相关 ------------------------------------------
+// /assets/upload/headicon 上传头像图标:
+//  (1) http body上传图片数据，分辨率限制：165x165, 大小限制：64K
+//  (2) 上传成功返回资源相对路径，下载图片的绝对url再加上服务器地址
+
+//----------------------------------------- 系统消息相关 ------------------------------------------
+// 连接到websocet到通知中心：/notify，Notify
+// 登录时获取离线时的消息：/notify/pull, QueryUserNotifyArg, QueryUserNotifyRes
+// 阅读一条消息 /notify/read, ReadNotifyArg, IntValue
+
+
+//----------------------------------------- 发现模块相关 ------------------------------------------
+// 获取新闻列表：/options/discover/news/list， QueryNewsArg， 返回NewsList
+// 获取某个新闻：直接访问NewsList中个体的 ContentUrl
+// 获取发现模块Banner图 /options/discover/banner， Nil, 返回BannerList
+
+//----------------------------------------app 首页-----------------------------------------------
+//获取首页的轮播，彩票配置，最新中奖 /options/home/index, 没有入参， 返回 HomeParams.
+//获取客服联系方式，/options/contact/info, 没有入参, 返回 Contact.
+
+//----------------------------------------平台配置相关-----------------------------------------------
+// 获取常见问题列表   ／options/faq/list, Nil, 返回FaqList
+// 获取某个常见问题， 直接访问FaqList中的ContentUrl
+// 获取用户协议      直接访问/options/agreement
+
+//----------------------------------------- 竞猜足球模块相关 ------------------------------------------
+// 获取比赛及赔率列表：/football/games，没有入参， 返回QueryGameInfoRes

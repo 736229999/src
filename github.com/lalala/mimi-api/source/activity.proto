@@ -1,0 +1,47 @@
+syntax = "proto3";
+package apiproto;
+
+//参与活动要完成的任务
+message Task{
+  int64 id = 1;
+  string name = 2;
+  string des = 3;
+  bool is_complete = 4;   //用户是否已完成该任务
+  string type = 5;
+  float money = 6;
+}
+//活动
+message Activity{
+  int64 id = 1;
+  string title = 2;
+  string des = 3;
+  string logo =4;
+  int64 num = 5;
+  int64 left_num=6;
+  int64 starttime = 7;
+  int64 endtime = 8;
+  bool has_join = 9;
+}
+//活动列表
+message ActivityList{
+  repeated Activity list = 1;
+
+}
+//包含活动id和用户账户id，用于查询活动详情
+message ActivityAccount{
+  int64 activity_id = 1;
+  int64 account_id = 2;
+}
+//用户基本信息
+message UserBaseInfo{
+  int64 account_id = 1;
+  string icon = 2;
+  string nickname = 3;
+}
+//活动详情
+message ActivtyDetail{
+  Activity activity = 1;
+  repeated UserBaseInfo gainers = 2;  //活动的获得者名单
+  repeated Task task_list = 3;
+}
+

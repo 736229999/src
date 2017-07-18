@@ -1,0 +1,22 @@
+syntax = "proto3";
+package dbproto;
+
+message Log {
+    int64 id  = 1;
+    string username = 2;
+    string path = 3;
+    int64 operating = 4;
+    string params = 5;
+    string message = 6;
+    int64 create_time = 7;
+    int64 user_id = 8;
+}
+message LogReply {
+    string account = 1;
+    repeated Log log = 2;
+    int64 page = 3;
+    int64 size = 4;
+    int64 total = 5;
+    bool Authorization = 6; //是否有权限查询所有的日志.
+    int64 user_id = 7; //自己的id.
+}

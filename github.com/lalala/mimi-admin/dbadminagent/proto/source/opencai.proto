@@ -1,0 +1,56 @@
+syntax = "proto3";
+package dbproto;
+
+enum LotteryType {
+    AllType = 0;
+    LowFreq = 1; // 低频彩
+    HighFreq = 2; // 高频彩
+    Comp = 3; // 竞彩
+}
+
+enum LotteryId {
+    AllId = 0;
+    Dlt = 1; // 大乐透
+    Fc3d = 2; // 福彩3D
+    Ssq = 3; // 双色球
+    Cqssc = 4;  // 重庆时时彩
+    Bjpk10 = 5; // 北京PK拾
+    Gd11x5 = 6; // 广东11选5
+    Pl3 = 7; // 排列三
+    Pl5 = 8; // 排列五
+    Jczq = 9; //竞彩足球
+    Jclq = 10; //竞彩篮球
+}
+
+message LotteryWinningNo {
+    string lottery = 1;
+    string issue = 2;
+    int64 start_time = 3;
+    int64 end_time = 4;
+    int64 open_time = 5;
+    string open_balls = 6;
+    string lottery_name = 7;
+    int64 id = 8;
+}
+
+message LotteryWinningNoList {
+    repeated LotteryWinningNo list = 1;
+}
+
+message WinningLotteryList {
+    repeated WinningLottery list = 1;
+}
+message WinningLottery {
+    string lottery = 1;
+}
+
+message WinningListByLottery {
+    repeated LotteryWinningNo list = 1;
+    int32 page = 2;
+    int32 size = 3;
+    int32 total = 4;
+    string issue = 5;
+    string lottery = 6;
+    int32 start_time = 7;
+    int32 end_time = 8;
+}

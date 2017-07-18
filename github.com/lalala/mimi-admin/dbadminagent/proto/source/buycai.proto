@@ -1,0 +1,66 @@
+syntax = "proto3";
+package dbproto;
+
+message BuycaiOptions {
+    int64  id = 1;
+    string issue = 2;
+    int64 start_time = 3;
+    int64 end_time = 4;
+    int64 open_time = 5;
+    string open_balls = 6;
+}
+
+message BuycaiOptionsReply {
+    int64    size = 1;                 //每页显示条数.
+    int64    page = 2;                 //当前多少页.
+    int64    total = 3;           //总共多少条.
+    string   lottery = 4;                 //彩种.
+    repeated BuycaiOptions buycai = 5; //分页的数据.
+}
+
+message BuycaiOptionsIssue {
+    int64 num = 1;
+    string issue = 2;
+    repeated BuycaiOptions buycai = 3;
+    int64 day_max_no = 4;
+    string lottery = 5;
+    int64 id = 6;
+}
+
+message BuycaiOptionsUpdateIssue {
+    int64 id = 1;
+    string lottery = 2;
+    BuycaiOptions buycai = 3;
+}
+
+message PlayTimeSettings {
+    int64 id = 1;
+    int64 lottery_id = 2;
+    int64 start_time = 3;
+    int64 end_time = 4;
+    int64 chase_start_time = 5;
+    string name = 6;
+}
+
+message PlayTimeSettingsList {
+    repeated PlayTimeSettings list = 1;
+}
+
+message BuycaiStatistics {
+    int32 buycai_time  = 1;
+    int32 buycai_num = 2;
+    string buycai_amount = 3;
+    int32 ios_buycai_num = 4;
+    string ios_buycai_amount = 5;
+    int32 android_buycai_num = 6;
+    string android_buycai_amount = 7;
+}
+
+message BuycaiStatisticsList {
+    int32 start_time = 1;
+    int32 end_time = 2;
+    int32 page = 3;
+    int32 size = 4;
+    int32 total = 5;
+    repeated BuycaiStatistics list = 6;
+}

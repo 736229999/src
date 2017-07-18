@@ -1,0 +1,88 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Options";
+
+
+message LotteryOptions {
+    int64 id = 1;
+    string lottery_name = 2;
+    bool is_plus_award = 3;
+    string info = 4;
+    bool stop_sale = 5;
+    int64 create_time = 6;
+    int64 update_time = 7;
+}
+
+message WiningList {
+    int64 id = 1;
+    string info = 2;
+}
+
+message Banner{
+    int64 id = 1;
+    string url =2;
+    string targetLink =3;
+    bool isVisible =4;
+    string description = 5;
+    int64 created = 6;
+    int64 sort = 7;
+    int64 targetId = 8;
+    enum TargetType {
+        TargetType_All = 0;  // 全部
+        TargetType_News = 1; //新闻
+        TargetType_Activity = 2; //活动
+        TargetType_Link = 3; //链接
+    }
+    TargetType targetType = 9;
+    enum Location {
+        Location_All = 0; // 全部
+        Location_Home = 1; // 首页
+        Location_Discover = 2; // 发现
+    }
+    Location location = 10;
+    int64 updated = 11;
+}
+
+message BannerList {
+    repeated Banner list = 1;
+    int64    total = 2;
+}
+
+message HomeParams {
+    map<int32, LotteryOptions> lottery_options = 1; 
+    repeated string win_list = 2;
+    repeated Banner banner = 3;
+}
+
+message Contact {
+    int64 id = 1;
+    string qq = 2;
+    string wechat = 3;
+    string email = 4;
+    string telphone = 5;
+}
+
+message Faq {
+    int64 id = 1;
+    string title = 2;
+    string content = 3;
+    string contentUrl = 4;
+    string html = 5;
+    bool isVisible = 6;
+    int64 createTime = 7;
+    int64 updateTime = 8;
+}
+
+message FaqId {
+    int64 id = 1;
+}
+
+message FaqList {
+    repeated Faq list = 1;
+    int64 total = 2;
+}
+
+
+

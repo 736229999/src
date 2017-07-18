@@ -1,0 +1,27 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Credits";
+
+message CreditsTask {
+  enum TaskType {
+    Buycai = 0; // 购彩
+    InviteFriend = 1; // 邀请好友
+    FirstWin = 2; // 首次中奖
+    FirstBuycai = 3; // 首次购彩
+    AuthRealname = 4; // 实名认证
+    BindPhone = 5; // 绑定手机
+    RegistAccount = 6; // 新用户注册
+  }
+  int32 award_credits = 1;
+  TaskType type = 2;
+  string title = 3;
+  string desc = 4;
+  bool is_finish = 5;
+}
+
+message CreditsTaskInfo {
+  int32 credits = 1;
+  repeated CreditsTask task_list = 2;
+}

@@ -1,0 +1,41 @@
+syntax = "proto3";
+package dbproto;
+
+message BuycaiVendorOrder {
+    int64 id = 1;  // 唯一id
+    int64 account_id = 2;
+    int64 user_order_id = 3;
+    int32 lottery_id = 4; // 彩种id
+    string issue = 5;
+    int32 sum_num = 6;
+    int32 multiple = 7;
+    double money = 8; // 订单金额
+    double cai = 9; // 使用的彩金
+    double balance = 10; // 使用的余额
+    int32 chase_no = 11; // 当前追期序号
+    string vendor = 12; // 投注站
+    repeated BuycaiScheme scheme_list = 13; // 购彩方案
+    int64 add_time = 14; // 投注订单生成时间
+    int32 status = 15; // 投注状态(0: 未投注 | 1: 投注成功 | 2: 投注失败 | 3: 未中奖  | 4: 已中奖)
+    string status_desc = 16; // 状态描述
+    int64 vendor_req_time = 17; // 委托投注站时间
+    int64 vendor_resp_time = 18; // 投注站响应时间
+    string vendor_resp_id = 19; // 投注站响应id
+    double win_money = 20; // 中奖金额
+}
+
+message BuycaiScheme {
+    string type = 1; // 玩法类型，例如五星直选
+    map<string, Balls> select_balls = 2; // 选择的球
+    int32 num = 3; // 注数
+    double money = 4; // 金额
+}
+
+message Balls {
+    repeated int32 list = 1;
+}
+
+message IssueMultiple {
+    string issue = 1;
+    int32 multiple = 2;
+}

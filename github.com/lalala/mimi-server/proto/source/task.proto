@@ -1,0 +1,10 @@
+syntax = "proto3";
+package proto;
+
+//硬编码任务id.
+enum TaskId {
+  ALL = 0;
+  CDKEY_ID = 1;     //cdkey任务id.
+  INVITE_ID = 2;    //邀请任务id.
+}
+

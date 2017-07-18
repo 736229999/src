@@ -1,0 +1,35 @@
+syntax = "proto3";
+package apiproto;
+import "user.proto";
+
+option java_package = "Proto";
+option java_outer_classname = "Gift";
+
+message ExchangeRequest {
+	string code = 1;
+}
+
+message ExchangeReply {
+	int64 ticketNum = 1;  //购彩券数量.
+	int64 credits  = 2; //积分数量.
+	UserInfo userInfo = 3; //用户信息
+}
+
+message UserInviteInfoReply {
+	int64 invite_num = 1;
+	int64 credits = 2;
+	int64 tickets_num = 3;
+	int64 tickets_money = 4;
+	bool UserInviteStatus = 5; //true 为已经被邀请，false反之
+}
+
+message GiftItem {
+  int32 type = 1; // 0: 购彩券
+  string desc = 2;
+  int32 value = 3; 
+}
+
+message RegistGiftPackage {
+  repeated GiftItem list = 1;
+  string title = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+package dbproto;
+
+message Nil {
+}
+
+message BoolValue {
+  bool value = 1;
+}
+
+message IntValue {
+  int64 value = 1;
+}
+
+message StringValue {
+  string value = 1;
+}

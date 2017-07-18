@@ -1,0 +1,31 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+import "lottery_options.proto";
+import "options.proto";
+import "discover.proto";
+service DbOptionsAgent {
+    rpc QueryLotteryOptionsList(Nil) returns (HomeParams) {}
+    // 创建一条Banner信息
+    rpc CreateBanner(Banner) returns (IntValue) {}
+    // 后台查询Banner列表
+    rpc QueryBannerList (QueryBannerArg) returns (BannerList){}
+    // 客户端查询Banner列表
+    rpc QueryClientBannerList (QueryClientBannerArg) returns (BannerList){}
+    // 查询一条Banner信息
+    rpc QueryBannerById (BannerId) returns (Banner);
+    // 获取一条新闻
+    rpc QueryNewsById (NewsId) returns (News){}
+    // 客户端获取新闻列表
+    rpc QueryNewsList (QueryNewsArg) returns (NewsList){}
+    // 阅读一条新闻（阅读量+1）
+    rpc ReadANews (NewsId) returns (Nil){}
+
+    // 查询常见问题列表
+    rpc QueryFaqList (Nil) returns (FaqList) {}
+    // 查询一条常见问题
+    rpc QueryFaqById (FaqId) returns (Faq) {}
+
+    rpc QueryContact(Nil) returns (Contact) {}
+    rpc InsertFeedback(Feedback) returns (Nil) {}
+}

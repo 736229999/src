@@ -1,0 +1,29 @@
+syntax = "proto3";
+package dbproto;
+
+message Privilege {
+    int64 id = 1;
+    string name = 2;
+    string key = 3;
+    string path = 4;
+    string creator = 5;
+    int32 create_time = 6;
+    int64 p_id = 7;
+    string label = 8;
+}
+
+message PrivilegeChildrenList {
+    int64 id = 1;
+    string name = 2;
+    string key = 3;
+    string path = 4;
+    string creator = 5;
+    int32 create_time = 6;
+    int64 p_id = 7;
+    repeated PrivilegeChildrenList children = 8;
+    string label = 9;
+}
+
+message PrivilegeList {
+    repeated PrivilegeChildrenList children = 8;
+}

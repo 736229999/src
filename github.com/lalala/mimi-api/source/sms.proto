@@ -1,0 +1,19 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Sms";
+
+enum SmsType {
+  Regist = 0; // 注册验证
+  ResetPwd = 1; // 重置密码
+  BindPhone = 2; // 绑定手机号
+  BindBankcard = 3; // 绑定银行卡
+  ForgotPayPwd = 4; // 忘记支付密码
+}
+
+message SmsRequest {
+  string phone = 1;
+  SmsType type = 2;
+}
+

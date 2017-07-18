@@ -1,0 +1,47 @@
+syntax = "proto3";
+package dbproto;
+
+message RechargeOrder {
+    int64 id = 1;
+    string order_no = 2;
+    int64 account_id = 3;
+    int32 money = 4;
+    enum RechargeStatus {
+        WIAT = 0;
+        SUCCESS = 1;
+        CLOSE = 2;
+    }
+    RechargeStatus status = 5;
+    string os = 6;
+    int32 client_req_time = 7;
+    int32 create_time = 8;
+    int32 uc_resp_time = 9;
+    enum RechargePaymentMethod {
+        WECHAT = 0;
+        ALIPAY = 1;
+    }
+    RechargePaymentMethod payment_method = 10;
+}
+
+message RechargeOrderList {
+    int32 total = 1;
+    int32 page = 2;
+    int32 size = 3;
+    int32 start_time = 4;
+    int32 end_time = 5;
+    repeated RechargeStatistics list = 6;
+}
+
+message RechargeStatistics {
+    int32 recharge_time = 1;
+    int32 recharge_num = 2;
+    string recharge_total_amount = 3;
+    string wechat_recharge_amount = 4;
+    string alipay_recharge_amount = 5;
+    int32 wechat_recharge_num = 6;
+    int32 alipay_recharge_num = 7;
+    string android_recharge_amount = 8;
+    string iphone_recharge_amount = 9;
+    int32 iphone_recharge_num = 10;
+    int32 android_recharge_num = 11;
+}

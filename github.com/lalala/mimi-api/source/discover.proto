@@ -1,0 +1,35 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Discover";
+
+message News{
+    int64  id = 1;
+    string title = 2;
+    string description = 3;
+    string cover = 4;
+    string content = 5;
+    string html = 6;
+    string author = 7;
+    int64  created = 8;
+    int64  newsClass = 9;
+    bool   isVisible = 10;
+    int64  updated = 11;
+    int64  pageViews = 12;
+    string contentUrl = 13;
+}
+
+message QueryNewsArg{
+    int64   page = 1;
+    int64   pageSize = 2;
+}
+
+message NewsList {
+    repeated News list = 1;
+    int64    total = 2;
+}
+
+message NewsId {
+    int64 id = 1;
+}

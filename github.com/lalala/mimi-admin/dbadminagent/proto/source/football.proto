@@ -1,0 +1,107 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+
+//比赛信息
+message GameInfo {
+    int64 id = 1;
+    string gameNo = 2;
+    string gameType = 3;
+    int64 openTime = 4;
+    string homeTeam = 5;
+    string guestTeam = 6;
+    int64 giveball = 7;
+    int64 startTime = 8;
+    int64 endTime = 9;
+}
+//玩法赔率信息
+message PlayOdds {
+    int64 id = 1;
+    string spf = 2;
+    string rqspf = 3;
+    string zjqs = 4;
+    string bf = 5;
+    string bqc = 6;
+    bool spfdg = 7;
+    bool rqspfdg = 8;
+    bool zjqsdg = 9;
+    bool bfdg = 10;
+    bool bqcdg = 11;
+}
+//开奖表信息
+message FbGameresult {
+    int64 id = 1;
+    int64 homeball = 2;
+    int64 guestball = 3;
+    int64 homeHball = 4;
+    int64 guestHball = 5;
+    string spf = 6;
+    string rqspf = 7;
+    int64 zjqs = 8;
+    string bqc = 9;
+    bool ifopen = 10;
+}
+//联赛信息
+message FbLeagueInfo {
+    int64 id = 1;
+    string name = 2;
+}
+//球队信息
+message FbTeamInfo {
+    int64 id = 1;
+    string name = 2;
+    string url = 3;
+}
+//比赛信息查询参数
+message QueryFbGameArg {
+    int64 team = 1;
+    int64 start = 2;
+    int64 end = 3;
+    int64 page = 4;
+    int64 pageSize = 5;
+}
+//开奖信息查询参数
+message QueryOpencaiArg {
+    int64 date = 1;
+    int64 page = 2;
+    int64 pageSize = 3;
+}
+//球队信息查询参数
+message QueryFbTeamArg {
+    int64 page = 1;
+    int64 pageSize = 2;
+    string Name = 3;
+}
+//联赛信息查询参数
+message QueryFbLeagueArg {
+    int64 page = 1;
+    int64 pageSize = 2;
+    string Name = 3;
+}
+//比赛和开奖信息
+message FbOpencai {
+    GameInfo game = 1;
+    FbGameresult result = 2;
+}
+
+message FbGameList {
+    repeated GameInfo list = 1;
+    int64 total = 2;
+}
+
+message FbLeagueList {
+    repeated FbLeagueInfo list = 1;
+    int64 total = 2;
+}
+
+message FbTeamList {
+    repeated FbTeamInfo list = 1;
+    int64 total = 2;
+}
+
+message FbOpencaiList {
+    repeated FbOpencai list = 1;
+    int64 total = 2;
+}
+
+

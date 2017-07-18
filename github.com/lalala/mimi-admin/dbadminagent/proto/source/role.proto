@@ -1,0 +1,15 @@
+syntax = "proto3";
+package dbproto;
+
+message Role {
+    int64 id = 1;
+    string role_name = 2;
+    int32 create_time = 3;
+    int32 creator = 4;
+    string creator_name = 5;
+    string remarks = 6;
+}
+
+message RoleList {
+    repeated Role list = 1;
+}

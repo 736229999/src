@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--忽略数字自动识别为电话号码-->
+		<meta name = "format-detection" content="telephone = no" />
+		<!--iphone 允许全屏模式浏览-->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!--iphone中safari顶端的状态条的样式-->
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>个人设置</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="css/twoStagePages.css" />
+		<script type="text/javascript" src="../js/self_adaption.js" ></script>
+	</head>
+	<body>
+	<!--头部-->
+		<!--<header class="header">
+			<a class="goback fleft" onclick="history.go(-1)"></a>
+			<p>个人设置</p>
+		</header>-->
+	<!--头部-//-->	
+	
+	<!--头像-->
+	<div class="set-userHearer-box">
+		<div class="set-userHearer-box-infor">
+			<span class="leftInfor fleft">头像</span>
+			<span class="set-userHearer-box-infor-img fright">
+				<input type="file" class="set-userHearer-box-infor-img-input" id="set-UserImgInput"/>
+				<p>
+					<img src="img/kids.jpg" id="set-UserImg" />
+				</p>
+				
+			</span>
+		</div>
+	</div>
+	<!--头像--//-->
+	
+	
+	<!--其它项-->
+	<ul class="set-ul">
+		<li>
+			<div>
+				<span class="leftInfor fleft">
+					昵称
+				</span>
+				<div class="rightInfor fright">
+					<input type="text" value="用户昵称"/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div>
+				<span class="leftInfor fleft">
+					性别
+				</span>
+				<div class="rightInfor fright">
+					<div class="set-ul-sex fleft">
+						<span class="set-ul-sex-span">男</span>
+						<select class="set-ul-select_sex">
+							<option selected="selected">男</option>
+							<option selected="selected">女</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div>
+				<span class="leftInfor fleft">
+					年龄
+				</span>
+				<div class="rightInfor fright">
+					<div class="set-ul-age fleft">
+						<span class="set-ul-age-span">20岁</span>
+						<select class="set-ul-select_age"></select>
+					</div>
+					
+					<div class="set-ul-constellation fleft">
+						<span class="set-ul-constellation-span">水瓶座</span>
+						<select class="set-ul-select_constellation">
+							<option>水瓶座</option>
+							<option>双鱼座</option>
+							<option>白羊座</option>
+							<option>金牛座</option>
+							<option>双子座</option>
+							<option>巨蟹座</option>
+							<option>狮子座</option>
+							<option>处女座</option>
+							<option>天秤座</option>
+							<option>天蝎座</option>
+							<option>射手座</option>
+							<option>摩羯座</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="borderNone">
+				<span class="leftInfor fleft">
+					签名
+				</span>
+				<div class="rightInfor fright" style="width: 80%;">
+					<input type="text" value="个性签名"  style="width: 100%;"/>
+				</div>
+			</div>
+		</li>
+		
+	<!--这两项用户绑定过手机号的才显示-->	
+		<li style="margin-top: 20px;">
+			<div>
+				<span class="leftInfor fleft">
+					手机绑定
+				</span>
+				<div class="rightInfor fright" >
+					<input type="tel" value="18328023507" class="set-user-phone" maxlength="11" required="required" disabled="disabled"/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="borderNone">
+				<a href="passWord.html" class="set-modifyPassword"></a>
+				<span class="leftInfor fleft">
+					修改密码
+				</span>
+				<div class="rightInfor fright" >
+					<span class="gonewpage"></span>
+				</div>
+			</div>
+		</li>
+	<!--这两项用户绑定过手机号的才显示--////-->	
+	</ul>
+	<!--其它项--///-->
+	
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script type="text/javascript" src="../js/fileinput.js" ></script>
+	<script>
+		$(function(){
+			//上传图片
+			z.plimg(z.$('set-UserImgInput'),z.$('set-UserImg'),function(file,img,url){});
+			//手机号截取
+			var phone = $('.set-user-phone').val();
+		    var mphone = phone.substr(0, 3) + '****' + phone.substr(7);
+		    $('.set-user-phone').val(mphone)
+			//选择性别
+			$(".set-ul-select_sex").change(function(){
+				$(".set-ul-sex-span").text($(".set-ul-select_sex").val())
+			});
+			//选择年龄
+			var optionOBJ;
+			for (var i=1;i<=100;i++) {
+				optionOBJ += "<option>"+i+"岁</option>"
+			}
+			$(".set-ul-select_age").append(optionOBJ);
+			$(".set-ul-select_age").change(function(){
+				$(".set-ul-age-span").text($(".set-ul-select_age").val())
+			});
+			//选择星座
+			$(".set-ul-select_constellation").change(function(){
+				$(".set-ul-constellation-span").text($(".set-ul-select_constellation").val())
+			});
+		});
+	</script>
+	</body>
+</html>

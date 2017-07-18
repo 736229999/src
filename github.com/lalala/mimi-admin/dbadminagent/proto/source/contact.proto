@@ -1,0 +1,10 @@
+syntax = "proto3";
+package dbproto;
+
+message Contact {
+    int64 id = 1;
+    string qq = 2;
+    string wechat = 3;
+    string email = 4;
+    string telphone = 5;
+}

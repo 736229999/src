@@ -1,0 +1,355 @@
+<template>
+  <div>
+    <el-col :span="8" class="contain">
+      <el-form :model="form" label-width="80px" :rules="formRules" ref="form">
+        <el-form-item label="活动标题" prop="title">
+          <el-col :span="24">
+            <el-input v-model="form.title" auto-complete="off"></el-input>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="活动描述" prop="desc">
+          <el-col :span="24">
+            <el-input v-model="form.desc"></el-input>
+          </el-col>
+        </el-form-item>
+        <!--<el-form-item label="可兑换数" prop="max_exchange">-->
+          <!--<el-col :span="24">-->
+            <!--<el-input v-model="form.max_exchange"></el-input>-->
+          <!--</el-col>-->
+        <!--</el-form-item>-->
+
+        <el-dialog title="" :visible.sync="dialogVisible" size="tiny" >
+          <el-form-item label="赠送积分">
+            <el-col :span="24">
+              <el-input type="number" v-model="form.credits" placeholder="输入赠送的积分额度"></el-input>
+            </el-col>
+          </el-form-item>
+          <span slot="footer" class="dialog-footer">
+                    <el-button @click="cancelJiFen">取 消</el-button>
+                    <el-button type="primary" @click="onCredits">确 定</el-button>
+                </span>
+        </el-dialog>
+
+        <el-dialog title="" :visible.sync="dialogTicketVisible" size="tiny" >
+          <el-row  :gutter="24">
+            <div class="form_item">
+              <el-form-item>
+                <el-col :span="4" class="ri">
+                  <label>减满基数:</label>
+                </el-col>
+                <el-col :span="20">
+                  <el-input  type="number" v-model="form.use_base" name="use_base" placeholder="减满基数"></el-input>
+                </el-col>
+              </el-form-item>
+            </div>
+            <div class="form_item">
+              <el-form-item>
+                <el-col :span="4" class="ri">
+                  <label>减满额:</label>
+                </el-col>
+                <el-col :span="20">
+                  <el-input type="number"  v-model="form.use_sub" name="use_sub" placeholder="减满额"></el-input>
+                </el-col>
+              </el-form-item>
+            </div>
+            <div class="form_item">
+              <el-form-item>
+                <el-col :span="4" class="ri">
+                  <label>限制彩种:</label>
+                </el-col>
+                <el-col :span="20">
+                  <el-radio-group v-model="form.limit_type">
+
+                    <el-form-item>
+                      <el-col><el-radio label="1" @click.native="blur">通用</el-radio></el-col>
+                    </el-form-item>
+
+                    <el-form-item>
+                      <el-col>
+                        <el-radio label="2"  @click.native="specifyType">指定彩种类型</el-radio>
+                      </el-col>
+                      <el-col>
+                        <div class="specifyType" v-if="this.IsA == true">
+                          <el-select v-model="form.use_tickes" placeholder="请选择">
+                            <el-option v-for="item in options" :key="item.Code" :label="item.Name" :value="item.Id"></el-option>
+                          </el-select>
+                        </div>
+                      </el-col>
+                    </el-form-item>
+
+                    <el-form-item>
+                      <el-col><el-radio label="3" @click.native="specifyNotType">不可用于指定彩种类型</el-radio></el-col>
+                      <el-col>
+                        <div class="specifyNotType" v-if="this.IsB == true">
+                          <el-select v-model="form.not_use_tickes" placeholder="请选择">
+                            <el-option v-for="item in options" :key="item.Code" :label="item.Name" :value="item.Id"></el-option>
+                          </el-select>
+                        </div>
+                      </el-col>
+                    </el-form-item>
+                  </el-radio-group>
+                </el-col>
+              </el-form-item>
+            </div>
+          </el-row>
+          <span slot="footer" class="dialog-footer">
+                <el-button @click="ticketClose()">取 消</el-button>
+                <el-button type="primary" @click="onTickets">确 定</el-button>
+            </span>
+        </el-dialog>
+        <el-form-item label="活动性质" prop="type">
+          <el-checkbox-group v-model="form.type" @change="groupChange">
+            <el-checkbox label="1" @change="credits()"  name="type">赠送积分</el-checkbox>
+            <el-checkbox label="2" @change="tickets()" name="type">购彩券</el-checkbox>
+          </el-checkbox-group>
+        </el-form-item>
+        <el-form-item label="开始时间" prop="start_time" required>
+          <el-col :span="24">
+            <el-date-picker type="datetime" placeholder="选择日期" v-model="form.start_time" style="width: 100%;"></el-date-picker>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="结束时间" prop="end_time">
+          <el-col :span="24">
+            <el-date-picker type="datetime" placeholder="选择日期" v-model="form.end_time" style="width: 100%;"></el-date-picker>
+          </el-col>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit" :disabled="disabled">立即创建</el-button>
+          <el-button>取消</el-button>
+        </el-form-item>
+      </el-form>
+    </el-col>
+  </div>
+</template>
+
+
+<script>
+
+  import {
+    GetLotteryList,
+    AddInvite,
+  } from '../../../api/api';
+
+  export default {
+    data() {
+      return {
+        IsA:false,
+        IsB:false,
+        dialogVisible: false,
+        dialogTicketVisible:false,
+        form: {
+          title: "",
+          desc: "",
+          type: [],
+          limit_type : "",
+          start_time : "",
+          end_time : "",
+          credits:"",
+          not_use_tickes:"",
+          use_base:"",
+          use_tickes:"",
+          use_sub:"",
+          max_exchange:1,
+        },
+        disabled:false,
+        formRules: {
+          title: [{ required: true,message: '标题不能为空',trigger: 'blur' }],
+          desc: [{ required: true,message: '描述不能为空',trigger: 'blur' }],
+          type: [{ type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }],
+          start_time: [{ type: 'date', required: true, message: '请选择开始时间', trigger: 'change' }],
+          end_time: [{ type: 'date', required: true, message: '请选择结束时间', trigger: 'change' }],
+        },
+        checked : false,
+        ticket : false,
+        cp_type : 0,
+        options: [],
+      }
+    },
+    methods: {
+      onSubmit() {
+        this.disabled = true;
+        this.$refs.form.validate((valid) => {
+          if (valid) {
+            this.$confirm('确认提交吗?', '提示', { type: 'warning' }).then(() => {
+
+              let params = new URLSearchParams();
+
+              params.append('title', this.form.title);
+              params.append('desc', this.form.desc);
+              params.append('type', this.form.type);
+              params.append('start_time', this.getTaskTime(this.form.start_time));
+              params.append('end_time', this.getTaskTime(this.form.end_time));
+              params.append('limit_type', this.form.limit_type);
+              params.append('credits', this.form.credits);
+              params.append('not_use_tickes', this.form.not_use_tickes);
+              params.append('use_base', this.form.use_base);
+              params.append('use_tickes', this.form.use_tickes);
+              params.append('use_sub', this.form.use_sub);
+              params.append('max_exchange', this.form.max_exchange);
+              AddInvite(params).then((res) => {
+
+                let obj = JSON.parse(res.data);
+
+                if ( res.status !== 200 ) {
+                  this.$message.error( obj.msg );
+                } else {
+                  this.$message.success('提交成功！');
+                }
+              });
+            }).catch(() => {
+              this.disabled = false;
+            });
+          }
+        });
+      },
+      cancelJiFen(){
+        this.dialogVisible = false;
+        this.checked = false;
+        this.form.type =  this.form.type.length ==2 ? ['2']:[];
+      },
+
+      getTaskTime (strDate) {
+        let date = new Date(strDate);
+        let y = date.getFullYear();
+        let m = date.getMonth() + 1;
+        m = m < 10 ? ('0' + m) : m;
+        let d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        let h = date.getHours();
+        let minute = date.getMinutes();
+        minute = minute < 10 ? ('0' + minute) : minute;
+        let str = y+"-"+m+"-"+d+" "+h+":"+minute;
+        return str;
+      },
+      groupChange(){
+        console.log("change",this.form.type);
+      },
+      credits() {
+        let status = this.checked;
+        if (!status) {
+          this.checked = true;
+          this.dialogVisible = true
+        } else {
+          this.checked = false;
+          this.dialogVisible = false
+        }
+      },
+      tickets() {
+        let status = this.ticket;
+        if (!status) {
+          this.ticket = true;
+          this.dialogTicketVisible = true
+        } else {
+          this.ticket = false;
+          this.dialogTicketVisible = false
+        }
+      },
+      ticketClose() {
+        this.dialogTicketVisible = false
+        this.ticket = false;
+        this.form.type =  this.form.type.length == 2 ? ['1']:[];
+      },
+      specifyType() {
+        this.IsA = true;
+        this.IsB = false;
+      },
+      specifyNotType() {
+        this.IsA = false;
+        this.IsB = true;
+      },
+      blur() {
+        this.IsA = false;
+        this.IsB = false;
+      },
+
+      GetLotteryList:function () {
+        let params = new URLSearchParams();
+        GetLotteryList(params).then((res) => {
+          console.log(res);
+          let obj = JSON.parse(res.data);
+          if ( res.status !== 200 ) {
+            this.$message.error( obj.msg );
+          } else {
+            this.options = obj.msg;
+          }
+        });
+      },
+
+      //赠送积分.
+      onCredits:function () {
+        let credits = this.form.credits;
+        if (credits < 1) {
+          this.$message.error("赠送的积分不能小于0")
+        } else {
+          this.dialogVisible = false;
+        }
+      },
+
+      //赠送购彩券.
+      onTickets:function () {
+        let use_base = this.form.use_base;
+        if (use_base < 1) {
+          this.$message.error("减满基数不能为空");
+          return false
+        }
+
+        let use_sub = this.form.use_sub;
+        if (use_sub < 1) {
+          this.$message.error("减满额不能为空");
+          return false
+        }
+
+        let limit_type = this.form.limit_type;
+        //limit_type = 1 为通用
+        //limit_type = 2 为指定彩种
+        //limit_type = 3 为指定不可以彩种
+
+        if (limit_type < 1) {
+          this.$message.error("请选择限制彩种");
+          return false
+        }
+
+        if (limit_type == 2) {
+          let use_tickes = this.form.use_tickes;
+          if (use_tickes < 1) {
+            this.$message.error("请选择指定彩种");
+            return false
+          }
+        }
+
+        if (limit_type == 3) {
+          let not_use_tickes = this.form.not_use_tickes;
+          if (not_use_tickes < 1) {
+            this.$message.error("请选择不可以彩种");
+            return false
+          }
+        }
+
+        this.dialogTicketVisible = false;
+      }
+    },
+    mounted() {
+      this.GetLotteryList();
+    }
+  }
+</script>
+
+<style>
+  .contain {
+    margin:50px;
+  }
+  .form_item {
+    margin-top:15px;
+    margin-bottom:15px;
+  }
+  .ri {
+    text-align: right;
+  }
+  .specifyTypeShow {
+    display: none;
+  }
+  .specifyTypeNotShow {
+    display: block;
+  }
+</style>
+

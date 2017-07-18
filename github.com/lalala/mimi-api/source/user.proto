@@ -1,0 +1,138 @@
+syntax = "proto3";
+package apiproto;
+import "fund.proto";
+
+option java_package = "Proto";
+option java_outer_classname = "User";
+
+enum UserType {
+  Phone = 0;
+  QQ = 1; 
+  Weixin = 2;
+}
+
+enum Sex {
+  Unknown = 0;
+  Male = 1;
+  Female = 2;
+}
+
+message UserInfo {
+  int64 account_id = 1; // 唯一id
+  string nickname = 2; // 昵称
+  string icon = 3; // 头像
+  string idno = 4; // 身份证号码
+  Sex sex = 5;
+  int32 exp = 6;
+  int32 level = 7;
+  string realname = 8;
+  string bindphone = 10; // 绑定手机号
+  string bindqq = 11; // 绑定QQ openid
+  string bindwx = 12; // 绑定微信 openid
+  string invitation_code = 13; // 邀请码
+  bool pay_password = 14; // 是否设置支付密码
+  bool pay_open_password = 15; // 是否开启支付密码
+  bool login_password = 16; // 是否设置登陆密码
+  bool UserInviteStatus = 17; //true 为已经被邀请，false反之
+  bool is_daily_check = 18; // 当日是否已签到
+}
+
+message RegistRequest {
+  string phone = 1;
+  string code = 2;
+  string password = 3;
+}
+
+message LoginRequest {
+  UserType type = 1;
+  string phone = 2;
+  string password = 3;
+  string openid = 4;
+  string access_token = 5;
+}
+
+message LoginReply {
+  UserInfo user = 1; // 用户信息 
+  FundInfo fund = 2; // 资产信息
+  Bankcard bankcard = 3; // 绑定银行卡
+}
+
+message ForgotPwdRequest {
+  string phone = 1;
+  string code = 2;
+  string password = 3;
+}
+
+message ForgotPayPwdRequest {
+  string phone = 1; // 绑定手机号
+  string login_password = 2; // 登录密码
+  string code = 3; // 验证码
+}
+
+message VerifyPayPwdRequest {
+  string password = 1; // 支付密码
+  string api = 2; // 密码验证的后续接口
+}
+
+message SetPwdRequest {
+  string password = 1;
+  string token = 2; // 初次设置为空, 忘记支付密码传返回值
+}
+
+message ResetPwdRequest {
+  string password = 1;
+  string new_password = 2;
+}
+
+message BindPhoneRequest {
+  string phone = 1;
+  string code = 2;
+}
+
+message ChangePhoneRequest {
+  string phone = 1;
+  string new_phone = 2;
+  string code = 3;
+}
+
+message BindWeixinRequest {
+  string openid = 1;
+}
+
+message BindQQRequest {
+  string openid = 1;
+}
+
+message SetIconRequest {
+  string value = 1;
+}
+
+message SetNicknameRequest {
+  string value = 1;
+}
+
+message SetSexRequest {
+  Sex value = 1;
+}
+
+message SetBoolRequest{
+  bool value = 1;
+}
+
+message SetIntRequest {
+  int64 value = 1;
+}
+
+// 实名认证
+message AuthRealnameRequest {
+  string realname = 1;
+  string idno = 2;
+  string phone = 3;
+  string sms_code = 4;
+}
+
+// 每日签到
+message DailyCheckReply {
+  int32 cont_check_days = 1; // 连续签到天数
+  int32 exp = 2; // 本次签到获得经验值
+}

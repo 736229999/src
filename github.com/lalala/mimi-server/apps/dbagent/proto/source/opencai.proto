@@ -1,0 +1,40 @@
+syntax = "proto3";
+package dbproto;
+
+message BonusDetail {
+  int32 id = 1;
+  int32 num = 2;
+  double money = 3;
+}
+
+message OpenDetail {
+  double sale = 1;
+  double pool = 2;
+  repeated BonusDetail bonus_list = 3;
+}
+
+message OpenInfo {
+  string issue = 1;
+  int64 open_time = 2;
+  string balls = 3;
+  int64 grab_time = 4;
+  string grab_source = 5;
+  OpenDetail detail = 6;
+}
+
+message OpencaiQueryArg {
+  string code = 1;
+  repeated string args = 2;
+}
+
+message OpencaiInsertArg {
+  string code = 1;
+  OpenInfo info = 2;
+}
+
+message OpencaiUpsertDetailArg {
+  string code = 1;
+  string issue = 2;
+  OpenDetail detail = 3;
+}
+

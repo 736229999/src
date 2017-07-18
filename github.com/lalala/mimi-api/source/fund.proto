@@ -1,0 +1,128 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Fund";
+
+message FundInfo {
+  double total = 1; // 总金额
+  double balance = 2; // 余额
+  double cai = 3; // 彩金
+  double freeze = 4; // 冻结额(冻结余额+冻结彩金)
+  int32 credits = 5; // 消费积分
+  int32 kxd = 6; // 开心豆
+}
+
+enum Bankname {
+  UnknownBank = 0;
+  IcbcBank = 1; // 工商银行
+  CebBank = 2; // 光大银行 
+  CgbChinaBank = 3; // 广发银行
+  HxbBank = 4; // 华夏银行
+  CcbBank = 5; // 建设银行
+  CommBank = 6; // 交通银行
+  CmbcBank = 7; // 民生银行
+  AbcChinaBank = 8; // 中国农业银行
+  PinganBank = 9; // 平安银行
+  SpdBank = 10; // 浦发银行
+  CibBank = 11; // 兴业银行
+  PsbcBank = 12; // 中国邮政储蓄银行
+  CmbChinaBank = 13; // 招商银行
+  BocBank = 14; // 中国银行
+  CityBank = 15; // 中信银行
+}
+
+message Bankcard {
+  int64 id = 1; // 唯一id
+  string cardno = 2; // 卡号
+  Bankname bankname = 3; // 开户行
+  string cardtype = 4; // 卡类型
+}
+
+message AddBankcardRequest {
+  string phone = 1;
+  string sms_code = 2;
+  string cardno = 3;
+  Bankname bankname = 4;
+}
+
+enum TicketStatus {
+  WaitUse = 0; // 待使用
+  WaitValid = 1; // 待生效
+  Used = 2; // 已使用
+  Expired = 3; // 已过期
+}
+
+message BuycaiTicket {
+  int64 id = 1; // 唯一id
+  int32 use_base = 2; // 满减基数(例如满50减2，此处为50)
+  int32 use_sub = 3; // 满减额(例如满50减2，此处为2)
+  int32 max_stack = 4; // 最大可叠加使用数
+  int64 valid_start = 5; // 有效期开始时间
+  int64 valid_end = 6; // 有效期结束时间
+  int64 addtime = 7; // 获得时间
+  string title = 8; // 标题
+  string restrict_desc = 9; // 使用描述
+  int32 restrict_type = 10; // 使用限制彩种类型(0:通用, n:仅可用于指定彩种类型, -n:不可用于指定彩种类型)
+  int32 restrict_id = 11; // 使用限制彩种id(0:通用，n:仅可用于指定彩种id, -n:不可用于指定彩种id)
+  TicketStatus status = 12; // 购彩券状态
+}
+
+message BuycaiTicketInfo {
+  repeated BuycaiTicket tickets = 1;
+}
+//---------------------------------------------------------------------------------------------------------------
+// 资金变动记录
+message FundChangeRecord {
+  string title = 1; // 全部|充值|提现|购彩|中奖
+  string desc = 2; // e.g. 支付宝充值
+  int64 time = 3; // 时间戳
+  double val = 4; // 变动金额
+  double remain = 5; // 剩余金额 
+  string name = 6; // 剩余金额名称（余额|彩金)
+  int64 user_order_id = 7; // 用户订单id
+  int64 vendor_order_id = 8; // 购彩订单id
+  int64 withdraw_apply_id = 9; // 提现申请单id
+  int32 direct = 10; //资金流向 0:冻结/解冻, 1: 入, 2: 出
+}
+
+message FundHistoryPage {
+  enum ChangeType {
+    All = 0;
+    Recharge = 1;
+    Withdraw = 2;
+    Buycai = 3;
+    Win = 4;
+  }
+  enum TimeRange {
+    AllTime = 0;
+    Today = 1;
+    Week = 2;
+    Month = 3;
+    ThreeMonth = 4;
+  }
+  ChangeType type = 1;
+  int32 page = 2; // 页索引(0开始)
+  TimeRange range = 3;
+}
+
+message FundHistory {
+  double recharge = 1;
+  double withdraw = 2;
+  double buycai = 3;
+  double win = 4;
+  int32 page_size = 5; // 分页大小
+  repeated FundChangeRecord list = 6;
+}
+
+/* enum CreditsChangeType { */
+/*   Invalid = 0; */
+/*   CreateAccount = 1; // 新用户注册 */
+/*   FirstBuycai = 2; // 首次购彩 */
+/*   FirstWin = 3; // 首次中奖 */
+/*   AuthRealname = 4; // 实名认证 */
+/*   Buycai = 5; // 购彩 */
+/*   InviteFriend = 6; // 邀请好友 */
+/*   BindPhone = 7; // 绑定手机 */
+/* } */
+

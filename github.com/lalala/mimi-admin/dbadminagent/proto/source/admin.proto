@@ -1,0 +1,56 @@
+syntax = "proto3";
+package dbproto;
+
+message AdminUserInfoArg {
+    int64 id = 1;
+    string email = 2;
+    string username = 3;
+    string password = 4;
+    string salt = 5;
+    int64 status = 6;
+    string mobile = 7;
+    int64 create_time = 8;
+    int64 creator = 9;
+    string register_ip =10;
+}
+
+message AdminUserList {
+    repeated AdminUserInfoReply UserList = 1;
+}
+
+message AdminUserInfoReply {
+    int64 id = 1;
+    string email = 2;
+    string username = 3;
+    string password = 4;
+    string salt = 5;
+    string status = 6;
+    string mobile = 7;
+    string create_time = 8;
+    string creator = 9;
+    string register_ip = 10;
+}
+
+message AdminPrivilegesReply {
+    int64 id = 1;
+    string name = 2;
+    string key = 3;
+    string path = 4;
+    string creator = 5;
+    string create_time = 6;
+}
+
+message AdminPrivilegesList {
+    repeated AdminPrivilegesReply PrivilegesList = 1;
+}
+
+message AdminPrivileges {
+    int64 id = 1;
+    string name = 2;
+    string key = 3;
+    string path = 4;
+    int64 creator = 5;
+    int64 create_time = 6;
+}
+
+

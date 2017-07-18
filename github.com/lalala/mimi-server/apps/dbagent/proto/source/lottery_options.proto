@@ -1,0 +1,17 @@
+syntax = "proto3";
+package dbproto;
+
+message LotteryOptions {
+    int64 id = 1;
+    string lottery_name = 2;
+    bool is_plus_award = 3;
+    string info = 4;
+    bool stop_sale = 5;
+    int64 create_time = 6;
+    int64 update_time = 7;
+}
+
+message HomeParams {
+    repeated LotteryOptions lottery = 1;
+}
+

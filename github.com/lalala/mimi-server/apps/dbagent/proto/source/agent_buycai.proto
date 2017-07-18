@@ -1,0 +1,11 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+import "buycai.proto";
+
+service DbBuycaiAgent {
+  rpc BuycaiQuerySaleList(StringValue) returns (BuycaiSaleList) {}
+  rpc BuycaiQueryIssue(BuycaiQueryIssueArg) returns (BuycaiSaleIssue) {}
+  rpc BuycaiUpsertIssue(BuycaiUpsertIssueArg) returns (Nil) {}
+  rpc BuycaiUpdateOpenBalls(BuycaiUpsertIssueArg) returns (Nil) {}
+}

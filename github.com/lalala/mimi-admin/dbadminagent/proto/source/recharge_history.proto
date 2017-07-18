@@ -1,0 +1,21 @@
+syntax = "proto3";
+package dbproto;
+
+message RechargeHistory {
+    int64 id = 1;
+    int64 account_id = 2;
+    string money = 3;
+    string order_id = 4;
+    string source = 5;
+    int64 recharge_time = 6;
+}
+
+//获取金额的数据.
+message FundHistory {
+    string recharge = 1;
+    string withdraw = 2;
+    string buycai = 3;
+    string winning = 4;
+    repeated RechargeHistory recharge_list = 5;
+    //    repeated BuycaiUserOrder buycai_list = 6;
+}

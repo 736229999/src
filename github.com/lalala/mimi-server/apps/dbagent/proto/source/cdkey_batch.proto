@@ -1,0 +1,13 @@
+syntax = "proto3";
+package dbproto;
+
+message CdkeyBatch {
+    int64 id = 1;
+    int32 max_exchange = 2;
+    string title = 3;
+    int64 gift_template_id = 4;
+    int32 valid_start = 5;
+    int32 valid_end = 6;
+    int32 add_time = 7;
+    string cdkey_desc = 8;
+}

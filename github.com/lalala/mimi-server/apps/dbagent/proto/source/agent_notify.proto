@@ -1,0 +1,20 @@
+syntax = "proto3";
+package dbproto;
+
+import "base.proto";
+import "notify.proto";
+
+service DbNotifyAgent {
+    // 创建一条通知
+    rpc CreateNotify(Notify) returns (IntValue) {};
+    // 创建一条用户关联通知
+    rpc CreateUserNotify(UserNotify) returns (IntValue) {};
+    // 查询未加入用户消息队列的notify
+    rpc QueryNotifyUserMissed(QueryUserMissedArg) returns (QueryUserMissedRes) {};
+    // 查询用户的消息队列
+    rpc QueryUserNotify(QueryUserNotifyArg) returns (QueryUserNotifyRes) {};
+    // 把一条消息标为已读
+    rpc ReadUserNotify(ReadUserNotifyArg) returns (IntValue) {};
+//    rpc CreateRemind(CreateRemindArg) returns (IntValue) {};
+//    rpc CreateMessage(CreateMessageArg) returns (IntValue) {};
+}

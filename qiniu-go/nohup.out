@@ -1,0 +1,535 @@
+        ___                    
+      /  _/                    
+     _| |_  __        __   ___ 
+    /_   // _ |/\  /\/ _ \/ _ \
+      | |  \/ /\ \/ / |/ / |/ /
+      / / \_/\\ \  / \_ / \__/ 
+     / /        / /  _\ \      
+    \_/        \_/  \_\_/   VERSION 1.0  URL https://github.com/henrylee2cn/faygo
+
+[05/25 13:52:15] The PID of the current process is 18667
+[05/25 13:52:15] APIdoc's URL path is '/apidoc/' [check direct ip for filter] <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /MP_verify_FfXgomWspAkznBQA.txt <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /MP_verify_Z2Q4pyfE628bSDwp.txt <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /add                           <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /apidoc/*filepath              <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /apidoc_swagger.json           <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /bindAgent                     <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /index.html                    <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /login                         <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /static/*filepath              <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m    POST | /test                          <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /testAjax                      <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /threeDistribute               <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m     GET | /upload/*filepath              <qiniu-go>
+[05/25 13:52:15] [46m[SYS][0m listen and serve HTTP on 0.0.0.0:9090 <qiniu-go>
+[05/25 13:52:30] [I]   223.85.132.23     GET  [32m200[0m      72917  3.11108995s /index.html?code=061JwE0g2tt18D0b3k4g2xvW0g2JwE0Z&state=STATE |  <qiniu-go>
+[05/25 13:52:46] [I]   223.85.132.23     GET  [32m200[0m      72917 875.465866ms /index.html?code=0716JQFu1lK4U902EHEu1xKyFu16JQFi&state=STATE |  <qiniu-go>
+[05/25 13:53:37] [I] 182.140.175.142     GET  [32m200[0m      72917 6.704814267s /index.html?code=031ucTKy1yJGHd0gqULy1pXDKy1ucTKO&state=STATE |  <qiniu-go>
+[05/25 13:53:47] [I] 182.140.175.142     GET  [32m200[0m      72917 766.786295ms /index.html?code=0016DmZH1gLw65089z0I1kOvZH16DmZA&state=STATE |  <qiniu-go>
+[05/25 13:53:56] [I] 182.140.175.142     GET  [32m200[0m      72917 764.288235ms /index.html?code=061a7nbG1pJzh30e6wdG1PUqbG1a7nbp&state=STATE |  <qiniu-go>
+[05/25 13:54:43] [I] 182.140.175.142     GET  [32m200[0m      72917 873.154525ms /index.html?code=071f9iTR1j0lL91bicWR1CnGTR1f9iTC&state=STATE |  <qiniu-go>
+[05/25 14:12:18] [I]   124.161.23.60     GET  [35m404[0m        226     31.256µs /                              |  <qiniu-go>
+[05/25 14:12:18] [I] 182.140.175.143     GET  [35m404[0m        226     24.762µs /                              |  <qiniu-go>
+[05/25 14:12:19] [I] 182.140.175.142     GET  [32m200[0m      72917  1.16001573s /index.html?code=021CMLhj0bu5Rl1Yltgj0gqKhj0CMLhC&state=STATE |  <qiniu-go>
+[05/25 14:12:27] [I] 182.140.175.142     GET  [32m200[0m      72917 724.211894ms /index.html?code=041fehiA1rrsPh0D7NjA1qediA1fehih&state=STATE |  <qiniu-go>
+[05/25 14:17:08] [I] 182.140.175.142     GET  [32m200[0m      72917 4.192756424s /index.html?code=021T7MK229g0UZ0W02M22NtWK22T7MK6&state=STATE |  <qiniu-go>
+[05/25 14:17:17] [I] 182.140.175.142     GET  [90m302[0m        243 788.651315ms /index.html                    |  <qiniu-go>
+[05/25 14:17:21] [I] 182.140.175.142     GET  [32m200[0m      72917 814.810908ms /index.html?code=001SoBw10umAtC1LwJu10WfQw10SoBwA&state=STATE |  <qiniu-go>
+[05/25 14:17:48] [I] 182.140.175.142     GET  [32m200[0m      72917 2.411183153s /index.html?code=061vRywU0AkO8V1OUsuU0rStwU0vRywR&state=STATE |  <qiniu-go>
+[05/25 16:25:47] [I]   182.131.10.30     GET  [35m404[0m        226     17.511µs /                              |  <qiniu-go>
+[05/25 16:25:47] [I]  175.155.112.40     GET  [35m404[0m        226     32.018µs /                              |  <qiniu-go>
+[05/25 16:25:52] [I] 182.140.175.142     GET  [32m200[0m      72917 4.866902475s /index.html?code=0311afcd0gfmVv1gI79d06q9cd01afcK&state=STATE |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m      17800    258.718µs /static/jidi/css/swiper.min.css |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m      40431     111.41µs /static/jidi/css/video-js.min.css |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m     370557    284.635µs /static/jidi/js/video.min.js   |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m        747    208.663µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m     466957   2.344923ms /static/jidi/js/videojs-contrib-hls.js |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m      84345    103.139µs /static/jidi/js/jquery-2.1.4.min.js |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m      60657     86.062µs /static/jidi/css/weiChat.css   |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m        669     79.161µs /static/jidi/css/webiaoqing.css |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m      96824    159.629µs /static/jidi/js/swiper.min.js  |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m      93435    169.509µs /static/jidi/js/jquery.min.js  |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m      12194    113.952µs /static/jidi/js/weiChat.js     |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m       3555     86.016µs /static/jidi/js/jquery.qqFace.js |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       1733    178.911µs /static/jidi/img/weixin@2x.png |  <qiniu-go>
+[05/25 16:25:53] [I] 182.140.175.142     GET  [32m200[0m       2353    100.125µs /static/jidi/js/hidpi-canvas.min.js |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       1477    145.524µs /static/jidi/img/balance@2x.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m      16829    163.735µs /static/jidi/img/gift/chengbao.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       9021    148.484µs /static/jidi/img/gift/xianhua.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       9426     96.921µs /static/jidi/img/gift/jitui.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m      16307     91.069µs /static/jidi/img/gift/jiqiren.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m      46536    197.326µs /static/jidi/img/logo_font3x.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       1008     80.956µs /static/jidi/img/friendshipLink.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       5442     69.826µs /static/jidi/img/header.jpg    |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       5412     75.784µs /static/jidi/img/gift/youxiji.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       8303     81.239µs /static/jidi/img/gift/xueren.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       7943    165.389µs /static/jidi/img/gift/chouzhi.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m      13115    107.726µs /static/jidi/img/gift/luyinji.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       1659     82.344µs /static/jidi/img/giftx2.png    |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       1263    200.752µs /static/jidi/img/looked.png    |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       2210     99.897µs /static/jidi/img/chat_expression.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       3094    147.858µs /static/jidi/img/shang.png     |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       2818     89.425µs /static/jidi/img/erweima.png   |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       2934    114.488µs /static/jidi/img/fenxiang.png  |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       2697     89.919µs /static/jidi/img/personalCenter@2x.png |  <qiniu-go>
+[05/25 16:25:53] [I] 101.204.149.154     GET  [32m200[0m       2624     90.499µs /static/jidi/img/hongbao.png   |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       1341     144.79µs /static/jidi/img/orde_share.png |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m      45785    153.481µs /static/jidi/img/gd.jpg        |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m      55220     95.485µs /static/jidi/img/c.jpg         |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       1382     97.197µs /static/jidi/img/waybox_back.png |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       2472     77.663µs /static/jidi/img/play.png      |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       2752     71.172µs /static/jidi/img/weichart.png  |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       1748    105.637µs /static/jidi/img/balance.png   |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m      14501     142.95µs /static/jidi/img/ddm.jpg       |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       1835    146.825µs /static/jidi/img/girl.png      |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       7558    100.281µs /static/jidi/img/ppt_img/slider1.png |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       2941     94.697µs /static/jidi/img/ppt_img/slider2.png |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       1685    200.176µs /static/jidi/img/heartx2.png   |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       4452    109.645µs /static/jidi/img/gold_medal.png |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       1676    124.221µs /static/jidi/img/follow.png    |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       5790    156.112µs /static/jidi/img/bronze_medal.png |  <qiniu-go>
+[05/25 16:25:54] [I] 101.204.149.154     GET  [32m200[0m       5387     81.684µs /static/jidi/img/silver_medal.png |  <qiniu-go>
+[05/25 16:31:27] [I]   223.85.132.23     GET  [32m200[0m      72917  2.86819833s /index.html?code=031g2vJC0wy6Vf2TqqIC01zyJC0g2vJm&state=STATE |  <qiniu-go>
+[05/25 16:31:27] [I] 101.204.149.154     GET  [32m206[0m          1     219.69µs /static/jidi/img/c.jpg         |  <qiniu-go>
+[05/25 16:31:27] [I] 101.204.149.154     GET  [32m206[0m      38801    265.954µs /static/jidi/img/c.jpg         |  <qiniu-go>
+[05/25 16:31:35] [I] 180.153.205.254     GET  [90m302[0m        243 1.741587486s /index.html                    |  <qiniu-go>
+[05/25 16:31:52] [I] 182.140.175.142     GET  [90m302[0m        243 676.204878ms /index.html                    |  <qiniu-go>
+[05/25 16:31:55] [I] 182.140.175.142     GET  [32m200[0m      72917 696.868686ms /index.html?code=081K03Qa0sqkBt1RNOMa0XLSPa0K03Qc&state=STATE |  <qiniu-go>
+[05/25 16:32:01] [I] 182.140.175.142     GET  [90m302[0m        243 635.271416ms /index.html                    |  <qiniu-go>
+[05/25 16:32:05] [I] 182.140.175.142     GET  [32m200[0m      72917 678.887031ms /index.html?code=021yBdHa0WjTat1YgZEa0JwfHa0yBdH0&state=STATE |  <qiniu-go>
+肯定是哪个删了数据库
+[05/25 17:24:04] [I] 101.204.149.154     GET  [32m200[0m         31    762.784µs /threeDistribute?money=78&uid=1 |  <qiniu-go>
+[05/25 17:24:04] [I] 101.204.149.154     GET  [35m404[0m        226     83.584µs /favicon.ico                   |  <qiniu-go>
+肯定是哪个删了数据库
+[05/25 17:24:07] [I] 101.204.149.154     GET  [32m200[0m         33    560.557µs /threeDistribute?money=78&uid=1 |  <qiniu-go>
+肯定是哪个删了数据库
+[05/25 17:24:10] [I] 101.204.149.154     GET  [32m200[0m         33    508.067µs /threeDistribute?money=78&uid=222 |  <qiniu-go>
+肯定是哪个删了数据库
+[05/25 17:24:15] [I] 101.204.149.154     GET  [32m200[0m         33     518.21µs /threeDistribute?money=78&uid=10 |  <qiniu-go>
+[05/25 17:27:58] [I]  175.155.112.40     GET  [35m404[0m        226     30.303µs /                              |  <qiniu-go>
+[05/25 17:27:58] [I] 182.140.175.143     GET  [35m404[0m        226     19.877µs /                              |  <qiniu-go>
+[05/25 17:27:59] [I] 182.140.175.142     GET  [90m302[0m        243 868.554701ms /index.html                    |  <qiniu-go>
+[05/25 17:28:03] [I]   223.85.132.23     GET  [32m200[0m      72917 1.066570792s /index.html?code=03180CBU1rXzZT04SlCU1rXQBU180CBM&state=STATE |  <qiniu-go>
+[05/25 17:28:12] [I] 182.140.175.142     GET  [32m200[0m      72917 681.253527ms /index.html?code=031jO9d50RJBnI1ZDld50kpTc50jO9dy&state=STATE |  <qiniu-go>
+[05/25 17:28:17] [I]   223.85.132.23     GET  [90m302[0m        243 601.636616ms /index.html                    |  <qiniu-go>
+[05/25 17:28:23] [I]   223.85.132.23     GET  [32m200[0m      72917 2.676740015s /index.html?code=071ORQJ11ydZ9M1g2PK11rEVJ11ORQJz&state=STATE |  <qiniu-go>
+[05/25 17:28:29] [I]   223.85.132.23     GET  [32m200[0m      72917 835.675859ms /index.html?code=061tgNek13pLCj0ETPbk1kPWek1tgNeE&state=STATE |  <qiniu-go>
+[05/25 17:33:32] [I] 182.140.175.142     GET  [32m200[0m      72917 1.844989913s /index.html?code=011x1PV52Hzb9N0eH0S520xpV52x1PVz&state=STATE |  <qiniu-go>
+[05/25 17:33:40] [I] 182.140.175.142     GET  [90m302[0m        243 4.276538359s /index.html                    |  <qiniu-go>
+[05/25 17:33:44] [I] 182.140.175.142     GET  [32m200[0m      72917 750.498142ms /index.html?code=0717sBz12GFti11tl3B123Rlz127sBz-&state=STATE |  <qiniu-go>
+[05/25 20:08:50] [I]   45.76.104.123     GET  [32m200[0m      72917 1.406180022s /index.html?code=071iJpAY048maZ1NSKzY0oLGAY0iJpAO&state=STATE |  <qiniu-go>
+[05/25 20:08:51] [I]   45.76.104.123     GET  [90m304[0m          0      61.14µs /static/jidi/css/swiper.min.css |  <qiniu-go>
+[05/25 20:08:51] [I]   45.76.104.123     GET  [90m304[0m          0     63.373µs /static/jidi/js/jquery-2.1.4.min.js |  <qiniu-go>
+[05/25 20:08:51] [I]   45.76.104.123     GET  [90m304[0m          0     61.291µs /static/jidi/css/weiChat.css   |  <qiniu-go>
+[05/25 20:08:51] [I]   45.76.104.123     GET  [90m304[0m          0     73.006µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+[05/25 20:08:51] [I]   45.76.104.123     GET  [90m304[0m          0     60.809µs /static/jidi/js/videojs-contrib-hls.js |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     59.902µs /static/jidi/css/video-js.min.css |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     52.665µs /static/jidi/css/webiaoqing.css |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     60.675µs /static/jidi/js/swiper.min.js  |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     82.723µs /static/jidi/js/weiChat.js     |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     60.431µs /static/jidi/js/jquery.min.js  |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     88.208µs /static/jidi/js/jquery.qqFace.js |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     32.685µs /static/jidi/js/hidpi-canvas.min.js |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     70.563µs /static/jidi/img/weixin@2x.png |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0     72.227µs /static/jidi/img/balance@2x.png |  <qiniu-go>
+[05/25 20:08:52] [I]   45.76.104.123     GET  [90m304[0m          0       63.6µs /static/jidi/img/gift/chengbao.png |  <qiniu-go>
+[05/25 20:08:53] [I]   45.76.104.123     GET  [90m304[0m          0     62.732µs /static/jidi/img/gift/jiqiren.png |  <qiniu-go>
+[05/25 20:08:53] [I]   45.76.104.123     GET  [90m304[0m          0     68.507µs /static/jidi/img/gift/jitui.png |  <qiniu-go>
+[05/25 20:08:54] [I]   45.76.104.123     GET  [90m304[0m          0     81.487µs /static/jidi/img/gift/xianhua.png |  <qiniu-go>
+[05/25 20:08:54] [I]   45.76.104.123     GET  [90m304[0m          0     113.69µs /static/jidi/img/gift/youxiji.png |  <qiniu-go>
+[05/25 20:08:54] [I]   45.76.104.123     GET  [90m304[0m          0     97.214µs /static/jidi/img/gift/xueren.png |  <qiniu-go>
+[05/25 20:08:54] [I]   45.76.104.123     GET  [90m304[0m          0    109.686µs /static/jidi/img/gift/chouzhi.png |  <qiniu-go>
+[05/25 20:08:55] [I]   45.76.104.123     GET  [90m304[0m          0     67.666µs /static/jidi/img/gift/luyinji.png |  <qiniu-go>
+[05/25 20:08:55] [I]   45.76.104.123     GET  [90m304[0m          0     71.701µs /static/jidi/img/header.jpg    |  <qiniu-go>
+[05/25 20:08:55] [I]   45.76.104.123     GET  [90m304[0m          0     74.669µs /static/jidi/img/orde_share.png |  <qiniu-go>
+[05/25 20:08:55] [I]   45.76.104.123     GET  [90m304[0m          0     61.031µs /static/jidi/img/gd.jpg        |  <qiniu-go>
+[05/25 20:08:56] [I]   45.76.104.123     GET  [90m304[0m          0     82.322µs /static/jidi/img/c.jpg         |  <qiniu-go>
+[05/25 20:08:56] [I]   45.76.104.123     GET  [90m304[0m          0     76.425µs /static/jidi/img/play.png      |  <qiniu-go>
+[05/25 20:08:56] [I]   45.76.104.123     GET  [90m304[0m          0    128.631µs /static/jidi/img/weichart.png  |  <qiniu-go>
+[05/25 20:08:56] [I]   45.76.104.123     GET  [90m304[0m          0     77.114µs /static/jidi/img/waybox_back.png |  <qiniu-go>
+[05/25 20:08:57] [I]   45.76.104.123     GET  [90m304[0m          0     84.988µs /static/jidi/img/balance.png   |  <qiniu-go>
+[05/25 20:08:57] [I]   45.76.104.123     GET  [90m304[0m          0      82.48µs /static/jidi/img/girl.png      |  <qiniu-go>
+[05/25 20:08:57] [I]   45.76.104.123     GET  [90m304[0m          0     71.154µs /static/jidi/img/ddm.jpg       |  <qiniu-go>
+[05/25 20:08:57] [I]   45.76.104.123     GET  [90m304[0m          0    103.542µs /static/jidi/img/logo_font3x.png |  <qiniu-go>
+[05/25 20:08:58] [I]   45.76.104.123     GET  [90m304[0m          0     57.349µs /static/jidi/img/ppt_img/slider1.png |  <qiniu-go>
+[05/25 20:08:58] [I]   45.76.104.123     GET  [90m304[0m          0     77.359µs /static/jidi/img/ppt_img/slider2.png |  <qiniu-go>
+[05/25 20:08:58] [I]   45.76.104.123     GET  [90m304[0m          0     84.219µs /static/jidi/img/heartx2.png   |  <qiniu-go>
+[05/25 20:11:05] [I]   45.76.104.123     GET  [32m200[0m      72917 1.227981801s /index.html?code=0213IIrX15qrPW0JyUsX1RsBrX13IIrE&state=STATE |  <qiniu-go>
+[05/25 20:11:06] [I]   45.76.104.123     GET  [32m200[0m     370557   4.006845ms /static/jidi/js/video.min.js   |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     86.948µs /static/jidi/img/chat_expression.png |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     63.097µs /static/jidi/img/gold_medal.png |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     16.839µs /static/jidi/img/personalCenter@2x.png |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     84.483µs /static/jidi/img/erweima.png   |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     87.399µs /static/jidi/img/giftx2.png    |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     95.942µs /static/jidi/img/follow.png    |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     66.128µs /static/jidi/img/silver_medal.png |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0       62.8µs /static/jidi/img/friendshipLink.png |  <qiniu-go>
+[05/25 20:11:07] [I]   45.76.104.123     GET  [90m304[0m          0     72.608µs /static/jidi/img/bronze_medal.png |  <qiniu-go>
+[05/25 20:11:08] [I]   45.76.104.123     GET  [90m304[0m          0     49.402µs /static/jidi/img/looked.png    |  <qiniu-go>
+[05/25 20:11:08] [I]   45.76.104.123     GET  [90m304[0m          0     63.706µs /static/jidi/img/shang.png     |  <qiniu-go>
+[05/25 20:11:08] [I]   45.76.104.123     GET  [90m304[0m          0     37.918µs /static/jidi/img/hongbao.png   |  <qiniu-go>
+[05/25 20:11:08] [I]   45.76.104.123     GET  [90m304[0m          0     61.539µs /static/jidi/img/fenxiang.png  |  <qiniu-go>
+[05/26 09:01:57] [I] 182.140.175.142     GET  [35m404[0m        226     30.355µs /                              |  <qiniu-go>
+[05/26 09:01:57] [I]   223.85.132.24     GET  [35m404[0m        226     49.707µs /                              |  <qiniu-go>
+[05/26 09:01:59] [I] 182.140.175.142     GET  [90m302[0m        243 2.848276388s /index.html                    |  <qiniu-go>
+[05/26 09:02:02] [I] 182.140.175.142     GET  [32m200[0m      72917 787.625944ms /index.html?code=031UPMX22vMZo018yFY22SeRX22UPMXA&state=STATE |  <qiniu-go>
+[05/26 09:02:02] [I] 101.204.149.154     GET  [90m304[0m          0     71.201µs /static/jidi/css/swiper.min.css |  <qiniu-go>
+[05/26 09:02:02] [I] 101.204.149.154     GET  [90m304[0m          0     28.311µs /static/jidi/css/video-js.min.css |  <qiniu-go>
+[05/26 09:02:02] [I] 182.140.175.142     GET  [90m304[0m          0     47.196µs /static/jidi/js/video.min.js   |  <qiniu-go>
+[05/26 09:02:02] [I] 101.204.149.154     GET  [90m304[0m          0     43.534µs /static/jidi/css/weiChat.css   |  <qiniu-go>
+[05/26 09:02:02] [I] 101.204.149.154     GET  [90m304[0m          0     27.592µs /static/jidi/css/webiaoqing.css |  <qiniu-go>
+[05/26 09:02:02] [I] 182.140.175.142     GET  [90m304[0m          0     67.088µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+[05/26 09:02:02] [I] 182.140.175.142     GET  [90m304[0m          0     35.775µs /static/jidi/js/jquery-2.1.4.min.js |  <qiniu-go>
+[05/26 09:02:03] [I]   124.161.23.61     GET  [90m304[0m          0     60.195µs /static/jidi/js/videojs-contrib-hls.js |  <qiniu-go>
+[05/26 09:02:03] [I] 182.140.175.142     GET  [90m304[0m          0     59.653µs /static/jidi/js/swiper.min.js  |  <qiniu-go>
+[05/26 09:02:03] [I] 182.140.175.142     GET  [90m304[0m          0       60.1µs /static/jidi/js/weiChat.js     |  <qiniu-go>
+[05/26 09:02:03] [I] 182.140.175.142     GET  [90m304[0m          0     72.882µs /static/jidi/js/jquery.min.js  |  <qiniu-go>
+[05/26 09:02:03] [I] 182.140.175.142     GET  [90m304[0m          0     97.353µs /static/jidi/js/jquery.qqFace.js |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     64.604µs /static/jidi/img/weixin@2x.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     62.534µs /static/jidi/img/balance@2x.png |  <qiniu-go>
+[05/26 09:02:03] [I] 182.140.175.142     GET  [90m304[0m          0     68.496µs /static/jidi/js/hidpi-canvas.min.js |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0    104.842µs /static/jidi/img/gift/chengbao.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     37.393µs /static/jidi/img/gift/jiqiren.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     34.175µs /static/jidi/img/gift/jitui.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     53.604µs /static/jidi/img/gift/xianhua.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     57.712µs /static/jidi/img/gift/youxiji.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     44.155µs /static/jidi/img/gift/xueren.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     29.668µs /static/jidi/img/gift/chouzhi.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     45.631µs /static/jidi/img/gift/luyinji.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     54.761µs /static/jidi/img/logo_font3x.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     71.802µs /static/jidi/img/header.jpg    |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     37.041µs /static/jidi/img/friendshipLink.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     59.836µs /static/jidi/img/giftx2.png    |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0      39.81µs /static/jidi/img/hongbao.png   |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     36.003µs /static/jidi/img/chat_expression.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     86.945µs /static/jidi/img/looked.png    |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     28.379µs /static/jidi/img/fenxiang.png  |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     56.564µs /static/jidi/img/personalCenter@2x.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     56.808µs /static/jidi/img/shang.png     |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     38.365µs /static/jidi/img/erweima.png   |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     56.759µs /static/jidi/img/orde_share.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0      59.65µs /static/jidi/img/gd.jpg        |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0      38.32µs /static/jidi/img/c.jpg         |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     40.679µs /static/jidi/img/play.png      |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     53.221µs /static/jidi/img/weichart.png  |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0      48.88µs /static/jidi/img/waybox_back.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     71.781µs /static/jidi/img/balance.png   |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     41.711µs /static/jidi/img/girl.png      |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     36.568µs /static/jidi/img/ddm.jpg       |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     38.999µs /static/jidi/img/ppt_img/slider1.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     47.805µs /static/jidi/img/ppt_img/slider2.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     56.741µs /static/jidi/img/heartx2.png   |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     58.331µs /static/jidi/img/gold_medal.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     37.968µs /static/jidi/img/follow.png    |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     75.899µs /static/jidi/img/silver_medal.png |  <qiniu-go>
+[05/26 09:02:03] [I] 101.204.149.154     GET  [90m304[0m          0     48.522µs /static/jidi/img/bronze_medal.png |  <qiniu-go>
+[05/26 09:02:06] [I] 101.226.125.103     GET  [90m302[0m        243 607.962419ms /index.html                    |  <qiniu-go>
+[05/26 09:05:56] [I]  101.226.33.205     GET  [90m302[0m        243 821.496296ms /index.html                    |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [90m301[0m         43     31.862µs /apidoc                        |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m       5631    594.179µs /apidoc/                       |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m        452    222.063µs /apidoc/css/typography.css     |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m        369    186.273µs /apidoc/lib/jquery.slideto.min.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m       1066    166.369µs /apidoc/css/reset.css          |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      46473   2.261056ms /apidoc/css/print.css          |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      48978    788.033µs /apidoc/css/screen.css         |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m        692   1.076027ms /apidoc/lib/object-assign-pollyfill.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      92555    5.44148ms /apidoc/lib/jquery-1.8.0.min.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m        762    304.325µs /apidoc/lib/jquery.wiggle.min.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m       4119    343.775µs /apidoc/lib/jquery.ba-bbq.min.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      43621   2.189593ms /apidoc/lib/js-yaml.min.js     |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      48517   1.545475ms /apidoc/lib/handlebars-2.0.0.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      52646   1.999982ms /apidoc/lib/lodash.min.js      |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      20390    908.293µs /apidoc/lib/backbone-min.js    |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      11037    731.935µs /apidoc/lib/highlight.9.1.0.pack.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m       1025    808.964µs /apidoc/lib/highlight.9.1.0.pack_extended.js |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      28156     899.73µs /apidoc/lib/marked.js          |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m     130042   2.702097ms /apidoc/lib/jsoneditor.min.js  |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m    1823645  58.508085ms /apidoc/swagger-ui.js          |  <qiniu-go>
+[05/26 10:26:46] [I] 101.204.149.154     GET  [32m200[0m      11615    544.117µs /apidoc/lib/swagger-oauth.js   |  <qiniu-go>
+[05/26 10:26:47] [I] 101.204.149.154     GET  [32m200[0m        770    193.469µs /apidoc/images/logo_small.png  |  <qiniu-go>
+[05/26 10:26:47] [I] 101.204.149.154     GET  [32m200[0m       8751    868.353µs /apidoc_swagger.json           |  <qiniu-go>
+[05/26 10:26:48] [I] 101.204.149.154     GET  [32m200[0m       1654    224.079µs /apidoc/images/favicon-32x32.png |  <qiniu-go>
+[05/26 10:26:49] [I]    23.22.16.221     GET  [32m200[0m       8751    362.217µs /apidoc_swagger.json           |  <qiniu-go>
+[05/26 10:26:52] [I] 101.204.149.154     GET  [32m200[0m       9257    638.968µs /apidoc/images/throbber.gif    |  <qiniu-go>
+[05/26 10:26:59] [I] 101.204.149.154     GET  [32m200[0m         30     89.949µs /add?one=2&other=3             |  <qiniu-go>
+[05/26 10:27:38] [I] 101.204.149.154     GET  [32m200[0m         30     89.158µs /add?one=3&other=3             |  <qiniu-go>
+[05/26 10:28:28] [I] 101.204.149.154     GET  [32m200[0m       5631      580.6µs /apidoc/                       |  <qiniu-go>
+[05/26 10:28:28] [I] 101.204.149.154     GET  [35m404[0m        226     34.282µs /apple-touch-icon-precomposed.png |  <qiniu-go>
+[05/26 10:28:28] [I] 101.204.149.154     GET  [35m404[0m        226     40.204µs /apple-touch-icon.png          |  <qiniu-go>
+[05/26 10:28:28] [I] 101.204.149.154     GET  [32m200[0m       1654    144.357µs /apidoc/images/favicon-32x32.png |  <qiniu-go>
+[05/26 10:28:29] [I] 101.204.149.154     GET  [35m404[0m        226     35.518µs /apple-touch-icon-precomposed.png |  <qiniu-go>
+[05/26 10:28:29] [I] 101.204.149.154     GET  [35m404[0m        226     44.697µs /apple-touch-icon.png          |  <qiniu-go>
+[05/26 11:23:31] [I]   117.175.88.49     GET  [35m404[0m        226     34.017µs /                              |  <qiniu-go>
+[05/26 11:23:31] [I]   182.131.11.53     GET  [35m404[0m        226     59.701µs /                              |  <qiniu-go>
+[05/26 11:23:37] [I] 182.140.175.142     GET  [90m302[0m        243 5.292100878s /index.html                    |  <qiniu-go>
+[05/26 11:23:42] [I]   124.161.23.61     GET  [32m200[0m      72917 833.926951ms /index.html?code=021NAJM40a1kFH1u5vM40sKAM40NAJM3&state=STATE |  <qiniu-go>
+[05/26 11:23:51] [I] 182.140.175.142     GET  [90m302[0m        243 703.762942ms /index.html                    |  <qiniu-go>
+[05/26 11:23:56] [I] 182.140.175.142     GET  [32m200[0m      72917 757.537665ms /index.html?code=071kSl160jszVG157H160iVh160kSl1Z&state=STATE |  <qiniu-go>
+[05/26 11:24:07] [I] 101.204.149.154     GET  [32m200[0m       1545    156.211µs /static/jidi/img/close.png     |  <qiniu-go>
+[05/26 11:24:16] [I] 182.140.175.142     GET  [32m200[0m       3451    197.259µs /static/jidi/personal/personalCenter.html |  <qiniu-go>
+[05/26 11:24:16] [I] 101.204.149.154     GET  [32m200[0m      25375    188.328µs /static/jidi/personal/css/personal.css |  <qiniu-go>
+[05/26 11:24:16] [I] 101.204.149.154     GET  [32m200[0m      19022     129.94µs /static/jidi/personal/img/erweima.jpg |  <qiniu-go>
+[05/26 11:24:17] [I] 101.204.149.154     GET  [32m200[0m       5442    148.062µs /static/jidi/personal/img/header.jpg |  <qiniu-go>
+[05/26 11:24:17] [I] 101.204.149.154     GET  [32m200[0m       1834     93.773µs /static/jidi/personal/img/erweima.png |  <qiniu-go>
+[05/26 11:24:17] [I] 101.204.149.154     GET  [32m200[0m       1314    172.696µs /static/jidi/personal/img/gobanck.png |  <qiniu-go>
+[05/26 11:24:17] [I] 101.204.149.154     GET  [32m200[0m       1226    194.746µs /static/jidi/personal/img/gonewpage.png |  <qiniu-go>
+[05/26 11:24:18] [I] 182.140.175.142     GET  [32m200[0m       5878    179.783µs /static/jidi/order/ablecash.html |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       3209    179.377µs /static/jidi/order/dist/css/fullcss/reset.css |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       6706    106.936µs /static/jidi/order/dist/css/postal.css |  <qiniu-go>
+[05/26 11:24:18] [I] 182.140.175.142     GET  [32m200[0m     284394    2.35501ms /static/jidi/order/dist/js/fulljs/jquery-1.11.3.js |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       1244    175.533µs /static/jidi/order/dist/img/nav-f.png |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       1222    115.987µs /static/jidi/order/dist/img/icon-s.png |  <qiniu-go>
+[05/26 11:24:18] [I] 182.140.175.142     GET  [32m200[0m      19761    168.946µs /static/jidi/order/dist/js/fulljs/Chart.min.js |  <qiniu-go>
+[05/26 11:24:18] [I] 182.140.175.142     GET  [32m200[0m        384     86.263µs /static/jidi/order/dist/js/mychart.js |  <qiniu-go>
+[05/26 11:24:18] [I] 182.140.175.142     GET  [32m200[0m       2004    122.448µs /static/jidi/order/dist/js/pospal.js |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       1275     155.79µs /static/jidi/order/dist/img/g.png |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       1535     92.569µs /static/jidi/order/dist/img/icon-help.png |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       3485     75.647µs /static/jidi/order/dist/img/j.png |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       1743    143.573µs /static/jidi/order/dist/img/w.png |  <qiniu-go>
+[05/26 11:24:18] [I] 101.204.149.154     GET  [32m200[0m       1304     87.288µs /static/jidi/order/dist/img/icon-yes.png |  <qiniu-go>
+[05/26 11:24:26] [I]   180.163.2.119     GET  [32m200[0m       3451    185.135µs /static/jidi/personal/personalCenter.html |  <qiniu-go>
+[05/26 11:24:26] [I]   180.163.2.119     GET  [32m200[0m        747    156.754µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+[05/26 11:24:26] [I]   180.163.2.119     GET  [32m200[0m      84345    176.515µs /static/jidi/js/jquery-2.1.4.min.js |  <qiniu-go>
+[05/26 11:24:29] [I] 182.140.175.142     GET  [90m302[0m        243 834.134887ms /index.html                    |  <qiniu-go>
+[05/26 11:24:33] [I] 182.140.175.142     GET  [32m200[0m      72917    721.041ms /index.html?code=041TRK5y1et6mf0G0v5y1QgB5y1TRK5S&state=STATE |  <qiniu-go>
+[05/26 11:33:18] [I]  101.226.33.220     GET  [32m200[0m       5878    197.818µs /static/jidi/order/ablecash.html |  <qiniu-go>
+[05/26 11:33:28] [I]  101.226.33.220     GET  [32m200[0m     284394   3.164642ms /static/jidi/order/dist/js/fulljs/jquery-1.11.3.js |  <qiniu-go>
+[05/26 11:33:44] [I]  101.226.33.220     GET  [32m200[0m       2004    185.286µs /static/jidi/order/dist/js/pospal.js |  <qiniu-go>
+[05/26 11:33:54] [I]  101.226.33.220     GET  [32m200[0m      19761    190.653µs /static/jidi/order/dist/js/fulljs/Chart.min.js |  <qiniu-go>
+[05/26 11:34:03] [I]  101.226.33.220     GET  [32m200[0m        384     160.82µs /static/jidi/order/dist/js/mychart.js |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       5878    157.355µs /static/jidi/order/ablecash.html |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       3209    155.028µs /static/jidi/order/dist/css/fullcss/reset.css |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       6706    166.419µs /static/jidi/order/dist/css/postal.css |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       2004     160.86µs /static/jidi/order/dist/js/pospal.js |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m     284394   3.985453ms /static/jidi/order/dist/js/fulljs/jquery-1.11.3.js |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       1244     83.281µs /static/jidi/order/dist/img/nav-f.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       1222    106.398µs /static/jidi/order/dist/img/icon-s.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m      19761    125.145µs /static/jidi/order/dist/js/fulljs/Chart.min.js |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m        384     87.674µs /static/jidi/order/dist/js/mychart.js |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       1535    143.162µs /static/jidi/order/dist/img/icon-help.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       3485      79.89µs /static/jidi/order/dist/img/j.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       1275     75.902µs /static/jidi/order/dist/img/g.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       1743     98.027µs /static/jidi/order/dist/img/w.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       1304    108.651µs /static/jidi/order/dist/img/icon-yes.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       1304    141.647µs /static/jidi/order/dist/img/icon-yes.png |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m       2004    169.773µs /static/jidi/order/dist/js/pospal.js |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m      19761    138.109µs /static/jidi/order/dist/js/fulljs/Chart.min.js |  <qiniu-go>
+[05/26 11:34:12] [I]   61.151.226.16     GET  [32m200[0m        384    201.142µs /static/jidi/order/dist/js/mychart.js |  <qiniu-go>
+[05/26 16:52:40] [I]  182.131.11.251     GET  [35m404[0m        226     36.658µs /                              |  <qiniu-go>
+[05/26 16:52:42] [I]   223.85.132.24     GET  [35m404[0m        226     27.807µs /                              |  <qiniu-go>
+[05/26 16:52:45] [I] 182.140.175.142     GET  [90m302[0m        243 5.009132996s /index.html                    |  <qiniu-go>
+[05/26 16:52:48] [I] 182.140.175.142     GET  [32m200[0m      72917  753.51884ms /index.html?code=071hGiuF12osh20gWStF1eO2uF1hGiul&state=STATE |  <qiniu-go>
+[05/26 16:58:19] [I] 182.140.175.142     GET  [90m302[0m        243 840.290835ms /index.html                    |  <qiniu-go>
+[05/26 16:58:21] [I] 182.140.175.142     GET  [32m200[0m      72917 692.002909ms /index.html?code=021xymv50pWLII17gwu50Mwiv50xymvm&state=STATE |  <qiniu-go>
+        ___                    
+      /  _/                    
+     _| |_  __        __   ___ 
+    /_   // _ |/\  /\/ _ \/ _ \
+      | |  \/ /\ \/ / |/ / |/ /
+      / / \_/\\ \  / \_ / \__/ 
+     / /        / /  _\ \      
+    \_/        \_/  \_\_/   VERSION 1.0  URL https://github.com/henrylee2cn/faygo
+
+[06/02 22:46:18] The PID of the current process is 32690
+[06/02 22:46:18] APIdoc's URL path is '/apidoc/' [check direct ip for filter] <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /MP_verify_FfXgomWspAkznBQA.txt <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /MP_verify_Z2Q4pyfE628bSDwp.txt <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /add                           <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /ajax/uploadImg                <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/interaction/attentionUser <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/interaction/getAttentionUser <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/shop/addGoods             <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/shop/allCategory          <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/shop/apitest              <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/shop/createOrder          <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/user/getUserInfo          <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /api/user/getUserLevel         <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /apidoc/*filepath              <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /apidoc_swagger.json           <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /bindAgent                     <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /index.html                    <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /login                         <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /static/*filepath              <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m    POST | /test                          <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /testAjax                      <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /threeDistribute               <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m     GET | /upload/*filepath              <qiniu-go>
+[06/02 22:46:18] [46m[SYS][0m listen and serve HTTP on 0.0.0.0:9090 <qiniu-go>
+[06/02 22:46:20] [46m[SYS][0m shutting down servers...
+[06/02 22:46:20] [46m[SYS][0m servers are shutted down gracefully.
+signal: interrupt
+        ___                    
+      /  _/                    
+     _| |_  __        __   ___ 
+    /_   // _ |/\  /\/ _ \/ _ \
+      | |  \/ /\ \/ / |/ / |/ /
+      / / \_/\\ \  / \_ / \__/ 
+     / /        / /  _\ \      
+    \_/        \_/  \_\_/   VERSION 1.0  URL https://github.com/henrylee2cn/faygo
+
+[06/02 22:47:12] The PID of the current process is 364
+[06/02 22:47:12] APIdoc's URL path is '/apidoc/' [check direct ip for filter] <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /MP_verify_FfXgomWspAkznBQA.txt <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /MP_verify_Z2Q4pyfE628bSDwp.txt <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /add                           <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /ajax/uploadImg                <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/interaction/attentionUser <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/interaction/getAttentionUser <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/shop/addGoods             <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/shop/allCategory          <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/shop/apitest              <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/shop/createOrder          <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/user/getUserInfo          <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /api/user/getUserLevel         <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /apidoc/*filepath              <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /apidoc_swagger.json           <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /bindAgent                     <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /index.html                    <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /login                         <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /static/*filepath              <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m    POST | /test                          <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /testAjax                      <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /threeDistribute               <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m     GET | /upload/*filepath              <qiniu-go>
+[06/02 22:47:12] [46m[SYS][0m listen and serve HTTP on 0.0.0.0:9090 <qiniu-go>
+
+[06/02 22:47:53] [I]   182.131.11.53     GET  [35m404[0m        226     65.297µs /                              |  <qiniu-go>
+[06/02 22:47:53] [I]   223.85.132.24     GET  [35m404[0m        226     35.184µs /                              |  <qiniu-go>
+[06/02 22:47:54] [I] 182.140.175.142     GET  [90m302[0m        243 898.983797ms /index.html                    |  <qiniu-go>
+
+[06/02 22:47:57] [I] 182.140.175.142     GET  [32m200[0m      72917 658.961845ms /index.html?code=041SFDDH1GRPN40poACH1rYPDH1SFDDL&state=STATE |  <qiniu-go>
+
+[06/02 22:52:50] [I]  119.147.21.144     GET  [90m302[0m        243 771.127438ms /index.html                    |  <qiniu-go>
+
+[06/02 22:52:51] [I]    183.60.52.64     GET  [90m302[0m        243 608.068695ms /index.html                    |  <qiniu-go>
+
+
+[06/02 22:52:52] [I]  61.151.218.118     GET  [90m302[0m        243 629.761837ms /index.html                    |  <qiniu-go>
+
+[06/02 22:52:53] [I]    183.60.52.64     GET  [90m302[0m        243 586.123167ms /index.html                    |  <qiniu-go>
+[06/02 22:52:53] [I]  101.226.33.239     GET  [90m302[0m        243 551.910774ms /index.html                    |  <qiniu-go>
+
+[06/02 22:52:54] [I]    183.60.15.21     GET  [90m302[0m        243 547.894674ms /index.html                    |  <qiniu-go>
+
+[06/02 22:54:18] [I]   119.4.174.104     GET  [90m302[0m        243 712.413411ms /index.html                    |  <qiniu-go>
+
+[06/02 22:54:33] [I] 182.140.175.142     GET  [90m302[0m        243 647.323579ms /index.html                    |  <qiniu-go>
+
+[06/02 22:54:37] [I] 182.140.175.142     GET  [32m200[0m      72917 651.749562ms /index.html?code=001aycab1s1OFs0l3Pcb1dAnab1aycat&state=STATE |  <qiniu-go>
+[06/02 22:55:01] [I] 182.140.175.142     GET  [32m200[0m       3451    456.912µs /static/jidi/personal/personalCenter.html |  <qiniu-go>
+[06/02 22:55:01] [I]   119.4.174.104     GET  [32m200[0m      25375     481.41µs /static/jidi/personal/css/personal.css |  <qiniu-go>
+[06/02 22:55:01] [I]   119.4.174.104     GET  [32m200[0m      19022    486.003µs /static/jidi/personal/img/erweima.jpg |  <qiniu-go>
+[06/02 22:55:01] [I]   119.4.174.104     GET  [32m200[0m       5442    423.309µs /static/jidi/personal/img/header.jpg |  <qiniu-go>
+[06/02 22:55:01] [I]   119.4.174.104     GET  [32m200[0m       1834    434.662µs /static/jidi/personal/img/erweima.png |  <qiniu-go>
+[06/02 22:55:01] [I]   119.4.174.104     GET  [32m200[0m       1226    432.944µs /static/jidi/personal/img/gonewpage.png |  <qiniu-go>
+[06/02 22:55:01] [I]   119.4.174.104     GET  [32m200[0m       1314    270.606µs /static/jidi/personal/img/gobanck.png |  <qiniu-go>
+[06/02 22:55:11] [I]  180.153.201.15     GET  [32m200[0m       3451      144.1µs /static/jidi/personal/personalCenter.html |  <qiniu-go>
+[06/02 22:55:11] [I]  180.153.201.15     GET  [32m200[0m        747    160.531µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+[06/02 22:55:11] [I]  180.153.201.15     GET  [32m200[0m      84345    168.337µs /static/jidi/js/jquery-2.1.4.min.js |  <qiniu-go>
+
+[06/02 23:01:45] [I]   124.161.23.61     GET  [90m302[0m        243 826.596639ms /index.html                    |  <qiniu-go>
+
+[06/02 23:01:48] [I] 182.140.175.142     GET  [32m200[0m      72903 861.087887ms /index.html?code=081Y5Afv1h4Oyc0dQyhv1RECfv1Y5Af6&state=STATE |  <qiniu-go>
+[06/02 23:02:03] [I]   119.4.174.104     GET  [32m200[0m       1545    408.914µs /static/jidi/img/close.png     |  <qiniu-go>
+
+[06/02 23:18:20] [I]  117.177.27.202     GET  [90m302[0m        243 800.318382ms /index.html                    |  <qiniu-go>
+
+[06/02 23:23:09] [I]    183.60.15.14     GET  [90m302[0m        243 775.943216ms /index.html                    |  <qiniu-go>
+
+[06/02 23:23:10] [I]  101.226.33.239     GET  [90m302[0m        243 567.736556ms /index.html                    |  <qiniu-go>
+
+[06/02 23:23:11] [I]   61.151.226.16     GET  [90m302[0m        243 1.067501721s /index.html                    |  <qiniu-go>
+
+[06/02 23:23:19] [I] 140.207.124.105     GET  [90m302[0m        243 761.476295ms /index.html                    |  <qiniu-go>
+
+[06/03 00:16:25] [I] 182.140.177.165     GET  [35m404[0m        226     30.791µs /                              |  <qiniu-go>
+[06/03 00:16:25] [I]   223.85.132.35     GET  [35m404[0m        226     20.853µs /                              |  <qiniu-go>
+[06/03 00:16:25] [I] 182.140.175.142     GET  [90m302[0m        243 777.330053ms /index.html                    |  <qiniu-go>
+
+[06/03 00:16:28] [I] 182.140.175.142     GET  [32m200[0m      72917 702.731646ms /index.html?code=061GKtCh1P52pz0cSSyh1gprCh1GKtC7&state=STATE |  <qiniu-go>
+
+[06/03 07:12:56] [I]   61.188.187.33     GET  [90m302[0m        243 1.089110474s /index.html                    |  <qiniu-go>
+
+[06/03 07:13:09] [I]   61.188.187.33     GET  [90m302[0m        243 656.194962ms /index.html                    |  <qiniu-go>
+[06/03 07:58:25] [I] 123.147.165.153     GET  [35m404[0m        226     32.842µs /                              |  <qiniu-go>
+
+[06/03 16:18:26] [I] 115.239.212.136     GET  [90m302[0m        243 931.710231ms /index.html?code=021Ukzkg1Xf1Qx0i8gkg1lvDkg1UkzkJ&state=STATE |  <qiniu-go>
+[06/03 18:12:33] [I]   223.85.132.24     GET  [35m404[0m        226     18.097µs /                              |  <qiniu-go>
+
+[06/03 18:12:33] [I] 182.140.175.142     GET  [35m404[0m        226     39.304µs /                              |  <qiniu-go>
+[06/03 18:12:34] [I] 182.140.175.142     GET  [90m302[0m        243 931.757017ms /index.html                    |  <qiniu-go>
+
+[06/03 18:12:38] [I] 182.140.175.142     GET  [32m200[0m      72917 877.256946ms /index.html?code=081MEANR0zBRka2v8XPR02MJNR0MEANI&state=STATE |  <qiniu-go>
+[06/03 18:56:20] [I]   223.85.132.24     GET  [35m404[0m        226     32.892µs /                              |  <qiniu-go>
+
+[06/03 18:56:20] [I] 182.140.177.165     GET  [35m404[0m        226     37.225µs /                              |  <qiniu-go>
+[06/03 18:56:21] [I] 182.140.175.142     GET  [90m302[0m        243 921.978138ms /index.html                    |  <qiniu-go>
+
+[06/03 18:56:34] [I] 182.140.175.142     GET  [32m200[0m      72917 709.209375ms /index.html?code=031qCwei0lVR9l1bPFdi0Kmoei0qCwei&state=STATE |  <qiniu-go>
+[06/03 18:57:06] [I]  61.151.218.118     GET  [32m200[0m       3451    219.411µs /static/jidi/personal/personalCenter.html |  <qiniu-go>
+[06/03 18:57:06] [I]  61.151.218.118     GET  [32m200[0m        747    188.989µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+[06/03 18:57:06] [I]  61.151.218.118     GET  [32m200[0m      84345    214.857µs /static/jidi/js/jquery-2.1.4.min.js |  <qiniu-go>
+[06/03 19:11:09] [I]   120.92.32.206     GET  [32m200[0m       3451     220.79µs /static/jidi/personal/personalCenter.html |  <qiniu-go>
+[06/03 19:11:21] [I]   120.92.32.206     GET  [32m200[0m        747    158.718µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+
+[06/03 20:31:33] [I]   182.131.12.12     GET  [35m404[0m        226     46.299µs /                              |  <qiniu-go>
+[06/03 20:31:33] [I]   117.175.88.49     GET  [35m404[0m        226      15.79µs /                              |  <qiniu-go>
+[06/03 20:31:34] [I] 182.140.175.142     GET  [90m302[0m        243 1.136294294s /index.html                    |  <qiniu-go>
+
+[06/03 20:31:38] [I] 182.140.175.142     GET  [32m200[0m      72917 750.491372ms /index.html?code=051nK1OZ1A91iX0PciNZ1BkkOZ1nK1Oz&state=STATE |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     13.979µs /static/jidi/css/swiper.min.css |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     58.934µs /static/jidi/css/video-js.min.css |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     56.596µs /static/jidi/css/weiChat.css   |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     54.225µs /static/jidi/css/webiaoqing.css |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     26.764µs /static/jidi/js/video.min.js   |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     62.647µs /static/jidi/js/self_adaption.js |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     65.871µs /static/jidi/js/videojs-contrib-hls.js |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     42.596µs /static/jidi/js/jquery-2.1.4.min.js |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     63.662µs /static/jidi/js/weiChat.js     |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     76.378µs /static/jidi/js/jquery.min.js  |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     80.121µs /static/jidi/js/jquery.qqFace.js |  <qiniu-go>
+[06/03 20:31:39] [I] 182.140.175.142     GET  [90m304[0m          0     118.92µs /static/jidi/js/hidpi-canvas.min.js |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     90.834µs /static/jidi/img/weixin@2x.png |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0    130.666µs /static/jidi/img/balance@2x.png |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0    124.082µs /static/jidi/img/gift/jiqiren.png |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     79.583µs /static/jidi/img/gift/jitui.png |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0    153.384µs /static/jidi/img/gift/xianhua.png |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     75.134µs /static/jidi/img/gift/youxiji.png |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     90.533µs /static/jidi/img/gift/xueren.png |  <qiniu-go>
+[06/03 20:31:39] [I]   119.4.175.243     GET  [90m304[0m          0     68.833µs /static/jidi/img/gift/chengbao.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     84.312µs /static/jidi/img/gift/chouzhi.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     76.194µs /static/jidi/img/gift/luyinji.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     84.244µs /static/jidi/img/header.jpg    |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     66.956µs /static/jidi/img/orde_share.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     105.12µs /static/jidi/img/gd.jpg        |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     70.181µs /static/jidi/img/c.jpg         |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     63.314µs /static/jidi/img/play.png      |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     83.494µs /static/jidi/img/weichart.png  |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     67.935µs /static/jidi/img/waybox_back.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     62.526µs /static/jidi/img/balance.png   |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     81.471µs /static/jidi/img/girl.png      |  <qiniu-go>
+[06/03 20:31:40] [I]   124.161.23.61     GET  [90m304[0m          0     64.762µs /static/jidi/js/swiper.min.js  |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     71.568µs /static/jidi/img/ddm.jpg       |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     61.051µs /static/jidi/img/logo_font3x.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     62.273µs /static/jidi/img/ppt_img/slider1.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     56.879µs /static/jidi/img/ppt_img/slider2.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     61.466µs /static/jidi/img/heartx2.png   |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     65.988µs /static/jidi/img/looked.png    |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     65.435µs /static/jidi/img/friendshipLink.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     88.018µs /static/jidi/img/chat_expression.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     79.623µs /static/jidi/img/giftx2.png    |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     68.777µs /static/jidi/img/gold_medal.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     67.067µs /static/jidi/img/follow.png    |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     56.949µs /static/jidi/img/silver_medal.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     46.612µs /static/jidi/img/bronze_medal.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     39.858µs /static/jidi/img/fenxiang.png  |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     58.978µs /static/jidi/img/hongbao.png   |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     36.437µs /static/jidi/img/personalCenter@2x.png |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     41.804µs /static/jidi/img/shang.png     |  <qiniu-go>
+[06/03 20:31:40] [I]   119.4.175.243     GET  [90m304[0m          0     43.148µs /static/jidi/img/erweima.png   |  <qiniu-go>
+[06/04 11:50:14] [I] 123.147.165.166     GET  [35m404[0m        226     48.884µs /                              |  <qiniu-go>
+
+[06/05 01:41:58] [I]   111.206.36.11     GET  [90m302[0m        243 1.189575085s /index.html?code=021S14nW1BPI8W0zXPmW1AAnnW1S14nJ&state=STATE |  <qiniu-go>
+
+[06/05 01:42:00] [I]   111.206.36.15     GET  [90m302[0m        243  605.07554ms /index.html?code=051WKQCm0UB80n1kR8Cm0ItCCm0WKQCj&state=STATE |  <qiniu-go>

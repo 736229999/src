@@ -1,0 +1,12 @@
+.idea
+.vscode
+backend.bak
+backend/backend
+backend/backend.linux
+1.sql
+dbadminagent/dbadminagent
+dbadminagent/dbadminagent.linux
+backend/test*.html
+backend/assetmain.go
+d.go
+bin/

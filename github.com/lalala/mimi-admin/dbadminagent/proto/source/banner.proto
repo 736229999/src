@@ -1,0 +1,44 @@
+syntax = "proto3";
+package dbproto;
+
+message Banner{
+    int64 id = 1;
+    string url =2;
+    string targetLink =3;
+    bool isVisible =4;
+    string description = 5;
+    int64 created = 6;
+    int32 sort = 7;
+    int64 targetId = 8;
+    enum TargetTypeBackend {
+        TargetType_All = 0;         // 全部
+        TargetType_News = 1;        //新闻
+        TargetType_Activity = 2;    //活动
+        TargetType_Link = 3;        //链接
+    }
+    TargetTypeBackend targetType = 9;
+    enum LocationTypeBackend {
+        Location_All = 0;       // 全部
+        Location_Home = 1;      // 首页
+        Location_Discover = 2;  // 发现
+    }
+    int64 updated = 11;
+    LocationTypeBackend location = 10;
+}
+
+
+message BannerId {
+    int64 id = 1;
+}
+
+message BannerList {
+    repeated Banner list = 1;
+    int64    total = 2;
+}
+
+
+message QueryBannerArg{
+    Banner.LocationTypeBackend location = 1;
+    int32   page = 2;
+    int32   pageSize = 3;
+}

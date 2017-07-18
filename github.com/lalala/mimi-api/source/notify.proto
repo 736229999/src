@@ -1,0 +1,54 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "NotifyCenter";
+
+enum NotifyType {
+    Announce = 0; //公告
+    Remind = 1; //提醒
+    Message = 2; //私信
+    All = 3; //全部
+}
+
+message Notify {
+    int64 id = 1;
+    string content = 2;
+    NotifyType type = 3;
+    int64   target = 4;
+    string  targetType = 5;
+    string  action = 6;
+    int64   sender  = 7;
+    int64 created = 8;
+    int64 updated = 9;
+    int64 contentLength = 10;
+}
+
+message UserNotify {
+    int64 account = 1;
+    int64 notify = 2;
+    bool isRead = 3;
+    NotifyType notifyType = 4;
+    int64 created = 5;
+}
+
+message QueryUserNotifyArg {
+    int64 account = 1;
+    NotifyType notifyType = 2;
+    int64 page = 3;
+    int64 pageSize = 4;
+}
+
+message ReadNotifyArg {
+    int64 notifyId = 1;
+    int64 accountId = 2;
+}
+
+message UserNotifyInfo {
+    UserNotify userNotify = 1;
+    Notify  notify = 2;
+}
+
+message QueryUserNotifyRes {
+    repeated UserNotifyInfo list = 1;
+}

@@ -1,0 +1,155 @@
+syntax = "proto3";
+package dbproto;
+import "admin.proto";
+
+message WithdrawApply {
+    int64 id = 1;
+    int64 account_id = 2;
+    string realname = 3;
+    string phone = 4;
+    enum WAStepBackend {        // 提现申请的当前步骤
+        STEP_ALL = 0;
+        STEP_APPLY = 1;         // 提现申请
+        STEP_AUDIT = 2;         // 平台审核
+        STEP_BANK_HANDLING = 3; // 银行处理
+    }           
+    enum WATypeBackend {        // 提现类型
+        TYPE_ALL = 0;           // 所有
+        TYPE_BANKCARD = 1;      // 银行卡
+        TYPE_ALIPAY = 2;        // 支付宝
+    }
+    int32 create_time = 5;
+    double amount = 6;
+    string in_no = 7;
+    WAStepBackend step = 8;
+    bool is_success = 9;
+    string auditor = 10;
+    int32 audit_time = 11;
+    string audit_comment = 12;
+    WATypeBackend withdraw_type = 13;
+    string idcard_no = 14;
+    string in_bankname = 15;
+    bool can_operate = 16;
+}
+
+message QueryWithdrawApplyArg {
+    WithdrawApply.WAStepBackend step = 1;
+    bool   is_success = 2;
+    string auditor = 3;
+    string realname = 4;
+    string phone = 5;
+    string in_no = 6;
+    int64 start = 7;
+    int64 end = 8;
+    int64 min_amount = 9;
+    int64 max_amount = 10;
+    int32 page = 11;
+    int32 page_size = 12;
+}
+
+message WithdrawApplyId {
+    int64 id = 1;
+}
+
+message WithdrawApplyList {  
+    repeated WithdrawApply list = 2;
+    int64 total = 3;
+}
+
+message UpdateWAStatusArg {
+    int64 id = 1;
+    WithdrawApply.WAStepBackend step = 2;
+    bool is_success = 3;
+    string auditComment = 4;
+}
+
+message ClaimWAArg {
+    int64 withdrawApplyId = 1;
+    string auditor = 2;
+}
+
+message CheckWAArg {
+    int64 withdrawApplyId = 1;
+    string auditor = 2;
+}
+
+message CheckWARes {
+    bool exist_auditor = 1;     // 是否存在审核人
+    bool is_own = 2;            // 是否自己已认领
+    WithdrawApply.WAStepBackend step = 3;             // 当前步骤
+    bool is_success = 4;        // 当前步骤是否成功
+}
+
+message WithdrawAuditAuth {
+    int64 id = 1;
+    int64 user_id = 2;
+    AdminUserInfoArg user_info = 3;
+    float min_amount = 4;
+    float max_amount = 5;
+    int64 create_time = 6;
+    int64 creator = 7;
+    AdminUserInfoArg creator_user_info = 8;
+    bool valid = 9;
+    bool unlimited = 10;
+    enum TypeBackend {
+        TYPE_ALL = 0;
+        TYPE_APPLY = 1;
+        TTPE_TRANSFER = 2;
+    }
+    TypeBackend type = 11;          
+}
+
+message WithdrawAuditAuthList {  
+    repeated WithdrawAuditAuth list = 2;
+    int64 total = 3;
+}
+
+
+message QueryWithdrawAuditAuthArg {
+    int64 userId = 1;
+    bool vaild = 2;
+    WithdrawAuditAuth.TypeBackend type = 3;
+    int32 page = 8;
+    int32 pageSize = 9;
+}
+
+message WithdrawTransfer {
+    int64 id = 1;
+    int64 appy_id = 2;
+    float transfer_amount = 3;
+    string certificate_url = 4;
+    enum WTStepBackend {
+        STEP_ALL = 0;
+        STEP_WAITING = 1;
+        STEP_TRANSFER = 2;
+    }
+    WTStepBackend step = 5;
+    bool is_success = 6;
+    string operator = 7;
+    int64 operate_time = 8;
+    string pay_no = 9;
+    string pay_sn = 10;
+    string target_account = 11;
+    WithdrawApply  withdraw_apply = 12;
+    bool can_operate = 13;
+}
+
+message WithdrawTransferList {  
+    repeated WithdrawTransfer list = 1;
+    int64 total = 2;
+}
+
+message QueryWithdrawTransferArg {
+    WithdrawTransfer.WTStepBackend step = 1;
+    bool   is_success = 2;
+    string operator = 3;
+    string realname = 4;
+    string phone = 5;
+    string in_no = 6;
+    int64 start = 7;
+    int64 end = 8;
+    int64 min_amount = 9;
+    int64 max_amount = 10;
+    int32 page = 11;
+    int32 page_size = 12;
+}

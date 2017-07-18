@@ -1,0 +1,11 @@
+syntax = "proto3";
+package dbproto;
+
+message StatisticsOrderAndIncome {
+    int32 new_buycai_order = 1;             //新增购彩订单.
+    int32 buycai_order_total = 2;       //购彩订单总数.
+    int32 new_user_order = 3;               //新增用户订单.
+    int32 user_order_total = 4;         //用户订单总数.
+    string new_income = 5;              //今日收入.
+    string income_total = 6;            //历史总收入.
+}

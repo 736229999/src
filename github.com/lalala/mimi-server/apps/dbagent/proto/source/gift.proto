@@ -1,0 +1,84 @@
+syntax = "proto3";
+package dbproto;
+import "fund.proto";
+
+message GiftPackage {
+	string title  = 1;
+	string content_desc = 2;
+	string content  = 3;
+	int64  total_exchange_num = 4;
+	int64  gift_type = 5;
+	int64  add_time = 6;
+}
+
+message GiftArg {
+	repeated BuycaiTicket TicketList = 1;
+	ChangeVirtualFundArg Credits  = 2;
+	string CdKey= 3;
+	int64 AccountId = 4;
+	int64 Batch = 5;
+}
+
+message CdKeyBatchArg {
+	int64 id = 1;
+	int64 Max_exchange = 2;
+	string title = 3;
+	int64 Gift_package_id = 4;
+	int64 Valid_start = 5;
+	int64 Valid_end = 6;
+	int64 add_time = 7;
+}
+
+message GiftCdkeyArg {
+	GiftPackage gift = 1;
+	CdKeyBatchArg cdkey = 2;
+}
+
+message InviteArg {
+	string Code = 1; //邀请码.
+	int64 InviteeId = 2; //受邀者.
+}
+
+message InviteRelationArg {
+	int64 inviter  = 1; //邀请人.
+	int64 invitee  = 2; //被邀请人.
+}
+
+message CreditsArg {
+	int64 Credits = 1;
+	int64 AccountId = 2;
+}
+message Gift {
+	int64 Credits = 1;
+	repeated BuycaiTicket TicketList = 2;
+	int64 Inviter = 3;
+	int64 invitee  = 4;
+
+}
+message GiftPackageArg {
+	repeated BuycaiTicket Tickets = 1;
+	int64 Credits = 2;
+	int64 gift_package_id = 3;
+}
+
+message UserInviteInfo {
+	int64 invite_num = 1;
+	int64 credits = 2;
+	int64 tickets_num = 3;
+	int64 tickets_money = 4;
+	bool UserInviteStatus = 5; //true 为已经被邀请，false反之
+}
+
+enum GiftPackageType {
+	cdkey = 0;	         //cdkeyl礼包.
+	type_invite = 1;     //邀请礼包.
+	private = 2;         //赠送给某个个人的礼包.
+	register = 3;	     //新人注册礼包.
+}
+
+message PhoneRegistGift {
+	int64 account_id = 1;
+	int32 credits = 2;
+	repeated BuycaiTicket list = 3;
+}
+

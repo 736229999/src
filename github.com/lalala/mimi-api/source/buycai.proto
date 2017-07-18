@@ -1,0 +1,183 @@
+syntax = "proto3";
+package apiproto;
+import "opencai.proto";
+
+option java_package = "Proto";
+option java_outer_classname = "Buycai";
+
+enum BuycaiOrderType {
+  Normal = 0; // 普通订单
+  Chase = 1; // 追号订单
+  Union = 2; // 合买订单
+}
+
+message Balls {
+  repeated int32 list = 1;
+}
+
+message BuycaiScheme {
+  string type = 1; // 玩法类型，例如五星直选
+  map<string, Balls> select_balls = 2; // 选择的球
+  int32 num = 3; // 注数
+  double money = 4; // 金额
+}
+
+message IssueMultiple {
+  string issue = 1;
+  int32 multiple = 2;
+}
+// 追号订单
+message BuycaiOrder {
+  LotteryId lottery_id = 1; // 彩种id
+  repeated IssueMultiple issues = 2; // 期号和倍数 (追期期号可能不连续)
+  double sum_money = 3; // 总金额(购彩券未抵扣金额）
+  double cai = 4; // 使用的彩金
+  double balance = 5; // 使用的余额
+  repeated BuycaiScheme scheme_list = 6; // 方案列表
+  int64 ticket_id = 7; // 使用的购彩券id
+  bool is_win_stop = 8; // 是否中奖停止追号
+}
+
+message OnSellInfo {
+  string issue = 1; // 期号
+  int64 deadline = 2;  // 截止时间
+}
+
+message ValidTicketsRequest {
+  LotteryId lottery_id = 1; // 彩种id
+  double sum_money = 2; // 总金额(原始金额）
+}
+
+message SaleIssue {
+  string issue = 1;
+  int64 start_time = 2;
+  int64 end_time = 3;
+  int64 open_time = 4;
+}
+
+message BuycaiInfo {
+  SaleIssue last = 1; // 上一期
+  SaleIssue current = 2; // 正在销售
+  SaleIssue next = 3; // 下一期
+  repeated string sale_list = 4; // 可购期号列表
+  int32 max_multiple = 5; // 最大倍数
+}
+
+enum TimeRange {
+  TR_Default = 0;
+  TR_Today = 1;
+  TR_Week = 2;
+  TR_Month = 3;
+  TR_ThreeMonth = 4;
+}
+
+enum VendorOrderStatus {
+  VOS_All = 0;
+  VOS_WaitTicket = 1; // 待出票
+  VOS_TicketFail = 2; // 出票失败
+  VOS_WaitOpen = 3; // 待开奖
+  VOS_Win = 4; // 已中奖
+  VOS_NotWin = 5; // 未中奖
+}
+
+enum UserOrderStatus {
+  UOS_All = 0;
+  UOS_Doing = 1; // 进行中
+  UOS_Finish = 2; // 已完成
+  UOS_Stop = 3; // 已停止
+}
+
+message VendorOrderHistoryRequest {
+  LotteryId lottery_id = 1;
+  TimeRange range = 2;
+  VendorOrderStatus status = 3;
+  int32 page = 4; // 页索引(0开始)
+}
+
+message UserOrderHistoryRequest {
+  LotteryId lottery_id = 1;
+  TimeRange range = 2;
+  UserOrderStatus status = 3;
+  BuycaiOrderType type = 4;
+  int32 page = 5; // 页索引(0开始)
+}
+
+message VendorOrderRecord {
+  int64 id = 1;
+  LotteryId lottery_id = 2;
+  string issue = 3;
+  double money = 4;
+  VendorOrderStatus status = 5;
+  bool is_chase = 6;
+  double win_money = 7;
+  int64 add_time = 8;
+}
+
+message UserOrderRecord {
+  int64 id = 1;
+  LotteryId lottery_id = 2;
+  double money = 3;
+  UserOrderStatus status = 4;
+  int32 issue_num = 5;
+  int32 chase_no = 6;
+  double win_money = 7;
+  int64 add_time = 8;
+  string cur_issue = 9;
+}
+
+message VendorOrderHistory {
+  repeated VendorOrderRecord list = 1;
+  int32 page_size = 2;
+}
+
+message UserOrderHistory {
+  repeated UserOrderRecord list = 1;
+  int32 page_size = 2;
+}
+
+message BuycaiIssueInfo {
+  string issue = 1;
+  int32 multiple = 2;
+  double money = 3;
+  double win_money = 4;
+  VendorOrderStatus status = 5;
+  int32 chase_no = 6;
+  int64 vendor_order_id = 7;
+}
+
+message BuycaiUserOrder {
+  int64 id = 1;
+  LotteryId lottery_id = 2;
+  double sum_money = 3; // 订单总金额
+  UserOrderStatus status = 4; // 订单状态
+  int64 order_time = 5; // 下单时间
+  double ticket_sub_money = 6; // 购彩券抵扣金额
+  double total_win_money = 7; // 总中奖金额
+  int32 sum_num = 8; // 注数
+  int32 issue_num = 9; // 总期数
+  int32 chase_no = 10;  // 当前追期序号
+  string cur_issue = 11; // 当前期号
+  repeated BuycaiScheme scheme_list = 12; // 方案列表
+  repeated BuycaiIssueInfo issue_list = 13; // 期号列表
+  BuycaiOrderType order_type = 14; // 订单类型
+  string user_order_no = 15; // 订单编号
+}
+
+message BuycaiVendorOrder {
+  int64 id = 1;
+  LotteryId lottery_id = 2;
+  VendorOrderStatus status = 3; // 订单状态
+  int64 open_time = 4; // 开奖时间
+  repeated string open_balls = 5; // 开奖号码
+  int32 multiple = 6; // 方案倍数
+  double money = 7; // 方案金额
+  int32 sum_num = 8; // 方案注数
+  double win_money = 9; // 中奖金额
+  repeated BuycaiScheme scheme_list = 10; // 方案列表
+  string user_order_no = 11; // 订单编号
+  int64 user_order_id = 12; // 订单id
+  int64 order_time = 13; // 预约时间
+  int64 req_time = 14; // 接单时间
+  int64 resp_time = 15; // 出票时间
+  string cur_issue = 16; // 当前期号
+}

@@ -1,0 +1,83 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Opencai";
+
+enum LotteryType {
+  AllType = 0;
+  LowFreq = 1; // 低频彩
+  HighFreq = 2; // 高频彩
+  Comp = 3; // 竞彩
+}
+
+enum LotteryId {
+  AllId = 0;
+  Dlt = 1; // 大乐透
+  Fc3d = 2; // 福彩3D
+  Ssq = 3; // 双色球
+  Cqssc = 4;  // 重庆时时彩
+  Bjpk10 = 5; // 北京PK拾
+  Gd11x5 = 6; // 广东11选5
+  Pl3 = 7; // 排列三
+  Pl5 = 8; // 排列五
+  Jczq = 9; //竞彩足球
+  Jclq = 10; //竞彩篮球
+}
+message BonusDetail {
+  string name = 1;
+  int32 num = 2;
+  double money = 3;
+}
+
+// 开奖详细
+message OpenDetail {
+  double sale = 1; // 本期销售额
+  double pool = 2; // 奖池
+  repeated BonusDetail bonus_list = 3; // 中奖详情
+}
+
+message OpenInfo {
+  LotteryType type = 1; // 彩种类型
+  LotteryId id = 2; // 彩种id
+  string name = 3;// 彩种名字
+  string issue = 4; // 期号
+  int32 no = 5; // 当日期号(高频彩使用)
+  int64 open_time = 6; // 开奖时间
+  repeated string balls = 7; // 开奖号码
+  int32 blue_num = 8; // 蓝球个数
+  OpenDetail detail = 9; // 开奖详细
+}
+
+message LotteryCollection {
+  string name = 1;
+  LotteryType type = 2;
+}
+// 最新开奖信息
+message LatestOpen {
+  repeated OpenInfo list = 1;
+  repeated LotteryCollection tabs = 2;
+}
+
+message DayHistory {
+  string name = 1; // 今天|昨天|前天
+  string date = 2; // yyyy-mm-dd
+  repeated OpenInfo list = 3; // 开奖历史记录(按时间倒序）
+}
+
+message History {
+  repeated DayHistory days = 1;
+}
+
+// 开奖信息摘要
+message OpenInfoDigest {
+   string issue = 1;
+   repeated string balls = 2;
+   repeated string try_balls = 3;
+   int32 blue_num = 4; 
+}
+
+message DigestHistory {
+  repeated OpenInfoDigest list = 1;
+}
+

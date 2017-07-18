@@ -1,0 +1,139 @@
+syntax = "proto3";
+package dbproto;
+
+enum AccountChangeType {
+  Create = 0; // 创建
+  Bind = 1; // 绑定
+  Unbind = 2; // 解绑
+  Password = 3; // 修改密码
+  ChangePhone = 4; // 修改绑定手机
+}
+
+enum UserType {
+  Phone = 0; // 手机用户  
+  QQ = 1; // QQ用户
+  Weixin = 2; // 微信用户
+}
+
+// 手机用户
+message PhoneUser {
+  string phone = 1;
+  string password = 2;
+  int64 account_id = 3;
+}
+
+// QQ用户
+message QQUser {
+  string openid = 1;
+  int64 account_id = 3;
+}
+
+// 微信用户
+message WeixinUser {
+  string openid = 1;
+  int64 account_id = 3;
+}
+
+// 彩金卡 
+message Giftcard {
+  int64 id = 1; // 唯一id
+  int32 type = 2; // 类型
+  int32 use_base = 3; // 满减基数
+  int32 use_sub = 4; // 满减减去额度
+  int32 max_stack = 5; // 最大可叠加使用数量
+  int64 valid_start = 6; // 有效期开始时间
+  int64 valid_end = 7; // 有效期结束时间
+  int64 gain_time = 8; // 获取时间
+  string gain_source = 9; // 获取来源
+  int64 account_id = 10; // 拥有者账户id
+}
+
+// 用户信息
+message UserInfo {
+  int64 account_id = 1;
+  string icon = 2;
+  string nickname = 3;
+  string realname = 4; // 实名
+  string idno = 5; // 身份证号码
+  int32 sex = 6; // 性别
+  int32 exp = 7; // 经验
+  int32 level = 8; // 等级
+  // AccountBankcard bankcard = 9; // 银行卡
+  bool pay_password = 10; // 是否设置支付密码
+  bool pay_open_password = 11; // 是否开启支付密码
+  string invitation_code = 12; // 邀请码
+  PhoneUser phone = 20;
+  QQUser qq = 21;
+  WeixinUser weixin = 22;
+  int64 daily_check_time = 23; // 每日签到时间
+  int32 cont_check_days = 24; // 连续签到天数
+}
+
+//--------------------------------------------------------------------------------------------------------------
+// 创建账户参数
+message CreateAccountArg {
+  oneof user {
+        PhoneUser phone_user = 1;
+        QQUser qq_user = 2;
+        WeixinUser wx_user = 3;
+    };
+  UserType user_type = 4;
+  string ip = 5; // ip地址
+}
+
+// 修改账号绑定手机参数
+message ChangePhoneArg {
+  string phone = 1;
+  string new_phone = 2;
+  string ip = 3; // ip地址
+}
+
+// 绑定/解绑用户参数
+message SetUserArg {
+  oneof user {
+        PhoneUser phone_user = 1;
+        QQUser qq_user = 2;
+        WeixinUser wx_user = 3;
+    };
+  UserType user_type = 4;
+  AccountChangeType set_type = 5;
+  string ip = 6; // ip地址
+}
+
+message PhonePassword {
+  string phone = 1;
+  string password = 2;
+  string ip = 3; // ip地址
+}
+
+message UserInfoArg {
+  int64 account_id = 1;
+  string icon = 2;
+  string nickname = 3;
+  int32 sex = 4;
+}
+
+message AccountIdcard {
+  int64 account_id = 1;
+  string idno = 2;
+  string realname = 3;
+  int64 add_time = 4;
+}
+
+message PayPasswordArg {
+  int64 account_id = 1;
+  string password = 2;
+  bool open = 3;
+}
+
+message PaySettings {
+  string password = 1;
+  bool open = 2;
+}
+
+message DailyCheckArg {
+  int64 account_id = 1;
+  int32 exp = 2;
+  int32 level = 3;
+  int32 cont_check_days = 4;
+}

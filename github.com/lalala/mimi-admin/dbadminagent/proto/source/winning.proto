@@ -1,0 +1,19 @@
+syntax = "proto3";
+package dbproto;
+
+message Winning {
+    int64 id = 1;
+    int64 user_id = 2;
+    string username = 3;
+    string info = 4;
+    bool status = 5;
+    int64 create_time = 6;
+}
+
+message WinningList {
+    int64 page = 1;
+    int64 size = 2;
+    int64 total = 3;
+    string mobile = 4;
+    repeated Winning list = 5;
+}

@@ -1,0 +1,52 @@
+syntax = "proto3";
+package dbproto;
+import "fund.proto";
+
+message GiftTemplate {
+    int64 id = 1;
+    string title = 2;
+    string content_desc = 3;
+    GiftTemplateContent content = 4;
+    int32 add_time = 5;
+    string creator = 6;
+    bool status = 7;
+    string content_json = 8;
+    //GiftTemplateContent template_content = 8;
+}
+
+message GiftTemplateList {
+    int32 page = 1;
+    int32 size = 2;
+    int32 total = 3;
+    string title = 4;
+    repeated GiftTemplate list = 5;
+}
+
+message GiftTemplateContent {
+    TicketBox tickets = 1;
+    CreditsBox credits = 2;
+}
+
+message TicketBox {
+    repeated BuycaiTicket tickets = 1;   //礼包.
+    bool random_tickets = 2;        //是否随机礼包.
+    int32 upper_limit = 3;          //礼包随机的上限.
+    int32 lower_limit = 4;          //礼包随机的下限
+}
+
+message CreditsBox {
+    int32 credits  = 1;             //积分.
+    bool random_credits = 2;        //是否随机积分.
+    int32 upper_limit = 3;          //积分随机的上限.
+    int32 lower_limit = 4;          //积分随机的下限
+}
+
+//message Tickets {
+//    int32 use_base = 2;             // 满减基数(例如满50减2，此处为50)
+//    int32 use_sub = 3;              // 满减额(例如满50减2，此处为2)
+//    int32 valid_start = 5;          // 有效期开始时间
+//    int32 valid_end = 6;            // 有效期结束时间
+//    int32 addtime = 7;              // 获得时间
+//    int32 restrict_type = 10;       // 使用限制彩种类型(0:通用, n:仅可用于指定彩种类型, -n:不可用于指定彩种类型)
+//    int32 restrict_id = 11;         // 使用限制彩种id(0:通用，n:仅可用于指定彩种id, -n:不可用于指定彩种id)
+//}

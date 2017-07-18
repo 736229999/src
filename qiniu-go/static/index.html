@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--忽略数字自动识别为电话号码-->
+		<meta name = "format-detection" content="telephone = no" />
+		<!--iphone 允许全屏模式浏览-->
+		<!--<meta content="yes" name="apple-mobile-web-app-capable">-->
+		<meta name="screen-orientation" content="portrait">
+		<!--iphone中safari顶端的状态条的样式-->
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>欢迎来到极地直播</title>
+		
+		<link rel="stylesheet" href="/static/jidi/css/swiper.min.css" />
+		<link rel="stylesheet" href="/static/jidi/css/video-js.min.css" />
+		<link rel="stylesheet" href="/static/jidi/css/weiChat.css" />
+		<link href="/static/jidi/css/webiaoqing.css" rel="stylesheet" type="text/css">
+		
+		<script type="text/javascript" src="/static/jidi/js/video.min.js" ></script>
+		<script type="text/javascript" src="/static/jidi/js/self_adaption.js" ></script>
+		<script type="text/javascript" src="/static/jidi/js/jquery-2.1.4.min.js" ></script>
+		<script type="text/javascript" src="/static/jidi/js/videojs-contrib-hls.js" ></script>
+		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+		<script>
+		    videojs.options.flash.swf = "js/video-js.swf";
+		</script>
+		<style>
+			video:-webkit-full-screen  {
+				width: 100%;
+				height: 100%;
+				}
+		</style>
+	</head>
+	<body>
+		<!------------------弹窗---------------------->
+		<!--提示需要购买门票-->
+		<div  class="smallPopup  needTicket_popup" >
+			<div class="popup-box" >
+				<div class="popup-box-header">
+					提示
+				</div>
+				<div class="smallPopup-infor">
+					<p>当前直播需要购买门票</p>
+					<p>
+						<a class="goBuy_btn" href="#">去购买</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!--提示需要购买门票---////-->
+		
+		<!--主播退出房间-->
+		<div  class="popup smallPopup anchorQuit_popup" >
+			<div class="popup-box" >
+				<div class="popup-box-header">
+					提示
+					<!--<span class="popup-box-close fright">X</span>-->
+				</div>
+				<div class="smallPopup-infor">
+					<p>主播已退出房间~</p>
+					<p>
+						<span class="fleft popup-box-close">关闭</span>
+						<span class="fright active"><a href="#">个人中心</a></span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!--主播退出房间---////-->
+		
+		<!--星钻充值-->
+		<div  class="blingRechargeable bigPopup" >
+			<div class="blingRechargeable-box">
+				<header class="blingRechargeable-header">
+					<a href="#" class="close" ></a>
+					充值星钻
+				</header>
+				<div class="presentBling">
+					<p>当前星钻余额</p>
+					<p>456465464</p>
+				</div>
+				<div class="rechargeAmount_list">
+					<ul>
+						<li>
+							<p>60星钻</p>
+							<p>售价：6元</p>
+						</li>
+						<li>
+							<p>388星钻</p>
+							<p>售价：38元</p>
+						</li>
+						<li>
+							<p>1980星钻</p>
+							<p>售价：198元</p>
+						</li>
+					</ul>
+				</div>
+				<div class="rechargeAmount_list">
+					<ul>
+						<li>
+							<p>5980星钻</p>
+							<p>售价：598元</p>
+						</li>
+						<li>
+							<p>15980星钻</p>
+							<p>售价：1598元</p>
+						</li>
+						<li>
+							<p>输入星钻：</p>
+							<p class="input_rechargeAmount">
+								<input type="number" />
+							</p>
+						</li>
+					</ul>
+				</div>
+				<ul class="modeOfpayment">
+					<li>
+						<label class="select_payment_method" for="select_payment_method-weixin">
+							<i class="fleft">
+								<img src="/static/jidi/img/weixin@2x.png" />
+							</i>
+							<i class="fleft">微信</i>
+							<span class="fright">
+								<input type="radio" name="paymode" class="choicePayment" checked="checked"  id="select_payment_method-weixin"/>
+							</span>
+						</label>
+						
+					</li>
+					<li>
+						<label class="select_payment_method" for="select_payment_method-balance">
+							<i class="fleft">
+								<img src="/static/jidi/img/balance@2x.png" />
+							</i>
+							<i class="fleft">余额支付</i>
+							<span class="fright">
+								<input type="radio" name="paymode" id="select_payment_method-balance"/>
+							</span>
+						</label>
+					</li>
+				</ul>
+				<button type="button" class="payment_btn">确认充值</button>
+			</div>
+		</div>
+	    <!--星钻充值--///-->	
+		
+		
+		<!--送礼物弹窗-->
+		<div class="send_gift">
+			<div class="send_gift-box">
+				<ul class="send_gift-ul">
+					<li  data-giftid="1" data-giftname='城堡' data-giftimg="img/gift/chengbao.png" data-giftmoney="10000"  data-giftcolor="#feb370">
+						<img src="/static/jidi/img/gift/chengbao.png" />
+						<div class="send_gift-ul-money">10000星钻</div>
+					</li>
+					<li data-giftid="1" data-giftname='机器人' data-giftimg="img/gift/jiqiren.png" data-giftmoney="20000"  data-giftcolor="#47dce1">
+						<img src="/static/jidi/img/gift/jiqiren.png" />
+						<div class="send_gift-ul-money">20000星钻</div>
+					</li>
+					<li data-giftid="1" data-giftname='鸡腿' data-giftimg="img/gift/jitui.png" data-giftmoney="20000"  data-giftcolor="#f9e1b0">
+						<img src="/static/jidi/img/gift/jitui.png" />
+						<div class="send_gift-ul-money">20000星钻</div>
+					</li>
+					<li data-giftid="1" data-giftname='鲜花' data-giftimg="img/gift/xianhua.png" data-giftmoney="30000"  data-giftcolor="#b4da76">
+						<img src="/static/jidi/img/gift/xianhua.png" />
+						<div class="send_gift-ul-money">30000星钻</div>
+					</li>
+					<li data-giftid="1" data-giftname='游戏机' data-giftimg="img/gift/youxiji.png" data-giftmoney="40000"  data-giftcolor="#afd3a5">
+						<img src="/static/jidi/img/gift/youxiji.png" />
+						<div class="send_gift-ul-money">40000星钻</div>
+					</li>
+					<li data-giftid="1" data-giftname='雪人' data-giftimg="img/gift/xueren.png" data-giftmoney="50000"  data-giftcolor="#c6c7fd">
+						<img src="/static/jidi/img/gift/xueren.png" />
+						<div class="send_gift-ul-money">50000星钻</div>
+					</li>
+					<li data-giftid="1" data-giftname='抽纸' data-giftimg="img/gift/chouzhi.png" data-giftmoney="60000"  data-giftcolor="#8bb5e1">
+						<img src="/static/jidi/img/gift/chouzhi.png" />
+						<div class="send_gift-ul-money">60000星钻</div>
+					</li>
+					<li data-giftid="1" data-giftname='录音机' data-giftimg="img/gift/luyinji.png" data-giftmoney="70000"  data-giftcolor="#426579">
+						<img src="/static/jidi/img/gift/luyinji.png" class="send_gift-ul-gift_recorder" />
+						<div class="send_gift-ul-money">70000星钻</div>
+					</li>
+				</ul>
+				<div class="send_gift-remainderAndsend">
+					<span class="fleft send_gift-remainder">余额：<i style="color: #f90;">999</i>星钻</span>
+					<button type="button" class="fright send_gift-send">发送</button>
+				</div>
+			</div>
+		</div>
+		<!--送礼物弹窗---///-->
+		
+		<!--门票详情-->
+		<div class="orderDetail bigPopup">
+		    <div class="orderDetail-box">
+		        <header class="orderDetail-header">
+		            <a href="#" class="close" ></a>
+		            订单详情
+		        </header>
+		        <div class="orderDetail-content">
+		            <div class="orderDetail-content_tit">
+		                <img src="/static/jidi/img/header.jpg" class="fleft" />
+		                <span class="fleft">朴信惠的直播间</span>
+		                <p class="order_share"><img src="/static/jidi/img/orde_share.png"/></p>
+		                <i class="cboth"></i>
+		            </div>
+		            <div class="orderDetail-content_infor">
+		                <div  class="orderDetail-ticketImg fleft">
+		                    <img src="/static/jidi/img/gd.jpg"/>
+		                </div>
+		                <div class="orderDetail-introduce fright">
+		                    <p>
+		                        <span class="fleft">朴信惠的门票x1</span>
+		                        <span class="fright">800星钻</span>
+		                    </p>
+		                    <p>朴信惠的门票信息详细介绍朴信惠的门票信息详细介绍朴信惠的门票信息详细介绍</p>
+		                </div>
+		                <!--<i class="cboth"></i>-->
+		            </div>
+		            <div class="orderDetail-introduce-ticket_time">
+		                <div class="live_time fleft">
+		                    <p>直播时间</p><p>2016/08/016</p><p>20:30~23:30</p>
+		                </div>
+		                <div class="order_time fright">
+		                    <p class="ticket-usestatus">已使用</p>
+		                    <p>下单时间：2016/01/12 90:30</p>
+		                </div>
+		            </div>
+		            <!--购买-->
+		            <button class="buy_ticketBtn" type="button">购买</button>
+		            <!--购买-->
+		        </div>
+		    </div>
+		</div>
+		<!--门票详情---///-->
+
+		<!--友情链接-->
+		<div class="friendshipLink_fullPop"></div>
+		<!--友情链接--///-->
+		
+		
+		<!------------------弹窗----------------------->
+		<!--视频-->
+			
+		<section class="video-box">
+        	<div class="videoDiv" style="width: 100%;">
+        		<video id="videoHLS"  class="video-js " 
+						style="width: 100%; height: 100%;" webkit-playsinline playsinline data-setup="{}" x5-playsinline="h5" x-webkit-airplay="allow">
+					<!--<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />-->
+					<source src="http://vod.mudu.tv/media-join-slice/3mm1bfjbpcwwv98p2eg6njhbb.m3u8" type="application/x-mpegURL"/>
+					<!--<source src="//cnhlsvodhls01.e.vhall.com//vhallrecord/863571888/20160923172744/record.m3u8" type="application/x-mpegURL"/>-->
+        		</video>
+        		<div class="vjs-poster" style="display: none;">
+	        		<img src="/static/jidi/img/c.jpg" />
+	        	</div>
+        	</div> 
+        	<div class="play" >
+        		<img src="/static/jidi/img/play.png" />
+        	</div>
+		</section>
+		<!--视频----/////-->
+		
+		<!--其它-->
+		<div class="otherAll" >
+			
+			<!--余额不足-->
+			<div  class="popup smallPopup notEnough_popup">
+				<div class="popup-box">
+					<div class="popup-box-header">
+						提示
+						<span class="popup-box-close fright">X</span>
+					</div>
+					<div class="smallPopup-infor">
+						<p>余额不足，消费失败</p>
+						<p>
+							<span class="fleft goRecharge"><a href="#">充值星钻</a></span><!--链接到充值页面-->
+							<span class=" fright otherWayPay active">其他方式支付</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--余额不足---////-->
+			
+			<!--购买-->
+			<div  class="paymentDetails_popup half-screen">
+				<div class="paymentDetailsBig-box" style="height: 100%;">
+					
+					<div style="display: block;"  class="paymentDetails payment-box">
+						<p class="title">
+							付款详情
+							<span class="close-paymentDetails fright"></span>
+						</p>
+						<ul>
+							<li>
+								<span class="leftInfor fleft">商品名称</span>
+								<span class="rightInfor fright">超级会员</span>
+							</li>
+							<li>
+								<span class="leftInfor fleft">商品价格</span>
+								<span class="rightInfor fright"><i>100</i>星钻</span>
+							</li>
+							<!--<li style="margin-top: 20px;" class="chosePay-li">
+								<div class="chosePay-box">
+									<label class="chosePay-box-label">
+										<input type="radio" name="chosePay-box-radio" value="111"/>
+										<img src="img/weichart.png"/>
+										<span>微信</span>
+									</label>
+									<label class="chosePay-box-label">
+										<input type="radio" name="chosePay-box-radio" value="222"/>
+										<img src="img/balance2x.png"/>
+										<span>余额</span>
+									</label>
+									<label class="chosePay-box-label">
+										<input type="radio" name="chosePay-box-radio" value="333"/>
+										<img src="img/star2x.png"/>
+										<span>星钻</span>
+									</label>
+								</div>
+							</li>-->
+							<li class="chosePay-li" style="display: none;">
+								<div class="chosePay-box1">
+									<span class="fleft">支付方式</span>
+									<div class="fright chosePay-box-img">
+										<img src="/static/jidi/img/weichart.png" />
+									</div>
+								</div>
+							</li>
+							
+							<li class="chosePay-li">
+								<label class="chosePay-box2">
+									<span class="fleft">支付方式</span>
+									<div class="go-way-box  fright">
+										<img src="/static/jidi/img/waybox_back.png" />
+									</div>
+									<div class="fright chosePay-box-img">
+										<img src="/static/jidi/img/weichart.png" />
+									</div>
+									<input type="radio" value="weichat"  class="chosePay-box2-radio"/>
+								</label>
+							</li>
+							
+							<li style="margin-top: 20px;">
+								<span class="leftInfor fleft">需付款</span>
+								<span class="rightInfor fright" style="color: #333;">200元</span>
+							</li>
+						</ul>
+						<div class="paymentDetails-buttom" >
+							<button type="button">确认支付</button>
+						</div>
+					</div>
+					
+					<div style="display: none;"  class="paymentDetails way-box">
+						<ul>
+							<li class="title">
+								付款方式
+								<div class="goback-paymentBox">
+									<img src="/static/jidi/img/waybox_back.png" />
+								</div>
+							</li>
+							<li>
+								<label>
+									<div class="choiceImg fleft">
+										<img src="/static/jidi/img/weichart.png" />
+									</div>
+									<div class="leftInfor fleft">微信</div>
+									<div class="choiceThisWay fright">
+										<input type="radio" value="weichat"  name="way-box-radio" checked/>
+									</div>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="choiceImg fleft">
+										<img src="/static/jidi/img/balance.png" />
+									</div>
+									<div class="leftInfor fleft">余额</div>
+									<div class="choiceThisWay fright">
+										<input type="radio" value="balance" name="way-box-radio"/>
+									</div>
+								</label>
+							</li>
+						</ul>
+					</div>
+			
+				</div>
+			</div>
+			<!--购买--///-->
+			
+			<!--二维码弹窗-->
+			<div class="popup erweima">
+				<div class="popup-box erweima-box">
+					<div class="popup-box-header">
+						二维码
+						<span class="popup-box-close fright">X</span>
+					</div>
+					<img src="/static/jidi/img/header.jpg" />
+				</div>
+			</div>
+			<!--二维码弹窗---////-->
+			
+			<!--红包OR打赏金额过少提示-->
+			<div class="errorMoney_point">打赏金额不低于1元</div>
+			<!--红包OR打赏金额过少提示---///-->
+			
+			<!--发红包弹窗-->
+			<div  class="popup half-screen send_redpacket">
+			<div class="popup-box_send_redpacket popup-box">
+				<div class="popup-box-header popup-box-fullheader">
+						发红包
+					<span class="popup-box-close  fright"></span>
+				</div>
+				<div class="send_redpacket-input">
+					<span class="fleft">红包个数</span>
+					<div class="fleft">
+						<input type="number"  class=" redpacket_num " style="ime-mode:Disabled" />
+						<i class="fright">个</i>
+					</div>
+				</div>
+				<div class="send_redpacket-input">
+					<span class="fleft">总金额</span>
+					<div class="fleft">
+						<input type="number" class=" redpacket_all " style="ime-mode:Disabled" />
+						<i class="fright">元</i>
+					</div>
+				</div>
+				<div class="send_redpacket-input">
+					<span class="fleft">留言</span>
+					<div class="fleft">
+						<input type="text"  maxlength="15" placeholder="恭喜发财"  />
+					</div>
+				</div>
+				<button type="button" class="btn_send_redpacket btn_disable" disabled="disabled">塞钱</button>
+			</div>
+			</div>
+			<!--发红包弹窗--///-->
+			
+			<!--打赏主播弹窗-->
+			<div  class="popup half-screen award_anchor">
+				<div class="popup-box_award_anchor popup-box" >
+					<div class="popup-box-header popup-box-fullheader">
+							打赏
+						<span class="popup-box-close"></span>
+					</div>
+					<ul class="award_anchor_ul">
+						<li><span><input type="radio" name="award_anchor_ul-radio" value="1.88">1.88</span></li>
+						<li><span><input type="radio" name="award_anchor_ul-radio" value="8.88"/>8.88</span></li>
+						<li><span><input type="radio" name="award_anchor_ul-radio" value="88.88"/>88.88</span></li>
+					</ul>
+					<div class="award-input">
+						<span class="fleft">其他金额</span>
+						<div class="fleft">
+							<input type="number" class=" input_awardMoney "  style="ime-mode:Disabled"/>
+							<i class="fright">星钻</i>
+						</div>
+					</div>
+					<div class="award-input">
+						<span class="fleft">留言</span>
+						<div class="fleft">
+							<input type="text"  style="ime-mode:Disabled"/>
+						</div>
+					</div>
+					<button type="button" class="btn_disable btn_awardMoney" disabled="disabled">赏</button>
+				</div>
+			</div>
+			<!--打赏主播弹窗--///-->
+			
+			<!--分享-->
+			<section class="share_alert" >
+			    <article class="share_prompt">
+			        <p>分享到微信，请点击右上角<br>再选择【分享给朋友】</p>
+			    </article>
+			</section>
+			<!--分享---///-->
+		
+			<!--游客基本信息弹窗-->
+			<div class="popup user_infor">
+				<div class="popup-box user_infor-box">
+				<div class="popup-box-header">
+					<span class="popup-box-close cleanBtn fright">X</span>
+				</div>
+				<div class="popup-box-userHeader">
+					<img src="/static/jidi/img/header.jpg" class="cleanImgSrc"/>
+				</div>
+				<p class="popup-box-userInfor">
+					<span class="popup-box-userInfor-name cleanInfor" >朴信朴信惠朴信惠朴</span>
+					<span class="popup-box-userInfor-sex">
+						<img src="/static/jidi/img/girl.png" class="popup-box-userInfor-sexImg cleanImgSrc"/>
+					</span>
+					<span class="popup-box-userInfor-degree cleanInfor">LV15</span>
+				</p>
+				<ul class="popup-box-list">
+					<li>
+						<p>关注</p>
+						<p>333</p>
+					</li>
+					<li>
+						<p>粉丝</p>
+						<p>333</p>
+					</li>
+					<li>
+						<p>收到</p>
+						<p>333钻</p>
+					</li>
+				</ul>
+				<div class="popup-box-flow_btn">关注</div>
+			</div>
+			</div>
+			<!--游客基本信息弹窗---////-->
+			
+			<!--抢红包弹窗-->
+			<div class="popup grab_redpacket">
+				<div class="popup-box grab_redpacket-box">
+					<div class="popup-box-header"></div>
+					<div class="grab_redpacket-box-userHeader">
+						<img src="/static/jidi/img/header.jpg" class="cleanImgSrc"/>
+					</div>
+					<div class="grab_redpacket-box-userName cleanInfor">来自哒哒哒的恶恶法</div>
+					<div class="grab_redpacket-box-moneyPoint cleanInfor">来晚一步，红包被领完了</div>
+					<a href="#" class="grab_redpacket-box-details">查看领取详情></a>
+				</div>
+			</div>
+			<!--抢红包弹窗---////-->	
+		
+			<!--红包详情-->
+			<div  class="redpacket_list half-screen bigPopup">
+				<div class="redpacket_list-box">
+					<header class="redpacket_list-header">
+						<p>秦小黑</p>
+						<a href="#" class="close redpacket_list-close"></a>
+					</header>
+					<div class="redpacket_list-sendUserheader-box">
+						<p class="redpacket_list-sendMessage cleanInfor">恭喜发财，大吉大利!</p>
+					</div>
+					<!--<p class="redpacket_list-remain-p">
+						已抢<i class="cleanInfor">360</i>元，还剩<i class="cleanInfor">6.6</i>元
+					</p>-->
+						<ul class="redpacket_list-ul">
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+									<p class="luck_king">运气王</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>大表哥</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+							<li>
+								<div class="redpacket_listImg fleft">
+					                <img src="/static/jidi/img/ddm.jpg" class="fleft" />
+					            </div>
+								<div class="redpacket_list_center_infor fleft">
+									<p>最后</p>
+									<p>03:21:50</p>
+								</div>
+								<div class="redpacket_list-receive_money fright">
+									<p>222.20元</p>
+								</div>
+							</li>
+						</ul>
+					<div class="redpacket_list-theLastli">
+						收到的红包可直接<a href="#">提现</a>
+					</div>
+				</div>
+			</div>
+			<!--红包详情--///-->
+		
+			<!--聊天输入框-->
+			<div class="chat_input">
+				<div class="chat_expression emotion fleft"></div>
+	            <div  class="chat-box_sendDiv fleft">
+	                <input type="text"  class="fleft chatContent" placeholder="想说点什么？" id="chatContent" name="chatContent" />
+	            	<span class="chat-box_send-btn fright" />发送</span>
+	            </div>
+	            <div class="chat-box_gif-btnBox fright">
+	            	<button type="button" class="chat-box_gif-btn "></button>
+	            </div>
+	        </div>
+			<!--聊天输入框--///-->
+				
+				
+			<!--选项卡与头像-->
+			<div class="tab-ulBox">
+				<div class="companyInforBox">
+					<div class="companyInfor">
+						主播昵称
+					</div>
+					<div class="wacthNumber">
+						<span class="fleft"></span>
+						<span class="fleft">12322</span>
+					</div>
+				</div>
+				<div class="companyLogo">
+					<img src="{{USERINFO.headimgurl}}" />
+				</div>
+				
+				<div class="tab-ul swiper-pagination swiper-pagination-big">
+					<span class="swiper-pagination-bullet">聊天</span>
+					<span class="swiper-pagination-bullet">讲义</span>
+					<span class="swiper-pagination-bullet">主播</span>
+					<span class="swiper-pagination-bullet">贡献</span>
+				</div>
+				<div class="friendshipLink">
+					<!--友链弹窗-->	
+					<div class="friendshipLink_popup">
+						<div class="friendshipLink_div">
+							<!--没有友情连接时显示这个P标签-->
+							<!--<p style="line-height: inherit; text-align: center;">暂无友情连接</p>-->
+							<div class="friendshipLink_box">
+								<div class="friendshipLink_boxImg">
+									<img src="/static/jidi/img/gift/xianhua.png" />
+								</div>
+								<p>友情链接友情链接友情链接</p>
+							</div>
+							<div class="friendshipLink_box">
+								<div class="friendshipLink_boxImg">
+									<img src="/static/jidi/img/gift/xianhua.png" />
+								</div>
+								<p>友情链接友情链接友情链接</p>
+							</div>
+							<div class="friendshipLink_box">
+								<div class="friendshipLink_boxImg">
+									<img src="/static/jidi/img/gift/xianhua.png" />
+								</div>
+								<p>友情链接友情链接友情链接</p>
+							</div>
+							<div class="friendshipLink_box">
+								<div class="friendshipLink_boxImg">
+									<img src="/static/jidi/img/gift/xianhua.png" />
+								</div>
+								<p>友情链接友情链接友情链接</p>
+							</div>
+						</div>
+					</div>
+					<!--友链弹窗--///-->
+				</div>
+			</div>
+			<!--选项卡与头像--///-->
+			
+			
+			<section class="bigBox swiper-container-big">
+				<div class="swiper-wrapper">
+				<!--聊天-->
+				<div class=" swiper-slide">
+				<div class="chat-box">
+					<!--聊天消息-->
+					<div class="chat-list">
+						<ul class="chat-list-ul">
+							<li class="other_words">
+								<div class="other_wordsHeader fleft">
+									<img src="/static/jidi/img/logo_font3x.png" class="header-img"/>
+								</div>
+								<div class="words_box">
+									<p>
+										<span class="wordsUser_name fleft">极地直播极地直播极地直播</span>
+										<span class="words_time fright">2017-01-09 16:21:02</span>
+									</p>
+									<p class="words_infor">
+										测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容
+									</p>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #f9e1b0;">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了鸡腿</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/jitui.png"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #afd3a5;">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了游戏机</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/youxiji.png"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #feb370;">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了城堡</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/chengbao.png" style="margin-top: -0.08rem;"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #8bb5e1;">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了抽纸</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/chouzhi.png"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #c6c7fd;">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了雪人</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/xueren.png"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="visitor_reward">
+								<div class="visitor_reward_box">
+									<img src="/static/jidi/img/header.jpg" class="fleft visitor_reward-userHeader" />
+									<span class="fleft">
+										<p>极地直播极地直播极地直播极地直播</p>
+										<p>打赏333.22元</p>
+										<p>2017-11-20 06:21:30</p>
+									</span>
+									<i>></i>
+								</div>
+							</li>
+							<li class="visitor_sendRedpacket">
+								<div class="visitor_sendRedpacket_box">
+									<img src="/static/jidi/img/header.jpg" class="fleft visitor_sendRedpacket-userHeader" />
+									<span class="fleft">
+										<p>极地直播极地极地直播极地</p>
+										<p>2017-11-20 06:21:30</p>
+										<p>恭喜发财，大吉大利恭喜发财，大吉大利恭喜发财，大吉大利</p>
+									</span>
+									<i>></i>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #b4da76;">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了鲜花</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/xianhua.png" style="margin-top: -0.08rem;"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #426579;" >
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了收音机</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/luyinji.png" style="margin-top: -0.15rem;"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="visitor_send_gift">
+								<div class="visitor_send_gift_box" style="background-color: #47dce1;" >
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直616161561</i>
+										<i>送了机器人</i>
+									</span>
+									<div class="visitor_send_gift_box-numAndimg">
+										<span class="visitor_send_gift_box-giftnum fleft">X1</span>
+										<div class="visitor_send_gift_box-giftImg fleft">
+											<img src="/static/jidi/img/gift/jiqiren.png" style="margin-top: -0.1rem;"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="my_words">
+								<div class="my_words-box fleft">
+									<div class="my_words-header fleft">
+										<img src="/static/jidi/img/header.jpg" />
+									</div>
+									<div class="my_words-cont fleft">
+										<p>2017-01-09 16:21:02 </p>
+										<p>我我我我我我我</p>
+									</div>
+									<i class="cboth"></i>
+								</div>
+							</li>
+							<li class="visitor_enter">
+								<div class="visitor_enter_box">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直播极地直播</i>
+										<i>进入了房间</i>
+									</span>
+								</div>
+							</li>
+							<li class="other_words ">
+								<div class="other_wordsHeader fleft">
+									<img src="/static/jidi/img/logo_font3x.png" class="header-img"/>
+								</div>
+								<div class="words_box">
+									<p>
+										<span class="wordsUser_name fleft">极地直播</span>
+										<span class="words_time fright">2017-01-09 16:21:02</span>
+									</p>
+									<p class="words_infor">
+										测试说
+									</p>
+								</div>
+							</li>
+							<li class="my_words">
+								<div class="my_words-box fleft">
+									<div class="my_words-header fleft">
+										<img src="/static/jidi/img/header.jpg" />
+									</div>
+									<div class="my_words-cont fleft">
+										<p>2017-01-09 16:21:02 </p>
+										<p>我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息我发送的消息</p>
+									</div>
+									<i class="cboth"></i>
+								</div>
+							</li>
+							<li class="visitor_enter">
+								<div class="visitor_enter_box">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直播极地直播</i>
+										<i>进入了房间</i>
+									</span>
+								</div>
+							</li>
+							<li class="other_words ">
+								<div class="other_wordsHeader fleft">
+									<img src="/static/jidi/img/logo_font3x.png" class="header-img"/>
+								</div>
+								<div class="words_box">
+									<p>
+										<span class="wordsUser_name fleft">极地直播极地直播极地直播极地直播极地直播极地直播极地直播</span>
+										<span class="words_time fright">2017-01-09 16:21:02</span>
+									</p>
+									<p class="words_infor">
+										测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容
+										测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容
+										测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容
+									</p>
+								</div>
+							</li>
+							<li class="visitor_enter">
+								<div class="visitor_enter_box">
+									<img src="/static/jidi/img/header.jpg" class="fleft" />
+									<span class="fleft">
+										<i>极地直播极地直播</i>
+										<i>进入了房间</i>
+									</span>
+								</div>
+							</li>
+							<li class="other_words ">
+								<div class="other_wordsHeader fleft">
+									<img src="/static/jidi/img/logo_font3x.png" class="header-img "/>
+								</div>
+								<div class="words_box">
+									<p>
+										<span class="wordsUser_name fleft">极地直播</span>
+										<span class="words_time fright">2017-01-09 16:21:02</span>
+									</p>
+									<p class="words_infor">
+										测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容
+										测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容
+										测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容测试说话内容
+									</p>
+								</div>
+							</li>
+							<li class="my_words">
+								<div class="my_words-box fleft">
+									<div class="my_words-header fleft">
+										<img src="/static/jidi/img/header.jpg" />
+									</div>
+									<div class="my_words-cont fleft">
+										<p>2017-01-09 16:21:02 </p>
+										<p>最后</p>
+									</div>
+									<i class="cboth"></i>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--聊天消息---///-->
+					
+					<!--浮动功能-->
+					<div class="fixed_fun">
+						<ul>
+							<li>
+								<div class="redpacket_box">
+									<div class="now_redpacket">红包</div>
+								</div>
+							</li>
+							<li class="fixed_fun-personal"><a style="color: transparent;display: inline-block; width: 100%; height: 100%;" href="/static/jidi/personal/personalCenter.html">1</a></li>
+							<li class="fixed_fun-erweima"></li>
+							<li class="fixed_fun-redpacket"></li>
+							<li class="fixed_fun-award"></li>
+							<li class="fixed_fun-share"></li>
+						</ul>
+					</div>
+					<!--浮动功能--///-->
+				</div>
+				<!--聊天--///-->
+			</div>
+				<!--讲义-->
+				<div class="lecture-box swiper-slide">
+					<!--没有PPT时这样显示-->
+					<!--<div class="notHaveppt">
+						<img src="img/nothaveppt.png" class="notHaveppt-img" />
+						<p class="notHaveppt-infor"> 
+							主播还没有讲义哦
+						</p>
+					</div>-->
+					<!--没有PPT时这样显示---/////-->
+					<h3>极地直播PPT</h3>
+				    <div class="swiper-container-ppt" >
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide"><img src="/static/jidi/img/ppt_img/slider1.png"/></div>
+				            <div class="swiper-slide"><img src="/static/jidi/img/ppt_img/slider2.png"/></div>
+				            <!--<div class="swiper-slide"><img src="img/ppt_img/slider1.png"/></div>
+				            <div class="swiper-slide"><img src="img/ppt_img/slider2.png"/></div>-->
+				        </div>
+				        <div class="swiper-pagination-ppt" style="text-align: center;"></div>
+					</div>
+				</div>
+				<!--讲义--///-->
+				
+					
+				<!--主播-->
+				<div  class="anchor-box swiper-slide">
+						<!--主播信息-->
+						<div class="anchor_infor">
+		            		<!--<div class="anchorheaderImg_box fleft">
+		            			<img src="img/header.jpg" />
+		            		</div>-->
+		            		<!--<div class="anchor_center_infor fleft">
+		            			<h5 class="anchor_infor_tit">直播主题</h5>
+		            			<p>主播：<span>主播昵称</span></p>
+		            			<p>分类：<span>美女</span></p>
+		            		</div>-->
+		            		<span class="anchorRoomId">房间号：123123</span>
+		            		<span class="focus_heart fright">
+		            			<img src="/static/jidi/img/heartx2.png" />
+		            		</span>
+		            		<span class="focus_heartInfor fright">已关注</span>
+		            		<i class="cboth"></i>
+			            </div>
+			            <!--主播信息--////-->
+			            
+			            <!--商城-->
+			            <!--<div class="supermarket-tit">
+			            	<img src="img/shopx2.png" class="fleft" />
+			            	<h2 class="fleft">商城</h2>
+			            </div>
+			           -->
+			           <div class="entranceTicket-box">
+			           <div class="supermarket-list" >
+							<ul >
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/logo_font3x.png" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情详情详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		             			<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>极地直播旗舰版</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                		<li>
+		                			<div class="supermarketImg fleft">
+			                			<img src="/static/jidi/img/header.jpg" />
+			                		</div>
+			                		<div class="supermarket_list_center_infor fleft">
+			                			<p>最后</p>
+			                			<p>
+			                				<span class="star_num">60000星钻</span>
+			                				<span class="ticket_type">次票</span>
+			                			</p>
+			                		</div>
+			                		<div class="detailAndbuy fright">
+			                			<a href="#" class="fleft detail-a">详情</a>
+			                			<a href="#" class="fright">购买</a>
+			                			<i class="cboth"></i>
+			                		</div>
+		                		</li>
+		                	
+		                	</ul>
+			            
+			            </div>
+			            </div>
+			            <!--商城--////-->
+				</div>
+				<!--主播--///-->
+				
+					
+				<!--贡献-->
+				<div class="contribution-box swiper-slide">
+					<!--<div>-->
+						<div class="seqencingDiv">
+							<ul class="seqencing-tab">
+								<li class="active">送礼榜</li>
+								<li>分享榜</li>
+								<li>时长榜</li>
+							</ul>
+						</div>
+						<div class="seqencingBox">
+							<!--送礼榜-->
+							<div class="present-box visible">
+								<ul class="seqencingBox-ul">
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">4</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">5</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">6</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>星钻</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+								</ul>
+							</div>
+							<!--送礼榜--///-->
+							
+							<!--分享榜-->
+							<div class="share-box">
+								<ul class="seqencingBox-ul">
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>次</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">
+											
+										</span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>次</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>次</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright">已关注</span>
+									</li>
+									<li>
+										<span class="ranking fleft">4</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>次</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">5</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>次</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">6</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>次</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+								</ul>
+							</div>
+							<!--分享榜--///-->
+							
+							<!--时长榜-->
+							<div class="duration-box">
+								<ul class="seqencingBox-ul">
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>分钟</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>分钟</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft"></span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>分钟</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">4</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>分钟</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">5</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>分钟</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+									<li>
+										<span class="ranking fleft">6</span>
+										<span class="seqencingHeader-img">
+											<img src="/static/jidi/img/header.jpg" />
+										</span>
+										<span class="seqencingUser-infor">
+											<p>
+												<span class="seqencingUser-infor_userName fleft">用户名用户名</span>
+												<span class="seqencingUser-infor_userGrade fright">LV8</span>
+												<i class="cboth"></i>
+											</p>
+											<p>
+												<span>56666</span>
+												<span>分钟</span>
+											</p>
+										</span>
+										<span class="seqencingUser-indexOrfollow fright"></span>
+									</li>
+								</ul>
+							</div>
+							<!--时长榜--///-->
+						</div>
+					<!--</div>-->
+				</div>
+				<!--贡献--///-->			
+			
+			</div>
+			</section>
+			
+		</div>
+		<!--其它--///-->
+		
+		<script type="text/javascript" src="/static/jidi/js/swiper.min.js" ></script>
+		<script type="text/javascript" src="/static/jidi/js/weiChat.js" ></script>
+		<script type="text/javascript" src="/static/jidi/js/jquery.min.js" ></script>
+		<script type="text/javascript" src="/static/jidi/js/jquery.qqFace.js" ></script>
+		<script type="text/javascript" src="/static/jidi/js/hidpi-canvas.min.js" ></script>
+		<script>
+			$(function(){
+				//实例化表情
+				$('.emotion').qqFace({
+			
+					id : 'facebox', 
+			
+					assign:'chatContent', //给输入框赋值
+			
+					path:'arclist/'	//表情存放的路径
+			
+				});
+				//查看表情结果
+				function replace_em(str){
+					str = str.replace(/\</g,'&lt;');
+					str = str.replace(/\>/g,'&gt;');
+					str = str.replace(/\n/g,'<br/>');
+					str = str.replace(/\[em_([0-9]*)\]/g,'<img src="arclist/$1.png" border="0" />');
+					return str;
+				}
+				
+				$(".chat-box_send-btn").click(function(){
+					var chatContent = $(".chatContent").val();
+					var chatUl = $(".chat-list-ul");
+					if(chatContent!=""){
+						chatContent = replace_em(chatContent);	
+						var word = '<li class="my_words">'+
+									'<div class="my_words-box fleft">'+
+										'<div class="my_words-header fleft">'+
+											'<img src="/static/jidi/img/header.jpg">'+
+										'</div>'+
+										'<div class="my_words-cont fleft">'+
+											'<p>2017-01-09 16:21:02 </p>'+
+											'<p>'+chatContent+'</p>'+
+										'</div>'+
+										'<i class="cboth"></i>'+
+									'</div>'+
+								'</li>';
+						chatUl.append(word)
+						holdBottom();
+						$(".chatContent").val("");
+					}
+				});
+				 //解决ios上使用第三方输入法会遮住输入框
+			    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+			    		var interval;
+					   $(".chatContent").focus(function(e){
+								var target = $(".chat_input");
+								var interval = setInterval(function() {
+								    document.body.scrollTop = document.body.scrollHeight
+//								    target.scrollIntoView(true)
+								}, 200)
+							});
+						$(".chatContent").blur(function(){
+							clearInterval(interval);
+						});
+				}
+				var myPlayer;
+				var videoBoxH = $(".video-box").height();
+				//视频播放
+				var myVideo;
+				function _videoPlay(){
+					myVideo = document.getElementsByTagName('video')[0];
+					$(".play").click(function(){
+						if (myVideo.paused){
+					    	myVideo.play();
+					    }
+				       	else{
+				           myVideo.pause();
+				       }
+					});
+					myPlayer = videojs("videoHLS");
+					myPlayer.on('play', function() {
+						$(".vjs-poster").hide();
+				        $( ".play" ).hide(); 
+				    });
+					myPlayer.on('pause', function() {
+						if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+							    $( ".play" ).hide();
+							} else {
+							    $( ".play" ).show();
+							};
+					    });
+					}
+				
+				//视频海报
+				function _videoPoster(){
+					var videoh=$(".video-box").css("height");
+					$(".vjs-poster").css("height",videoh).css("line-height",videoh);
+					$(".vjs-poster img").css("display","inline-block");
+				}
+				_videoPoster();
+				
+			    //设置聊天盒子高度
+				function _chatBoxHeight(){
+					var videoH=$(".video-box").height();
+				    var tabulH=$(".tab-ulBox").height();
+				    var chat_inputH=$(".chat_input").height();
+				    var bodyH=$(window).height();
+				    $(".otherAll").height(bodyH-videoH);
+				    $(".bigBox").height(bodyH-videoH-tabulH-1)
+				    $(".chat-list").height(bodyH-videoH-tabulH-50);
+				}
+			    _chatBoxHeight();
+			    
+			    //设置贡献盒子高度
+			    function _contributionBoxH(){
+					var contributionBoxH=$(".contribution-box").height();
+					var seqencingTabH=$(".seqencingDiv").height();
+					$(".seqencingBox>div").height(contributionBoxH - seqencingTabH - 15);
+				}
+			    _contributionBoxH();
+			    
+				//主播
+			    function _anchorBoxH(){
+			    	var anchorBoxH = $(".anchor-box").height();
+			    	var anchorInforH = $(".anchor_infor").height();
+			    	$(".entranceTicket-box").height(anchorBoxH - anchorInforH)
+			    }
+			    
+			    function _bigSwiper(){
+			    	var swiper = new Swiper('.swiper-container-big', {
+				        pagination: '.swiper-pagination-big',
+				        spaceBetween: 50,
+			        	paginationClickable: true
+				    });
+			    }
+			    _bigSwiper();
+			    
+			    function _bigSwiperText(){
+			    	var swiperPaginationBig = $(".swiper-pagination-big>span");
+				   swiperPaginationBig.eq(0).text("聊天");
+				   swiperPaginationBig.eq(1).text("讲义")
+				   swiperPaginationBig.eq(2).text("主播")
+				   swiperPaginationBig.eq(3).text("贡献")
+			    }
+			    _bigSwiperText();
+			    
+			    function _pptSwiper(){
+			    	var swiper = new Swiper('.swiper-container-ppt', {
+				        pagination: '.swiper-pagination-ppt',
+				        paginationType: 'fraction'
+				    });
+			    }
+			    _pptSwiper();
+			    
+			    var chatInput = function(){
+					var swiperIndex = $(".swiper-container-big>.swiper-wrapper>.swiper-slide-active").index();
+					if(swiperIndex==0){
+						$(".chat_input").show();
+					}else{
+						$(".chat_input").hide();
+					}
+				}
+				var chatInputValue; 
+				chatInputValue = setInterval(chatInput,100)
+			    
+			    //退出全屏
+				function exitFullscreen(){
+					if (document.exitFullscreen) {
+					document.exitFullscreen();
+					} else if (document.msExitFullscreen) {
+					document.msExitFullscreen();
+					} else if (document.mozCancelFullScreen) {
+					document.mozCancelFullScreen();
+					} else if(document.oRequestFullscreen){
+					document.oCancelFullScreen();
+					}else if (document.webkitExitFullscreen){
+					document.webkitExitFullscreen();
+					}else{
+//						document.IsFullScreen = false;
+					}
+				}
+				//进入全屏
+				function launchFullscreen(element) {
+					if(element.requestFullscreen) {
+					element.requestFullscreen();
+					} else if(element.mozRequestFullScreen) {
+					element.mozRequestFullScreen();
+					} else if(element.msRequestFullscreen){ 
+					element.msRequestFullscreen(); 
+					} else if(element.oRequestFullscreen){
+					element.oRequestFullscreen();
+					}
+					else if(element.webkitRequestFullscreen)
+					{
+					element.webkitRequestFullScreen();
+					}else{
+//					document.IsFullScreen = true;
+					}
+				}
+			    
+			    var _videofullScreen = function(){
+		    	  if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+		    	  	var _windowHeight,_windowWidth;
+		    	  	_windowHeight = document.body.scrollWidth;
+					_windowWidth = document.body.scrollHeight; 
+					if(_windowHeight>_windowWidth){
+						$(".video-box").css("height","100%");
+						$("..otherAll").css("z-index","-1");
+						launchFullscreen(document.getElementsByTagName("video")[0]);
+					}else if(_windowHeight<_windowWidth){
+						$(".video-box").css("height","3.6rem");
+						$(".otherAll").css("z-index","0");
+						exitFullscreen(document.getElementsByTagName("video")[0]);
+					}
+					}
+			   	 }
+			     
+			    window.onresize=function(){
+			    	_videofullScreen();
+				    _videoPoster();
+				 	_pptSwiper();
+					_bigSwiperText();
+			    }
+			    window.onload=function(){
+			    	$(".vjs-poster").show()
+			    	$( ".play" ).show();
+			    	_videoPlay();
+					holdBottom();
+					_bigSwiperText();
+				    _chatBoxHeight();
+				    _videoPoster();
+				    _anchorBoxH();
+				    $(".vjs-control-bar").remove();
+			    }//onload结束
+			   
+			  
+			   
+			   
+			});//$结束
+			</script>
+	</body>
+</html>

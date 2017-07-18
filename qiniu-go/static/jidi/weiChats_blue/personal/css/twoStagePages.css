@@ -1,0 +1,772 @@
+body{
+	background: #EBEFF4;
+	font-size: 0.25rem;
+	overflow-y: auto;
+}
+.borderNone{
+	border: none !important;
+}
+.marginBottom{
+	margin-bottom: 24px;
+}
+.textBeyond{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.header{
+	width: 100%;
+	text-align: center;
+	padding: 0.1rem 2%;
+	max-width: 768px;
+	background: #446ba6;
+	z-index: 500;
+	top: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+.header p{
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	font-size: 0.3rem;
+	color: #fff;
+}
+.header .goback {
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    background: url(../img/icon_goBack.png) center left no-repeat;
+    background-size: 30%;
+    left: 2%;
+    outline: none;
+}
+/*************************************个人设置.html*********************************************/
+.set-userHearer-box{
+	/*margin-top: 14px;*/
+	margin-bottom: 20px;
+	width: 100%;
+	height: 1.3rem;
+	background: #fff;
+}
+.set-userHearer-box-infor{
+	width: 96%;
+	height: 100%;
+	margin: 0 2%;
+	height: 1.3rem;
+	line-height: 1.3rem;
+}
+.set-userHearer-box-infor .leftInfor{
+	color: #333;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0.25rem;
+}
+
+.set-userHearer-box-infor-img{
+	width: 1rem;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	text-align: center;
+	position: relative;
+}
+.set-userHearer-box-infor-img p{
+	display: inline-block;
+	margin: 0 auto;
+	width: 0.9rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	vertical-align: middle;
+	overflow: hidden;
+	border-radius:100% ;
+	text-align: center;
+	background: #fff;
+}
+.set-userHearer-box-infor-img p img{
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius:100% ;
+	vertical-align: middle;
+}
+.set-userHearer-box-infor-img-input{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	opacity: 0;
+}
+
+
+
+/*其他项*/
+.set-ul{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.set-ul li{
+	width: 100%;
+	height: 1rem;
+	background: #fff;
+	position: relative;
+}
+.set-ul li>div{
+	width: 96%;
+	margin: 0 2%;
+	height: 1rem;
+	line-height: 1rem;
+	background: #fff;
+	border-bottom: 1px solid #D4D4D4;
+	box-sizing: border-box;
+}
+.set-ul li>div span.leftInfor{
+	color: #333;
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.25rem;
+}
+.set-ul li>div div.rightInfor{
+	color: #333;
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.25rem;
+	position: relative;
+}
+.set-ul li>div div.rightInfor input{
+	outline: none;
+	border: none;
+	background: none;
+	text-align: right;
+	color: #999;
+	font-size: 0.23rem;
+	right: 6px;
+	line-height: 1rem;
+	position: absolute;
+}
+.set-ul li>div div.rightInfor select,.set-ul li>div div.rightInfor select *{
+	outline: none;
+	border: none;
+	text-align: right;
+	color: #999;
+	font-size: 0.25rem;
+}
+span.gonewpage{
+	display: inline-block;
+	position: absolute;
+	width: 0.25rem;
+	height: 1rem;
+	line-height: 1rem;
+	top: 0;
+	right: 0;
+	background: url(../img/gonewpage.png) center no-repeat;
+	background-size: 68%;
+}
+.set-ul .set-modifyPassword{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+.set-ul-sex,
+.set-ul-age,
+.set-ul-constellation{
+	line-height: 1rem;
+	position: relative;
+	width:1rem;
+	height: 1rem;
+	display: block;
+	text-align: center;
+}
+.set-ul-sex span,
+.set-ul-age span,
+.set-ul-constellation span{
+	display: inline-block;
+	width:1rem;
+	color: #999;
+}
+.set-ul-select_sex,
+.set-ul-select_age,
+.set-ul-select_constellation{
+	opacity: 0;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+/*其它项--//*/
+/*************************************个人设置.html**********over***********************************/
+
+
+/*************************************修改密码.html*********************************************/
+.passWord-ul{
+	width: 100%;
+	height: auto;
+	position: relative;
+	/*margin-top: 14px;*/
+}
+.passWord-ul li{
+	width: 100%;
+	height: 1rem;
+	background: #fff;
+	position: relative;
+}
+.passWord-ul li>div{
+	width: 96%;
+	margin: 0 2%;
+	height: 1rem;
+	line-height: 1rem;
+	background: #fff;
+	border-bottom: 1px solid #D4D4D4;
+	box-sizing: border-box;
+}
+.passWord-ul li>div span.leftInfor{
+	color: #333;
+	display: inline-block;
+	width: 1.2rem;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.25rem;
+}
+.passWord-ul .passWord-ul-input{
+	width: 2.5rem;
+	height: 1rem;
+}
+.passWord-ul .passWord-ul-input input{
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: none;
+	outline: none;
+	font-size: 0.25rem;
+	color: #999;
+}
+.passWord-ul .passWord-ul-error_Prompt{
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.2rem;
+	color: #6485b6;
+}
+.passWord-ul button.passWord-ul-get_code{
+	outline: none;
+	border: none;
+	background: none;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 0.5rem;
+	padding: 0 0.21rem;
+	width: auto;
+	height: 0.6rem;
+	margin-top: 0.2rem;
+	font-size: 0.2rem;
+	background: #446ba6;
+	color: #fff;
+	/*color: #6485b6;*/
+}
+.passWord-ul button.passWord-ul-get_code:disabled{
+	background: #6485b6;
+}
+.passWord-reset_button{
+	width: 100%;
+}
+.passWord-reset_button button{
+	color: #fff;
+    background: #446ba6;
+    box-shadow: none;
+    display: block;
+    border: none;
+    width: 80%;
+    outline: none;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    text-shadow: none;
+    margin: 0.25rem auto;
+    font-size: 0.3rem;
+    box-shadow: 0 0.03rem 0.05rem rgba(0,0,0,0.2);
+}
+/*************************************修改密码.html**********over***********************************/
+
+/*************************************关注动态.html*********************************************/
+.dynamicwarp{
+	width: 100%;
+    overflow-y: hidden;
+    /*height: calc(100% - 0.8rem);*/
+   height: 100%;
+    overflow: auto;
+}
+.dynamicwarp .dynamic-ul{
+	width: 100%;
+	height: auto;
+}
+
+.dynamic-ul li{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	margin: 14px auto;
+}
+.dynamic-ul li:first-child{
+	margin-top: 0;
+}
+.dynamic-ul li .dynamic-ul-li-box{
+	padding: 2%;
+	box-sizing: border-box;
+}
+.dynamic-ul-li-box-top{
+	width: 100%;
+	height: 0.8rem;
+	line-height: 0.8rem;
+}
+.dynamic-ul .dynamic-ul-li-box-top-imgBox{
+	width: 0.8rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	overflow: hidden;
+	text-align: center;
+	border-radius: 50%;
+}
+.dynamic-ul-li-box-top-imgBox img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.dynamic-ul-li-box-top-inforBox{
+	width: calc(100% - 0.8rem);
+	height: 100%;
+}
+.dynamic-ul-li-box-top-inforBox>p{
+	width: 100%;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	overflow: hidden;
+}
+.dynamic-ul-li-box-top-inforBox>p>span.fleft{
+	margin-left: 14px;
+}
+.dynamic-ul-li-box-top-inforBox_name{
+	font-size: 0.25rem;
+	color: #333;
+	max-width: 2.5rem;
+}
+.dynamic-ul-li-box-top-inforBox_area span{
+	font-size: 0.23rem;
+	color: #2270b2;
+}
+.dynamic-ul-li-box-top-inforBox_area i{
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.5rem;
+	background: red;
+}
+.dynamic-ul-li-box-top-inforBox_state{
+	font-size: 0.22rem;
+	color: #666;
+}
+
+.dynamic-ul-li-box-top-inforBox_num,
+.dynamic-ul-li-box-top-inforBox_num *{
+	font-size: 0.2rem;
+	color: #666;
+}
+
+.dynamic-ul-li-box-posterBox{
+	width: 100%;
+	height: 3.8rem;
+	margin-top: 10px;
+	border-radius: 0.1rem;
+	overflow: hidden;
+	position: relative;
+}
+.dynamic-ul-li-box-posterBox img.video_posterImg{
+	position: absolute;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	border-radius: 0.1rem;
+}
+.dynamic-ul-li-box-posterBox .dynamic-ul-li-box-posterBox_state{
+	position: absolute;
+	display:block;
+	right: 3%;
+	top: 4%;
+	width: auto;
+	padding: 0 0.08rem;
+	line-height: 0.4rem;
+	height: 0.4rem;
+	border-radius: 0.1rem;
+	background: rgba(0,0,0,0.3);
+	font-size: 0.23rem;
+	color: #fff;
+	text-align: center;
+	z-index: 1;
+}
+.dynamic-ul-li-box-posterBox .liveTheme{
+	position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 98%;
+    padding: 1%;
+    color: #F8F8F8;
+    font-size: 0.22rem;
+    background: rgba(0,0,0,0.4);
+    border-bottom-right-radius: 0.1rem;
+    border-bottom-left-radius: 0.1rem;
+ }
+ .dynamic-ul-li-box-posterBox span.ticket {
+    position: absolute;
+    width: 1rem;
+   	font-size: 0.23rem;
+    border-radius: 0.05rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.5rem;
+    background: rgba(0,0,0,0.4);
+    left: calc(50% - 0.5rem);
+    top: calc(50% - 0.25rem);
+    z-index: 1;
+}
+/*************************************关注动态.html**********over***********************************/
+
+/****************************************星钻余额.html**********************************************/
+/*星钻充值*/
+.presentBling{
+	padding: 0.15rem 0;
+	text-align: center;
+	background: #446ba6;
+}
+.presentBling p{
+	line-height: 0.6rem;
+}
+.presentBling p:nth-of-type(1){
+	font-size: 0.25rem;
+	color: #fff;
+}
+.presentBling p:nth-of-type(2){
+	font-size: 0.36rem;
+	color: #fff;
+}
+.blingRechargeable-box .rechargeAmount_list{
+	background: #fff;
+}
+.blingRechargeable-box .rechargeAmount_list ul{
+	display:-webkit-box;
+    display:box;
+    -webkit-box-pack:center;
+    box-pack:center;
+}
+.blingRechargeable-box .rechargeAmount_list ul li{
+	width:30%;
+    border:1px solid lightblue;
+    background:#fff;
+    margin: 2% 2% 2% 0;
+    text-align: center;
+    border: 1px solid #446ba6;
+	padding: 0.1rem 0;
+	border-radius: 0.08rem;
+}
+
+.blingRechargeable-box .rechargeAmount_list ul li:last-child{
+    margin-right: 0;
+}
+.blingRechargeable-box .rechargeAmount_list ul li>p{
+	line-height: 0.5rem;
+}
+.blingRechargeable-box .rechargeAmount_list ul li>p:nth-of-type(1){
+	color: #446ba6;
+	font-size: 0.24rem;
+}
+.blingRechargeable-box .rechargeAmount_list ul li>p:nth-of-type(2){
+	color: #999;
+	font-size: 0.22rem;
+}
+.blingRechargeable-box .rechargeAmount_list ul li.active{
+	color: #fff;
+	background: #446ba6;
+}
+.blingRechargeable-box .rechargeAmount_list ul li.active p{
+	color: #fff;
+}
+.blingRechargeable-box .rechargeAmount_list ul li.active p.input_rechargeAmount input[type=number]{
+	border: none;
+}
+/*支付方式*/
+ul.modeOfpayment{
+	background: #fff;
+}
+.blingRechargeable-box ul.modeOfpayment li{
+	height: 0.8rem;
+	line-height: 0.8rem;
+	border-bottom: 1px solid #D4D4D4;
+	position: relative;
+}
+.blingRechargeable-box ul.modeOfpayment li p{
+	line-height: 0.8rem;
+	display: inline-block;
+	color: #333;
+	font-size: 0.25rem;
+}
+.blingRechargeable-box ul li .input_rechargeAmount input{
+	-webkit-appearance: none;
+	width: 70%;
+	margin: 0 auto;
+	outline: none;
+	border: 1px solid #446ba6;
+}
+
+/*付款方式*/
+.blingRechargeable-box ul.modeOfpayment li i,
+.blingRechargeable-box ul.modeOfpayment li span{
+	width: 0.8rem;
+	display: inline-block;
+	height: 0.6rem;
+	line-height: 0.8rem;
+	font-size: 0.24rem;
+	color: #333;
+	text-align: left;
+}
+.blingRechargeable-box ul.modeOfpayment li span{
+	width: auto;
+}
+.blingRechargeable-box ul.modeOfpayment li i:nth-of-type(2){
+	width: auto;
+}
+.blingRechargeable-box ul.modeOfpayment li i img{
+	margin: 0 auto;
+	display: inline-block;
+}
+.blingRechargeable-box ul.modeOfpayment li:nth-of-type(1) i:first-child img{
+	width: 0.43rem;
+	height: 0.37rem;
+}
+.blingRechargeable-box ul.modeOfpayment li i:first-child img{
+	width: 0.37rem;
+	height: 0.37rem;
+}
+
+.blingRechargeable-box ul.modeOfpayment li label.select_payment_method{
+	position: absolute;
+	width: 96%;
+	height: 100%;
+	padding: 0 2%;
+	top: 0;
+	left: 0;
+}
+
+.blingRechargeable-box ul.modeOfpayment li label.select_payment_method input[name=paymode]{
+	-webkit-appearance: none;
+	background: none;
+	border: none;
+	box-shadow: none;
+	width: 0.2rem;
+	height: 0.2rem;
+	line-height: 0.8rem;
+	background: url(../img/ellipse@2x.png) center no-repeat;
+	background-size: 100%;
+	outline: none;
+}
+.blingRechargeable-box ul.modeOfpayment li label.select_payment_method input[name=paymode]:checked{
+	background: url(../img/ellipse@2x_active.png) center no-repeat;
+	background-size: 100%;
+	outline: none;
+}
+/*付款方式--////*/
+
+
+.blingRechargeable-box .payment_btn {
+    color: #fff;
+    background: #446ba6;
+    box-shadow: none;
+    display: block;
+    border: none;
+    width: 80%;
+    outline: none;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    text-shadow: none;
+    margin: 0.25rem auto;
+    font-size: 0.3rem;
+    box-shadow: 0 0.03rem 0.05rem rgba(0,0,0,0.2);
+}
+
+/*星钻充值---///*/
+
+/****************************************星钻余额.html*********over***********************************/
+
+
+/****************************************直播认证.html********************************************/
+.liveAuthenticationwarp{
+    overflow-y: auto;
+    /*height: calc(100% - 0.8rem);*/
+   height: 100%;
+}
+.liveAuthentication-ul{
+	width: 100%;
+	height: auto;
+	position: relative;
+	/*margin-top: 14px;*/
+}
+.liveAuthentication-ul li{
+	width: 100%;
+	height: 1rem;
+	background: #fff;
+	position: relative;
+}
+.liveAuthentication-ul li>div{
+	width: 96%;
+	margin: 0 2%;
+	height: 1rem;
+	line-height: 1rem;
+	background: #fff;
+	border-bottom: 1px solid #D4D4D4;
+	box-sizing: border-box;
+}
+.liveAuthentication-ul li>div span.leftInfor{
+	color: #333;
+	display: inline-block;
+	width: 1.2rem;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.25rem;
+}
+.liveAuthentication-ul .liveAuthentication-ul-input{
+	width: 2.5rem;
+	height: 1rem;
+}
+.liveAuthentication-ul .liveAuthentication-ul-input input{
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: none;
+	outline: none;
+	font-size: 0.25rem;
+	color: #999;
+}
+.liveAuthentication-ul .liveAuthentication-ul-error_Prompt{
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.2rem;
+	color: #6485b6;
+}
+.liveAuthentication-ul button.liveAuthentication-ul-get_code{
+	outline: none;
+	border: none;
+	background: none;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 0.5rem;
+	padding: 0 0.21rem;
+	width: auto;
+	height: 0.6rem;
+	margin-top: 0.2rem;
+	font-size: 0.2rem;
+	background: #446ba6;
+	color: #fff;
+	/*color: #6485b6;*/
+}
+.liveAuthentication-ul button.liveAuthentication-ul-get_code:disabled{
+	background: #6485b6;
+}
+/*身份证上传*/
+.upload_idCard{
+	width: 100%;
+	height: auto;
+	margin-top: 14px;
+	background: #fff;
+}
+.upload_idCard .upload_idCard-ul{
+	padding: 2% 4%;
+}
+.upload_idCard .upload_idCard-ul li{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin: 0.2rem auto;
+}
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-a,
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-b{
+	width: 50%;
+}
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-a>div,
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-b>div{
+	margin: 0 auto;
+	position: relative;
+	width: 2.6rem;
+	height: 2.3rem;
+	background: #D4D4D4;
+	text-align: center;
+	border-radius: 0.1rem;
+}
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-b>div{
+	line-height: 2.3rem;
+}
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-a div input[type=file]{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+	opacity: 0;
+}
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-a div img{
+	margin: 0 auto;
+	display: inline-block;
+	width: 1rem;
+	/*height: 1rem;*/
+	margin: 0.3rem auto;
+	vertical-align: middle;
+}
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-a div .textInfor{
+	color: #fff;
+	font-size: 0.26rem;
+	font-weight: 600;
+	margin: 0.1rem auto;
+}
+
+li.upload_idCard-ul-positive .upload_idCard-ul-positive-b div img{
+	max-width: 2.6rem;
+	max-height: 2.3rem;
+}
+.liveAuthentication-reset_button{
+	width: 100%;
+}
+.liveAuthentication-reset_button button{
+	color: #fff;
+    background: #446ba6;
+    box-shadow: none;
+    display: block;
+    border: none;
+    width: 80%;
+    outline: none;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    text-shadow: none;
+    margin: 0.25rem auto;
+    font-size: 0.3rem;
+    box-shadow: 0 0.03rem 0.05rem rgba(0,0,0,0.2);
+}
+/*身份证上传--///*/
+/****************************************直播认证.html********over************************************/

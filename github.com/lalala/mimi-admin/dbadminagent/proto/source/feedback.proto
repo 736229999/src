@@ -1,0 +1,26 @@
+syntax = "proto3";
+package dbproto;
+
+message Feedback {
+    int64 id = 1;
+    string email = 2;
+    string name = 3;
+    string content = 4;
+    int32 status = 5;
+    int32 create_time = 6;
+}
+
+message FeedbackList {
+    int32 page = 1;
+    int32 size = 2;
+    int32 total= 3;
+    repeated Feedback list = 4;
+}
+
+//enum FeedbackStatus {
+//    wait = 0;           //待处理.
+//    examine = 1;        //已查看.
+//    process_ok = 2;     //已处理.
+//    ignore = 3;         //忽略 .
+//}
+

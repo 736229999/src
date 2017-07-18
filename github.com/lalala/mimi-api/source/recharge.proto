@@ -1,0 +1,40 @@
+syntax = "proto3";
+package apiproto;
+
+option java_package = "Proto";
+option java_outer_classname = "Recharge";
+
+
+message RechargeRequest {
+    int64 money = 1; //充值金额，最少1元，且为整数.
+    string os = 2; //请求来源 android iOS.
+}
+
+message RechargeResponse { 
+	string app_id     = 1; //应用id.
+    string partner_id = 2; //商户号.
+    string prepay_id  = 3; //预支付id.
+    string package    = 4; //扩展字段.
+   	string nonce_str  = 5; //随机字符串.
+   	int64 timestamp   = 6; //时间戳.
+   	string sign       = 7; //签名.
+}
+
+message AlipayRechargeReply {
+	string App_id      = 1; //应用id.
+	string Method      = 2; //接口名称。
+	string Charset     = 3; //编码.
+	string Sign_type   = 4; //签名算法类型.
+	string Timestamp   = 5; //时间戳.
+	string Version     = 6; //版本号.
+	string Biz_content = 7; //请求参数的集合.
+	string Notify_url  = 8; //服务通知地址.
+	string Sign        = 9; //签名.
+}
+
+message JdPayRechargeReply {
+	string Merchant     = 1;  //商户号.
+	string Device       = 2;  //设备号.
+	string OrderId      = 3;  //京东交易单号.
+	string Sign	        = 4; //签名.
+}

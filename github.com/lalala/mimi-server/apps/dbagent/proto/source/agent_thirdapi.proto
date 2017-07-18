@@ -1,0 +1,25 @@
+syntax = "proto3";
+package dbproto;
+import "thirdapi.proto";
+import "base.proto";
+import "opencai.proto";
+
+service DbThirdApiAgent {
+  rpc InsertSms(Sms) returns (Nil) {}
+  rpc QuerySms(StringValue) returns (Sms) {}
+  rpc SetSmsExpired(IntValue) returns (Nil) {}
+  rpc QuerySmsStats(StringValue) returns (SmsStats) {}
+  rpc UpdateSmsStats(SmsStats) returns (Nil) {}
+  //-------------------------------------------------------------------------------
+  rpc InsertIdcard(Idcard) returns (Nil) {}
+  rpc QueryIdcard(StringValue) returns (Idcard) {}
+  rpc InsertBankcard(Bankcard) returns (Nil) {}
+  rpc QueryBankcard(StringValue) returns (Bankcard) {}
+  //-------------------------------------------------------------------------------
+  rpc OpencaiQueryByOpendate(OpencaiQueryArg) returns (stream OpenInfo) {}
+  rpc OpencaiQueryByIssue(OpencaiQueryArg) returns (OpenInfo) {}
+  rpc OpencaiQueryByLatestNum(OpencaiQueryArg) returns (stream OpenInfo) {}
+  rpc OpencaiQueryLatestIssue(StringValue) returns (OpenInfo) {}
+  rpc OpencaiInsert(OpencaiInsertArg) returns (Nil) {}
+  rpc OpencaiUpsertDetail(OpencaiUpsertDetailArg) returns (Nil) {}
+}

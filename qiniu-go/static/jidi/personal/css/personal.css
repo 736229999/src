@@ -1,0 +1,1245 @@
+* {
+	padding: 0;
+	margin: 0;
+	color: #666;
+	font: 400 14px/22px Arial, "Microsoft YaHei";
+	/*-webkit-text-size-adjust: 100%;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);/*去除ios点击的时候带背景高亮*/
+}
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+	margin: 0;
+	padding: 0;
+}
+em {
+	font-style: normal;
+}
+img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+p {
+	word-wrap: break-word;
+}
+
+html,body {
+	height: 100%;
+	padding: 0;
+	position: relative;
+	background: #fff;
+	overflow-y: hidden;
+    -webkit-text-size-adjust:none;
+    overflow: hidden;
+}
+body {
+  -webkit-overflow-scrolling: touch;
+  background: #F5F5F5;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.fleft {
+	float: left;
+}
+
+.fright {
+	float: right;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+.displayNone{
+	display: none;
+}
+a,
+li {
+	list-style: none;
+	text-decoration: none;
+}
+
+.warp{
+	margin-top: 0.8rem;
+    overflow-y: auto;
+    height: calc(100% - 0.8rem);
+}
+.goback{
+	position: absolute;
+	width: 0.6rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	background: url(../img/gobanck.png) center left no-repeat;
+	background-size: 30%;
+	left: 2%;
+	outline: none;
+}
+/*个人中心头部*/
+.personalCenter{
+	width: 100%;
+	text-align: center;
+	padding: 0.1rem 2%;
+	position: fixed;
+	max-width: 768px;
+	background: #f90;
+	z-index: 500;
+	top: 0;
+	box-sizing: border-box;
+}
+.personalCenter p{
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	font-size: 0.3rem;
+	color: #333333;
+	opacity: 0.75;
+	
+}
+.focus_text{
+	position: absolute;
+	right: 2%;
+	vertical-align: middle;
+	display: inline-block;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	font-size: 0.2rem;
+	color: #f90;
+	top: 0.1rem;
+	letter-spacing: 0.012rem;
+	padding: 0 0.08rem;
+	border: 1px solid #f90;
+	border-radius: 0.1rem;
+	box-sizing: content-box;
+}
+.focus_btn{
+	position: absolute;
+	right: 2%;
+	vertical-align: middle;
+	display: inline-block;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	font-size: 0.2rem;
+	color: #fff;
+	top: 0.1rem;
+	background: #f90;
+	border-radius: 0.1rem;
+	letter-spacing: 0.02rem;
+	padding: 0 0.08rem;
+}
+/*个人中心头部---////*/
+
+/*二维码弹窗*/
+.qr-code_popup{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	z-index: 9999;
+	display: none;
+	left: 0;
+	top: 0;
+}
+.code_popupBox{
+	margin: 50% auto;
+	width: 4rem;
+	height: auto;
+	background: #FFF;
+	padding: 0.3rem 0.05rem;
+}
+.code_popupBox .spreadLink{
+	text-align: center;
+	margin: 0 auto;
+}
+.code_popupBox .spreadLink span{
+	font-size: 0.2rem;
+	color: #f90;
+}
+.code_popupBox .spreadLink span input{
+	text-align: center;
+	width: 1.5rem;
+	background: none;
+	border: none;
+	display: inline-block;
+	font-size: 0.2rem;
+	font-style: italic;
+	color: #f90;
+	text-decoration: underline;
+	outline: none;
+	-webkit-appearance: none;
+}
+.code_popupBox .spreadLink span.copyBtn{
+	color: #fff;
+	background: #f90;
+	display: inline-block;
+	border-radius: 0.08rem;
+	line-height: 0.4rem;
+	padding: 0 0.08rem;
+	margin-left: 0.2rem;
+}
+.codeImage{
+	width: 3.5rem;
+	height: 3.5rem;
+	margin: 0.3rem auto;
+}
+.codeImage img{
+	width: 3.5rem;
+	height: 3rem;
+}
+/*二维码弹窗---///*/
+
+/*用户信息*/
+.user_inforBox{
+	width: 96%;
+	padding: 2%;
+	background: #f90;
+	overflow: hidden;
+}
+.user_Header{
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 100%;
+	border: 3px solid #ffd391;
+}
+.user_Header img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+}
+.user_msg{
+	margin-left: 0.12rem;
+	width: auto;
+	height: 1.6rem;
+}
+.user_msg>p{
+	max-width: 3rem;
+	line-height: 0.4rem;
+	color: #f8f8f8;
+	text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.user_msg>p.user_msg-name{
+	font-size: 0.25rem;
+}
+.user_msg>p.user_msg-name{
+	font-size: 0.25rem;
+}
+.user_msg>p.user_msg-popularity{
+	overflow: visible;
+}
+.user_msg>p.user_msg-popularity span{
+	font-size: 0.23rem;
+	color: #f8f8f8;
+}
+.user_msg>p.user_msg-id{
+	font-size: 0.23rem;
+	color: #f8f8f8;
+}
+.user_msg>p.user_msg-basic span{
+	font-size: 0.23rem;
+	color: #f8f8f8;
+	background: #7f4c00;
+	padding: 0.05rem;
+	border-radius: 0.05rem;
+}
+.qr-code{
+	width: 0.3rem;
+	line-height: 1.6rem;
+}
+.qr-code img{
+	width: 0.3rem;
+	height: 0.3rem;
+}
+/*用户信息---///*/
+
+/*星钻和余额*/
+.serenaAndbalance{
+	width: 96%;
+	height: 1rem;
+	padding: 0.1rem 2%;
+	text-align: center;
+	background: #fff;
+}
+.serenaAndbalance .serena{
+	width: 49.5%;
+	display: block;
+}
+.serenaAndbalance .balance{
+	width: 49.5%;
+	border-left: 1px solid #ccc;
+}
+.serenaAndbalance p{
+	font-size: 0.25rem;
+	line-height: 0.5rem;
+	color: #333;
+}
+/*星钻和余额---////*/
+
+/*列表*/
+.personal-list{
+	width: 100%;
+	height: auto;
+	margin: .5rem auto;
+}
+.personal-list li{
+	padding: 0 2%;
+	height: 0.75rem;
+	line-height: 0.75rem;
+	position: relative;
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.personal-list li a{
+	font-size: 0.26rem;
+	display: inline-block;
+	position: absolute;
+	height: 0.75rem;
+	line-height: 0.75rem;
+	width: 96%;
+	left: 4%;
+	top: 0;
+	color: #333;
+	font-weight: 400;
+}
+.personal-list li span{
+	display: inline-block;
+	position: absolute;
+	font-size: 0.25rem;
+	width: 0.25rem;
+	height: 0.75rem;
+	line-height: 0.75rem;
+	top: 0;
+	right: 4%;
+	background: url(../img/gonewpage.png) center no-repeat;
+	background-size: 75%;
+}
+/*列表***/
+
+/************************个人主页***********************/
+
+/*个人中心头部*/
+.userHeaderBg{
+	max-width: 768px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	width: 100%;
+	padding: 2%;
+	background: url(../img/headerBg.jpg) no-repeat center;
+	background-size: cover;
+}
+.userHeaderBg .personalHome{
+	position: relative;
+	max-width: 768px;
+	margin: 0 auto;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	text-align: center;
+}
+.userHeaderBg .personalHome p{
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	font-size: 0.3rem;
+}
+.personalHome_header{
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: 0.15rem auto;
+	border: 2px solid #F8F8F8;
+	border-radius: 100%;
+	position: relative;
+}
+.personalHome_header img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+}
+.userHeaderBg .idSexLv{
+	text-align: center;
+}
+.userHeaderBg .idSexLv span{
+	color: #F8F8F8;
+	font-size: 0.25rem;
+	display: inline-block;
+}
+.userHeaderBg .idSexLv span:nth-of-type(2){
+	margin: 0 0.1rem;
+	line-height: 0.4rem;
+	display: inline-block;
+}
+.userHeaderBg .idSexLv span:nth-of-type(2) img{
+	width: 0.34rem;
+	line-height: 0.4rem;
+	display: inline-block;
+	vertical-align: middle;
+}
+.userHeaderBg .idSexLv span:nth-of-type(3){
+	padding: 0 0.081rem;
+	background-color: #3AEB64;
+	border-radius: 0.1rem;
+	font-size: 0.20rem;
+}
+.homeUser_msg-popularity{
+	text-align: center;
+}
+.homeUser_msg-popularity span{
+	color: #F8F8F8;
+	font-size: 0.22rem;
+	line-height: 0.4rem;
+	display: inline-block;
+}
+.homeAuthentication,.homeAutograph{
+	text-align: center;
+}
+.homeAuthentication span,.homeAutograph span{
+	color: #F8F8F8;
+	font-size: 0.25rem;
+	line-height: 0.4rem;
+	display: inline-block;
+}
+.homeAutograph span{
+	max-width: 5rem;
+	overflow: hidden;
+	text-overflow:ellipsis;     
+	word-break:keep-all;
+	white-space:nowrap;
+	
+}
+/*个人中心头部---////*/
+
+/*选项切换*/
+div.tab-ul {
+	padding: 0 10%;
+	max-width: 768px;
+	text-align: center;
+	overflow: hidden;
+	background: #fff;
+	position: relative;
+	border-bottom: 1px solid transparent;
+}
+
+div.tab-ul span {
+	height: 40px;
+	line-height: 40px;
+	width: 33.3333%;
+	color: #666;
+	float: left;
+	text-align: center;
+	font-size: 0.28rem;
+	border-bottom: 1px solid transparent;
+}
+.swiper-pagination-Homepage>span.swiper-pagination-bullet{
+	width: 33.3333%;
+	height: 40px;
+	color: #666;
+	line-height: 40px;
+	background: transparent;
+	border-bottom: 1px solid #FFF;
+	border-radius: 0;
+	font-size: 0.265rem;
+}
+.swiper-pagination-Homepage span.swiper-pagination-bullet-active{
+	color: #f90;
+	border-bottom: 1px solid #f90;
+}
+/*选项切换--///*/
+section.bigBox{
+	overflow: hidden;
+	max-width: 768px;
+	margin: 0 auto;
+}
+section.bigBox>.swiper-wrapper>div{
+	overflow-y: auto;
+}
+
+/*回放*/
+.playBack-box{
+	height: 95%;
+}
+.playBack-box .playBackUl li{
+	padding: 2%;
+	height: auto;
+	margin: 0.1rem auto;
+	overflow: hidden;
+}
+.playBack-box .playBackUl li.timeQuantum{
+	font-size: 0.3rem;
+	color: #666;
+}
+.playBack_item{
+	background: #fff;
+}
+.playBack_item-cover{
+	width: auto;
+	height: 3rem;
+	position: relative;
+	display: block;
+}
+.playBack_item-day{
+	padding: 0.1rem 0;
+}
+.playBack_item-cover .playBack_item-time{
+	position: absolute;
+	width: 96%;
+	padding: 2%;
+}
+.playBack_item-cover .playBack_item-time span{
+	display: inline-block;
+	background: rgba(0,0,0,0.2);
+	color: #F8F8F8;
+	border-radius: 0.05rem;
+	font-size: 0.2rem;
+	padding: 0 0.08rem;
+}
+.need-ticket{
+	position: absolute;
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 100%;
+	color: #f90;
+	text-align: center;
+	line-height: 0.8rem;
+	background: rgba(0,0,0,0.3);
+	left: calc(50% - 0.4rem);
+	top: calc(50% - 0.4rem);
+}
+.playBack_item-cover img{
+	width: 100%;
+	/*height: 100%;*/
+	border-radius: 0.1rem;
+}
+.playBack_item-cover .liveTheme{
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 96%;
+	padding: 2%;
+	color: #F8F8F8;
+	font-size: 0.3rem;
+	background: rgba(0,0,0,0.2);
+	border-bottom-right-radius: 0.1rem;
+	border-bottom-left-radius: 0.1rem;
+}
+
+/*门票弹窗*/
+.ticket-box{
+	width: 5.2rem;
+	height: 3.2rem;
+	margin: 50% auto;
+	background: url(../img/ticket_bg.png) center no-repeat ;
+	background-size: 100%;
+}
+.ticket-box_title{
+	text-align: center;
+	padding:0.1rem;
+	color: #333;
+	font-size: 0.28rem;
+}
+.ticket-box_msg{
+	width:auto;
+	padding: 0.1rem 0.4rem;
+	overflow: hidden;
+}
+.ticket-box_msg .ticketImg{
+	
+}
+.ticketImg{
+	width: 1rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	margin-right: 0.2rem;
+}
+.ticket-box_msg .ticketImg img{
+	margin: 0 auto;
+	display: inline-block;
+	width: 1.6rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+}
+.ticket-box_msg_infor{
+	width: 2.4rem;
+	height: 1.6rem;
+}
+.ticket-box_msg_infor p{
+	font-size: 0.2rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: visible;
+}
+.ticket-box_msg_infor p:nth-of-type(1){
+	font-size: 0.25rem;
+	color: #333;
+}
+.ticket-box_msg_infor p:nth-of-type(2),.ticket-box_msg_infor p:nth-of-type(2) *{
+	font-size: 0.23rem;
+	color: #FE4B4B;
+}
+.ticket-box_btn{
+	width: 90%;
+	padding: 0 5%;
+	height: 0.6rem;
+}
+.ticket-box_btn span{
+	width: 50%;
+	text-align: center;
+	line-height: 0.6rem;
+	font-size: 0.3rem;
+	display: inline-block;
+}
+/*门票弹窗--//*/
+
+/*回放--//*/
+/**********************************贡献盒子--///**********************************************/
+.contribution-box{
+	background: #FFF;
+	height: 100%;
+	overflow-y: hidden !important;
+}
+.contribution-box ul.seqencing-tab{
+	width: 55%;
+	height: 0.5rem;
+	margin: 0.2rem auto;
+	border: 1px solid #f90;
+	border-radius: 0.5rem;
+	background: #fff;
+	/*position: absolute;*/
+}
+.contribution-box ul.seqencing-tab li{
+	float: left;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	width: 33.3333%;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #f90;
+}
+.contribution-box ul.seqencing-tab li:first-child{
+	border-top-left-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+}
+.contribution-box ul.seqencing-tab li:last-child{
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+.contribution-box ul.seqencing-tab li.active{
+	background: #f90;
+	color: #fff;
+}
+
+/*送礼榜-列表*/
+.seqencingBox>div{
+	display: none;
+	height: 4.5rem;
+	overflow-y: auto;
+}
+.seqencingBox>div.visible {
+	display: block;
+}
+ul.seqencingBox-ul{
+	padding-bottom:8%;
+}
+ul.seqencingBox-ul li{
+	padding: 2% 2%;
+	border-bottom: 1px solid #f3f3f3;
+}
+ul.seqencingBox-ul li>span{
+	display: inline-block;
+}
+/*名次*/
+ ul.seqencingBox-ul li>span.ranking{
+	width: 0.8rem;
+	height: 1rem;
+	line-height: 0.9rem;
+	text-align: center;
+	font-size: 0.45rem;
+}
+/*金 银 铜 牌*/
+ul.seqencingBox-ul li:nth-of-type(1)>span.ranking{
+	background: url(../../img/gold_medal.png) center no-repeat;
+	background-size: 60%;
+}
+ul.seqencingBox-ul li:nth-of-type(2)>span.ranking{
+	background: url(../../img/silver_medal.png) center no-repeat;
+	background-size: 60%;
+}
+ul.seqencingBox-ul li:nth-of-type(3)>span.ranking{
+	background: url(../../img/bronze_medal.png) center no-repeat;
+	background-size: 60%;
+}
+
+/*头像*/
+ ul.seqencingBox-ul li>span.seqencingHeader-img{
+	width: 1rem;
+	height: 0.9rem;
+	border-radius: 100%;
+	overflow: hidden;
+}
+ ul.seqencingBox-ul li>span.seqencingHeader-img img{
+	width: 0.9rem;
+	height: 0.9rem;
+	margin: 0 auto;
+	display: block;
+	border-radius: 100%;
+}
+/*用户信息*/
+ul.seqencingBox-ul li>span.seqencingUser-infor{
+	width:auto ;
+	height: 0.8rem;
+	padding:0 0.2rem ;
+	overflow: hidden;
+}
+ul.seqencingBox-ul li>span.seqencingUser-infor>p:nth-of-type(1){
+	overflow: hidden;
+}
+ul.seqencingBox-ul li>span.seqencingUser-infor>p span.seqencingUser-infor_userName{
+	font-size: 0.25rem;
+	padding-right: 0.08rem;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	display: inline-block;
+	max-width: 1.7rem;
+	text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}
+ul.seqencingBox-ul li>span.seqencingUser-infor>p span.seqencingUser-infor_userGrade{
+	font-size: 0.20rem;
+	height: 0.3rem;
+	width: 0.6rem;
+	line-height: 0.3rem;
+	text-align: center;
+	margin-left: 0.02rem;
+	border-radius: 0.08rem;
+	display: inline-block;
+	background-color: #3aeb64;
+	color: #fff;
+}
+ul.seqencingBox-ul li>span.seqencingUser-infor>p:nth-of-type(2) span{
+	font-size: 0.20rem;
+	height: 0.3rem;
+	line-height:0.58rem;
+	display: inline-block;
+}
+ul.seqencingBox-ul li>span.seqencingUser-indexOrfollow{
+	width: 1rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	color: #f90;
+	text-align: right;
+	font-size: 0.20rem;
+	margin-right: 0.18rem;
+	background: url(../img/follow.png) center right no-repeat;
+	background-size: 30%;
+}
+ul.seqencingBox-ul li>span.seqencingUser-index{
+	background: url(../img/righticon.png) center right no-repeat;
+	background-size: 18%;
+}
+/*送礼榜-列表**//*************************/
+ul.seqencingBox-ul li:nth-of-type(1) span.seqencingHeader-img,
+ul.seqencingBox-ul li:nth-of-type(2) span.seqencingHeader-img,
+ul.seqencingBox-ul li:nth-of-type(3) span.seqencingHeader-img{
+	width: 1rem;
+	height: 1rem;
+}
+ul.seqencingBox-ul li:nth-of-type(1) span.seqencingHeader-img img,
+ul.seqencingBox-ul li:nth-of-type(2) span.seqencingHeader-img img,
+ul.seqencingBox-ul li:nth-of-type(3) span.seqencingHeader-img img{
+	width: 1rem;
+	height: 1rem;
+}
+
+/*商城订单详情      orderDetail.html*/
+.orderDetail-box,
+.blingRechargeable-box{
+	width: 96%;
+	margin: 2% auto;
+	min-height:500px;
+	height: 96%;
+	border-radius:0.12rem;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+	background: #fff;
+}
+header.orderDetail-header,
+header.blingRechargeable-header{
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	width: 100%;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #666;
+	border-bottom: 1px solid #e4e4e4;
+	max-width: 768px;
+	margin: 0 auto;
+}
+header.orderDetail-header a.close,
+header.blingRechargeable-header a.close{
+	position: absolute;
+	right: 0;
+	width: 0.6rem;
+	height: 0.8rem;
+	background: red;
+	display: inline-block;
+	background: url(../../img/close.png) no-repeat center;
+	background-size: 30%;
+}
+.orderDetail-content{
+	background: #fff;
+	padding: 4%;
+	max-width: 768px;
+	margin: 0 auto;
+}
+.orderDetail-content .orderDetail-content_tit{
+	height: 1rem;
+	width: auto;
+	overflow: hidden;
+	margin:0 0 0.2rem 0;
+}
+.orderDetail-content .orderDetail-content_tit img{
+	height: 1rem;
+	width: 1rem;
+	border-radius: 100%;
+}
+.orderDetail-content .orderDetail-content_tit span{
+	text-indent: .2rem;
+	display: inline-block;
+	line-height: 1rem;
+	font-size: 0.28rem;
+}
+.orderDetail-content .orderDetail-content_tit p.order_share{
+	display: block;
+	width: 0.5rem;
+	height: 1rem;
+	line-height: 1rem;
+	float: right;
+}
+.orderDetail-content .orderDetail-content_tit p.order_share img{
+	width: 0.3rem;
+	height: 0.3rem;
+	vertical-align: middle;
+	border-radius: 0;
+}
+.orderDetail-content_infor{
+	margin: 0.35rem 0;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.orderDetail-content_infor .orderDetail-ticketImg{
+	width: 27%;
+	height: 2rem;
+}
+.orderDetail-content_infor .orderDetail-ticketImg img{
+	width: 100%;
+	height: 80%;
+}
+.orderDetail-content_infor .orderDetail-introduce{
+	width: 70%;
+	height: auto;
+}
+.orderDetail-content_infor .orderDetail-introduce p{
+	width: 96%;
+	padding: 0 2%;
+}
+.orderDetail-content_infor .orderDetail-introduce p:nth-of-type(1){
+	height: 0.5rem;
+}
+.orderDetail-content_infor .orderDetail-introduce p:nth-of-type(1) span:nth-of-type(1){
+	font-size: 0.28rem;
+	line-height: 0.3rem;
+}
+.orderDetail-content_infor .orderDetail-introduce p:nth-of-type(1) span:nth-of-type(2){
+	font-size: 0.23rem;
+	color: #f90;
+	line-height: 0.3rem;
+}
+.orderDetail-content_infor .orderDetail-introduce p:nth-of-type(2){
+	font-size: 0.25rem;
+	line-height: 0.34rem;
+}
+.orderDetail-introduce-ticket_time{
+	width: 100%;
+	overflow: hidden;
+}
+.orderDetail-introduce-ticket_time>.live_time{
+	text-align: center;
+}
+.orderDetail-introduce-ticket_time>.live_time>p{
+	text-align: center;
+	font-size: 0.2rem;
+	line-height: 0.45rem;
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.orderDetail-content>.buy_ticketBtn{
+	color: #fff;
+	background: #f90;
+	box-shadow: none;
+	display: block;
+	border: none;
+	width: 80%;
+	outline: none;
+	height: 0.55rem;
+	line-height: 0.55rem;
+	text-align: center;
+	border-radius: 0.5rem;
+	text-shadow: none;
+	margin: 0.8rem auto;
+	font-size: 0.35rem;
+	box-shadow: 0 0.03rem 0.05rem rgba(0,0,0,0.2);
+}
+/*商城订单详情      orderDetail.html//////////////////////*******************/
+/*主播和游客的基本信息弹窗*/
+.popup,.bigPopup,.ticketPopup,.orderDetail{
+	position: absolute;
+	z-index: 990;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	display: none;
+}
+.popup .popup-box{
+	position: absolute;
+	left: 50%;
+	bottom: 2.5rem;
+	margin-left: -2.3rem;
+	width: 4.6rem;
+	height: auto;
+	border-top: 1px solid #fff;
+	border-radius: 0.15rem;
+	background: #fff;
+	padding-bottom: 0.25rem;
+	overflow: hidden;
+}
+.popup .popup-box .popup-box-header{
+	position: relative;
+	height: 0.5rem;
+	font-size: 0.28rem;
+	line-height: 0.5rem;
+	width: 100%;
+	color: #333;
+	border-bottom: 1px solid #dbdbdb;
+	text-align: center;
+}
+.popup .popup-box .popup-box-header .popup-box-close{
+	display: inline-block;
+	width: 0.3rem;
+	height: 0.3rem;
+	font-size: 0.3rem;
+	text-align: center;
+	line-height: 0.45rem;
+	color: #666;
+	position: absolute;
+	right: 2%;
+}
+.popup .popup-box .popup-box-userHeader{
+	width:1.2rem;
+	height:1.2rem;
+	border-radius: 100%;
+	margin: 0.15rem auto;
+	background: #fff;
+}
+.popup .popup-box .popup-box-userHeader img{
+	width:1.2rem;
+	height:1.2rem;
+	border-radius: 100%;
+}
+.popup-box-userInfor{
+	width: 2.5rem;
+	height: auto;
+	line-height: 0.3rem;
+	margin: 0 auto;
+	font-size: 0.20rem;
+	text-align: center;
+}
+.popup-box-userInfor span.popup-box-userInfor-name{
+	font-size: 0.20rem;
+    display: block;
+    line-height: 0.3rem;
+    text-align: center;
+}
+
+.popup-box-userInfor img.popup-box-userInfor-sex{
+	width: 0.32rem;
+	height: 0.32rem;
+	margin: auto 0.05rem ;
+	display: inline-block;
+}
+.popup .popup-box .popup-box-userHeader{
+	width:1.2rem;
+	height:1.2rem;
+	border-radius: 100%;
+	margin: 0.15rem auto;
+	background: #fff;
+}
+.popup .popup-box .popup-box-userHeader img{
+	width:1.2rem;
+	height:1.2rem;
+	border-radius: 100%;
+}
+.popup-box-userInfor{
+	width: 2.5rem;
+	height: auto;
+	line-height: 0.3rem;
+	margin: 0 auto;
+	font-size: 0.20rem;
+	text-align: center;
+}
+.popup-box-userInfor span.popup-box-userInfor-name{
+	font-size: 0.20rem;
+    line-height: 0.32rem;
+    text-align: center;
+}
+
+.popup-box-userInfor img.popup-box-userInfor-sexImg{
+	width: 0.32rem;
+	height: 0.32rem;
+	margin: auto 0.05rem ;
+	display: inline-block;
+}
+
+.popup-box-userInfor span.popup-box-userInfor-degree{
+	font-size: 0.20rem;
+    width: 0.6rem;
+    line-height: 0.32rem;
+    text-align: center;
+    border-radius: 0.08rem;
+    display: inline-block;
+    background-color: #3aeb64;
+    color: #fff;
+}
+
+.popup .popup-box ul.popup-box-list{
+	width: 80%;
+	height: 0.8rem;
+	margin: 0.25rem auto;
+	margin-bottom: 0.05rem;
+}
+.popup .popup-box ul.popup-box-list li{
+	width: 33%;
+	height: 0.8rem;
+	position: relative;
+	float: left;
+}
+.popup .popup-box ul.popup-box-list li:after{
+	width:1px;
+	height: 0.4rem;
+	right: -0.05rem;
+	top: 0.15rem;
+	position: absolute;
+	content: "";
+	background: #a7a2a2;
+	z-index: 1001;
+}
+.popup .popup-box ul.popup-box-list li:last-child:after{
+	width: 0;
+}
+.popup .popup-box ul.popup-box-list li p{
+	text-align: center;
+	font-size: 0.22rem;
+	line-height: 0.35rem;
+}
+.popup .popup-box .popup-box-flow_btn{
+	width: 80%;
+	height: 0.5rem;
+	background-color: #f90;
+	text-align: center;
+	line-height: 0.5rem;
+	color: #fff;
+	margin: 0 auto;
+	font-size: 0.28rem;
+	border-radius: 0.1rem;
+}
+.my_infor .popup-box ul.popup-box-list{
+	margin: 0.2rem auto 0 auto;
+}
+
+.popup-box-flow_focused{
+	background-color: gainsboro !important;
+}
+
+/*主播和游客的基本信息---////*/
+/**********************************贡献盒子--///**********************************************/
+
+
+/********************************门票************************************/
+
+.supermarket-list{
+	height: auto;
+	overflow: auto;
+	margin: 0 auto;
+	background: #fff;
+	
+}
+.supermarket-list ul{
+	overflow: auto;
+	margin: 0 auto;
+	padding-bottom: 6%;
+}
+
+.supermarket-list ul li{
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	border-bottom: 1px solid #F3F3F3;
+	padding: 4%;
+	background-color: #FFF;
+}
+.supermarket-list ul li .supermarketImg img{
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.supermarket-list .supermarket_list_center_infor{
+	margin-left: 0.3rem;
+	width: 2rem;
+	height: 1.2rem;
+}
+.supermarket-list .supermarket_list_center_infor p:nth-of-type(1){
+	color: #666;
+	font-size: 0.25rem;
+	line-height: 0.5rem;
+}
+.supermarket-list .supermarket_list_center_infor p:nth-of-type(2) span{
+	color: #666;
+	font-size: 0.20rem;
+	line-height: 0.8rem;
+}
+.supermarket_list_center_infor p:nth-of-type(2) span.ticket_type{
+	color: #6d93f5;
+	display: inline-block;
+	text-indent: 0.22rem;
+	font-size: 0.20rem;
+	
+}
+.supermarket-list ul li .detailAndbuy{
+	width: 1.6rem;
+	height: 1.2rem;
+	overflow: hidden;
+}
+.supermarket-list ul li .detailAndbuy a{
+	display: inline-block;
+	margin-top: 0.42rem;
+	font-size: 0.22rem;
+	outline: none;
+}
+.supermarket-list ul li .detailAndbuy a:nth-of-type(1){
+	color: #f90;
+	width: 0.8rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+}
+.supermarket-list ul li .detailAndbuy a:nth-of-type(2){
+	background-color: #f90;
+	color: #fff;
+	width: 0.8rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+	border-radius: 0.2rem;
+}
+
+
+
+/*分享*/
+.orderDetail-content .orderDetail-content_tit p.order_share{
+	display: block;
+	width: 0.5rem;
+	height: 1rem;
+	line-height: 1rem;
+	float: right;
+}
+.orderDetail-content .orderDetail-content_tit p.order_share img{
+	width: 0.3rem;
+	height: 0.3rem;
+	vertical-align: middle;
+	border-radius: 0;
+}
+.share_alert{
+	display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.share_prompt {
+    position: relative;
+    width: 90%;
+    height: 230px;
+    padding-top: 42%;
+    margin: 0 auto;
+    background: url(../../img/bg_sharetip.png) no-repeat center bottom;
+    background-size: 100%;
+}
+.share_prompt p {
+    position: absolute;
+    bottom: 0.4rem;
+    left: 0.6rem;
+    font-size: 1rem;
+    line-height: 0.8rem;
+    color: #666;
+    font-size: 0.3rem;
+}
+/*分享---///*/
+/*****************************门票--/////**************************************/
+
+/************************个人主页----/////***********************/
+
+@media screen and (max-width: 320px){
+	.ticket-box_msg_infor p{
+		font-size: 0.16rem;
+	}
+}
+@media screen and (min-width: 768px) {
+	.ticket-box_title{
+		padding:0.16rem;
+	}
+	.swiper-pagination-Homepage>span.swiper-pagination-bullet{
+		height: 70px;
+		line-height: 70px;
+	}
+}

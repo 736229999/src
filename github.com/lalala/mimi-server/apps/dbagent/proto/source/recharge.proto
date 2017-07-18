@@ -1,0 +1,21 @@
+syntax = "proto3";
+package dbproto;
+
+
+//充值订单.
+message RechargeOrder {
+    string order_no       = 1; //充值订单号.
+    int64 account_id      = 2; //账号id.
+    int64 money           = 3; //充值金额，以分为单位 重要的事情说三遍，分！分！分！.
+    int64 status          = 4; //充值订单的状态 0 => 待支付，1 => 已支付，2 => 支付取消.
+    string os             = 5; //充值请求的来源，来自 0 => IOS ，1 => ANDROID.
+    int64 client_req_time = 6; //客户端请求的时间.
+    int64 create_time     = 7; //充值的时间.
+    int64 uc_resp_time    = 8; //用户中心返回充值状体的时间.
+    int64 payment_method  = 9; //支付方式 0 => 微信， 1 => 支付宝.
+}
+
+//充值成功以后回调增加账户余额.
+message CallbackOrderInfo {
+    string OrderNo = 1; //充值订单号列表.
+}

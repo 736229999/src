@@ -1,0 +1,23 @@
+syntax = "proto3";
+package dbproto;
+import "gift_package.proto";
+//用户购彩订单
+message UserOrder{
+    int64 id = 1;
+    string name = 2;
+    int64 order_time = 3;
+    double sum_money = 4;
+    double cai = 5;
+    double balance = 6;
+    double cost_cai = 7;
+    double cost_balance = 8;
+    string lottery_name = 9;
+    string issues = 10;
+    int64 issues_num = 11;
+    string scheme_list = 12;
+    bool is_use_ticket = 13;         //是否使用了购彩券
+    int32 status = 14;               // 订单状态(0: 进行中 | 1: 完成停止 | 2: 用户取消停止 | 3: 中奖停止 | 4: 投注失败停止)
+    double total_win_money = 15;
+    Ticket ticket = 16;
+}
+

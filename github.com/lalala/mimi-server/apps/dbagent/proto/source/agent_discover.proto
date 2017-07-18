@@ -1,0 +1,13 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+import "discover.proto";
+
+service DbDiscoveragent {
+    // 获取一条新闻
+    rpc GetANews (NewsId) returns (News){}
+    // 客户端获取新闻列表
+    rpc QueryNewsListClient (QueryNewsArg) returns (NewsList){}
+    // 阅读一条新闻（阅读量+1）
+    rpc ReadANews (NewsId) returns (Nil){}
+}

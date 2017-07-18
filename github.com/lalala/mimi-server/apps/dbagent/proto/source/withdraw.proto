@@ -1,0 +1,18 @@
+syntax = "proto3";
+package dbproto;
+
+message WithdrawApply {
+    int64 id = 1;               /* 唯一id */
+    int64 account_id = 2;       /* 账户id */
+    string realname = 3;        /* 真实姓名 */
+    int64 create_time = 4;	/* 申请时间 */
+    double amount = 5;		/* 提现金额 */
+    string in_bankname = 6;     /* 用户收款银行卡开户行 */
+    string in_no = 7;		/* 用户收款银行卡卡号 */
+    int32 step = 8;		/* 当前步骤 */
+    bool is_success = 9;         /* 当前步骤结果 */
+    string auditor = 10;	/* 审核人员 */
+    int64 audit_time = 11;	/* 审核时间 */
+    string audit_comment = 12;	/* 审核评论 */
+    int32 withdraw_type = 13;	/* 提现类型(支付宝/银行卡) */
+}

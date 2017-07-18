@@ -1,0 +1,94 @@
+syntax = "proto3";
+package dbproto;
+
+message Banner{
+    int64 id = 1;
+    string url =2;
+    string targetLink =3;
+    bool isVisible =4;
+    string description = 5;
+    int64 created = 6;
+    int64 sort = 7;
+    int64 targetId = 8;
+    enum TargetType {
+        TargetType_All = 0;         // 全部
+        TargetType_News = 1;        //新闻
+        TargetType_Activity = 2;    //活动
+        TargetType_Link = 3;        //链接
+    }
+    TargetType targetType = 9;
+    enum Location {
+        Location_All = 0;       // 全部
+        Location_Home = 1;      // 首页
+        Location_Discover = 2;  // 发现
+    }
+    Location location = 10;
+    int64 updated = 11;
+}
+
+message BannerId {
+    int64 id = 1;
+}
+
+message BannerList {
+    repeated Banner list = 1;
+    int64    total = 2;
+}
+
+message QueryClientBannerArg{
+     enum Location {
+        Location_All = 0;           // 全部
+        Location_Home = 1;          // 首页
+        Location_Discover = 2;      // 发现
+    }
+    Location location = 1;
+}
+
+
+message QueryBannerArg{
+    Banner.Location location = 1;
+}
+
+message Contact {
+    int64 id = 1;
+    string qq = 2;
+    string wechat = 3;
+    string email = 4;
+    string telphone = 5;
+}
+
+message Feedback {
+    int64 id = 1;
+    string email = 2;
+    string name = 3;
+    string content = 4;
+    int32 status = 5;
+    int32 create_time = 6;
+}
+
+enum FeedbackStatus {
+    wait = 0;           //待处理.
+    examine = 1;        //已查看.
+    process_ok = 2;     //已处理.
+    ignore = 3;         //忽略 .
+}
+
+message Faq {
+    int64 id = 1;
+    string title = 2;
+    string content = 3;
+    string contentUrl = 4;
+    string html = 5;
+    bool isVisible = 6;
+    int64 createTime = 7;
+    int64 updateTime = 8;
+}
+
+message FaqId {
+    int64 id = 1;
+}
+
+message FaqList {
+    repeated Faq list = 1;
+    int64 total = 2;
+}

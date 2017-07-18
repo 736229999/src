@@ -1,0 +1,52 @@
+syntax = "proto3";
+package apiproto;
+option java_package = "Proto";
+option java_outer_classname = "Football";
+
+//比赛投注信息
+message GameInfo {
+    int64 startTime = 1;
+    string gameNo = 2;
+    string homeTeam = 3;
+    string guestTeam = 4;
+    string gameType = 5;
+    string giveball = 6;
+    int64 endTime = 7;
+    string homeIcon = 8;
+    string guestIcon = 9;
+    repeated double spf = 10;
+    bool spfDg = 11;
+    repeated double rqspf = 12;
+    bool rqspfDg = 13;
+    repeated double zjqs = 14;
+    bool zjqsDg = 15;
+    repeated double bqc = 16;
+    bool bqcDg = 17;
+    repeated double bf = 18;
+    bool bfDg = 19;
+}
+//开奖信息
+message FbGameOpencai {
+    string homeTeam = 1;
+    string guestTeam = 2;
+    string homeIcon = 3;
+    string guestIcon = 4;
+    int64 homeball = 5;
+    int64 guestball = 6;
+    string giveball = 7;
+    string spf = 8;
+    string rqspf = 9;
+    string zjqs = 10;
+    string bqc = 11;
+}
+
+message QueryGameInfoRes {
+    repeated GameInfo list = 1;
+}
+
+message QueryOpencaiRes {
+    repeated FbGameOpencai list = 1;
+}
+
+
+

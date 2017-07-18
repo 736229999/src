@@ -1,0 +1,11 @@
+syntax = "proto3";
+package dbproto;
+import "base.proto";
+import "activity.proto";
+
+service DbActivityAgent {
+  //显示所有活动
+  rpc QueryActivityList(IntValue) returns (ActivityList) {}
+  //某个活动详情
+  rpc ActivityDetail(ActivityAccount) returns (ActivtyDetail){}
+}
