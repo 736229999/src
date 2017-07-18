@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link href="/static/simpleLive/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+		<link href="/static/simpleLive/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/simpleLive/css/style.css" rel="stylesheet">
+    	<link href="/static/simpleLive/css/style-responsive.css" rel="stylesheet" />
+	</head>
+	<body class="login-body">
+
+    <div class="container">
+
+      <form class="form-signin" action="">
+        <h2 class="form-signin-heading">
+        	<img src="/static/simpleLive/img/logo.png" />
+        </h2>
+        <div class="login-wrap">
+            <input type="text" class="form-control" placeholder="昵称/手机号" autofocus>
+            <h6 class="text-danger">错误提示</h6>
+            <input type="password" class="form-control" placeholder="密码">
+            <h6 class="text-danger">错误提示</h6>
+            <label class="rememberAndForget pull-left">
+                <input type="checkbox" value="remember-me"> 记住密码
+            </label>
+             <label class="rememberAndForget pull-right">
+             	  <a href="passwordRretrieval.html"> 忘记密码?</a>
+             </label>
+            <button class="btn btn-lg btn-login btn-block" type="button">登陆</button>
+            <p style="color: #446BA6;">使用其它方式登陆</p>
+            <div class="weixinLogin">
+            	<img src="/static/simpleLive/img/erweima.jpg" />
+            	<p class="text-info">打开微信，扫一扫</p>
+            </div>
+            <div class="login-social-link">
+                <a href="#" class="pull-left">
+                    <img src="/static/simpleLive/img/share_qq_a.png" />
+                    <h6>QQ登录</h6>
+                </a>
+                <a href="#" class="pull-right">
+                    <img onclick="wxLogin()" src="/static/simpleLive/img/share_weixin_a.png" />
+                    <h6 >微信登录</h6>
+                </a>
+                <i class="clearfix"></i>
+            </div>
+			<p class="">
+				<a href="#" class="pull-right">
+                    <span class=""> <a href="register.html"> 还没有账号？去注册</a></span>
+                </a>
+			</p>
+        </div>
+      </form>
+    </div>
+    
+    
+    <script type="text/javascript" src="/static/simpleLive/js/jquery-1.8.3.min.js" ></script>
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script>
+    	$(".login-social-link>a").eq(0).hover(function(){
+    		$(this).find("img").attr("src","/static/simpleLive/img/qq.png");
+    	},function(){
+    		$(this).find("img").attr("src","/static/simpleLive/img/share_qq_a.png");
+    	});
+    	$(".login-social-link>a").eq(1).on({
+    		mouseenter:function(){
+    			$(this).find("img").attr("src","/static/simpleLive/img/share_weixin_b.png");
+    		},
+    		mouseleave:function(){
+    			$(this).find("img").attr("src","/static/simpleLive/img/share_weixin_a.png");
+    		},
+    		click:function(){
+    			$(".weixinLogin").show();
+    		}
+    	})
+
+        function wxLogin(){
+            console.info("点击了微信登录");
+        }
+        
+        function hasLogin() {
+            $.ajax({
+                url:'/simpleLiveAjax/wxLogin',
+                type:"get",
+                data:{},
+                success:function(data){
+                    console.info(data)
+                    if (data != "false"){
+                        console.info("不是false");
+                        window.location.href = "http://qiniu-go.jiditv.com/simpleLive/index.html";
+                    }
+                }
+            });
+        }
+    </script>
+  </body>
+</html>

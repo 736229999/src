@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--忽略数字自动识别为电话号码-->
+		<meta name = "format-detection" content="telephone = no" />
+		<!--iphone 允许全屏模式浏览-->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!--iphone中safari顶端的状态条的样式-->
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>个人中心</title>
+		<link rel="stylesheet" href="css/personal.css" />
+		<script type="text/javascript" src="../js/self_adaption.js" ></script>
+	</head>
+	<body>
+		<!--二维码弹窗-->
+		<div class="qr-code_popup">
+			<div class="code_popupBox">
+				<p class="spreadLink">
+					<span>推广链接：<input value="www.123.comwwwwwwwwwwwwwwwwwwwwww" class="copyObj"/></span>
+					<span class="copyBtn" onclick="copyUrl2();">复制</span>
+				</p>
+				<p class="codeImage">
+					<img src="img/erweima.jpg" />
+				</p>
+			</div>
+			
+		</div>
+		<!--二维码弹窗---///-->
+		
+		<header class="personalCenter">
+			<a class="goback fleft" onclick="history.go(-1)"></a>
+			<p>个人中心</p>
+		</header>
+		<div class="warp">
+			<!--主播信息-->
+			<section class="user_inforBox">
+				<div class="user_Header fleft">
+					<img src="img/header.jpg" />
+				</div>
+				<div class="user_msg fleft">
+					<p class="user_msg-name">主播昵称主播昵称主播昵称主播昵称主播昵称</p>
+					<p class="user_msg-id">极地号：6666</p>
+					<p class="user_msg-popularity">
+						<span>关注：6655556</span>
+						<span>|</span>
+						<span>粉丝：65555566</span>
+					</p>
+					<p class="user_msg-basic">
+						<span>18岁</span>
+						<span>男</span>
+						<span>中国香港</span>
+					</p>
+					
+				</div>
+				<div class="qr-code fright">
+					<img src="img/erweima.png" />
+				</div>
+			</section>
+			<!--主播信息---////-->
+			
+			<!--星钻和余额-->
+			<section class="serenaAndbalance">
+				<a href="../order/ablecash.html" class="serena fleft">
+					<p>666</p>
+					<p>总余额</p>
+				</a>
+				<a href="../order/ablecash.html" class="balance fright">
+					<p>666</p>
+					<p>星钻余额</p>
+				</a>
+			</section>
+			<!--星钻和余额--///-->
+			
+			
+			<!--列表-->
+			<ul class="personal-list">
+				<li>
+					<a href="personalHomepage.html">个人主页</a>
+					<span></span>
+				</li>
+				<li>
+					<a href="order.html">订单</a>
+					<span></span>
+				</li>
+				<li>
+					<a href="blingRecharge.html">充值星钻</a>
+					<span></span>
+				</li>
+				<li>
+					<a href="#">我的等级</a>
+					<span></span>
+				</li>
+			</ul>
+			<!--列表---///-->
+		</div>
+		
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+		<script>
+			//显示二维码
+			$(".qr-code img").click(function(){
+				$(".qr-code_popup").show()
+			});
+			//复制
+			function copyUrl2(){
+				var Url2=document.getElementsByClassName("copyObj")[0];
+				Url2.select(); // 选择对象
+				document.execCommand("Copy"); // 执行浏览器复制命令
+			}
+			//隐藏二维码
+			$(".qr-code_popup").click(function(e){
+				var target = $(e.target);
+				if(!target.is('.code_popupBox')&&!target.is('.code_popupBox *')){
+					$(".qr-code_popup").hide();
+				}
+			});
+		</script>
+	</body>
+</html>

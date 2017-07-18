@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--忽略数字自动识别为电话号码-->
+		<meta name = "format-detection" content="telephone = no" />
+		<!--iphone 允许全屏模式浏览-->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!--iphone中safari顶端的状态条的样式-->
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>详细账单</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="css/twoStagePages.css" />
+		<script type="text/javascript" src="../js/self_adaption.js" ></script>
+	</head>
+	<body>
+		<div class="popup">
+			<img class="popupCloseButton" src="../img/icon_popupClose.png" />
+			<div class="popup-cont">
+				<div class="popup-box">
+					<!----开始----->
+					
+					<!----结束----->
+				</div>
+			</div>
+		</div>
+		<div class="itemizedBillwarp">
+			<div class="salesOrder-giftBox">
+			<div class="salesOrder-giftBox">
+				<div class="salesOrder-selectbox" >
+					<p class="text-center">
+						<span>收支</span>
+						<select>
+							<option>全部</option>
+							<option>收入</option>
+							<option>支出</option>
+						</select>
+					</p>
+					<p class="text-center">
+						<span>类型</span>
+						<select>
+							<option>全部</option>
+							<option>礼物</option>
+							<option>门票</option>
+							<option>星钻</option>
+							<option>奖金</option>
+						</select>
+					</p>
+					<p class="text-center">
+						<span>时间</span>
+						<select>
+							<option>全部</option>
+							<option>今日账单</option>
+							<option>最近7天</option>
+							<option>最近30天</option>
+						</select>
+					</p>
+				</div>
+				
+				<div class="salesOrder-giftBox-list">
+					<ul>
+						<li>
+							<a href="javascript:void(0)" class="salesOrder-giftBox-show">
+								<div class="text-center">
+									<p class="textBeyond salesOrder-giftBox-list-gifts text-left">赠送鲜花</p>
+								</div>
+								<div class="text-center">
+									<p class="salesOrder-giftBox-list-orderTime textBeyond">-100星钻</p>
+								</div>
+								<div class="text-center">
+									<p class="salesOrder-giftBox-list-orderTime">2017-08-25 16:24</p>
+								</div>
+								<div class="text-right">
+									<p class="salesOrder-giftBox-list-orderTime ">
+										<b></b>
+									</p>
+								</div>
+							</a>
+						</li>
+							<li>
+							<a href="javascript:void(0)" class="salesOrder-giftBox-show">
+								<div class="text-center">
+									<p class="textBeyond salesOrder-giftBox-list-gifts text-left">收到礼物</p>
+								</div>
+								<div class="text-center">
+									<p class="salesOrder-giftBox-list-orderTime textBeyond">+100星钻</p>
+								</div>
+								<div class="text-center">
+									<p class="salesOrder-giftBox-list-orderTime">2017-08-25 16:24</p>
+								</div>
+								<div class="text-right">
+									<p class="salesOrder-giftBox-list-orderTime">
+										<b></b>
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				
+			</div>
+		</div>
+		</div>
+		
+	
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script type="text/javascript" src="../js/pages.js" ></script>
+	<script type="text/javascript" src="../js/template.js" ></script>
+	<!--账单详情-->
+	<script type="text/html" id="giftsDetails-popup">
+		<div class="giftsDetails-popup">
+			<p class="title">
+				<span>赠送</span>
+				<span class="textBeyond">主播昵称</span>
+				<img src="../order/dist/img/25.png" />
+			</p>
+			<p class="infor-gifts">鲜花X2000</p>
+			<p class="infor-num">-100星钻</p>
+			<p class="infor-time">2016/05/01 18:49</p>
+			<p class="infor-money">历史星钻余额：2900</p>
+		</div>
+	</script>
+	
+	</body>
+</html>

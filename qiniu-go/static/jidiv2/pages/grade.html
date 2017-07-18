@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--忽略数字自动识别为电话号码-->
+		<meta name = "format-detection" content="telephone = no" />
+		<!--iphone 允许全屏模式浏览-->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!--iphone中safari顶端的状态条的样式-->
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>等级</title>
+		<link rel="stylesheet" href="/static/jidiv2/css/style.css" />
+		<script type="text/javascript" src="/static/jidiv2/js/jquery-2.1.4.min.js" ></script>
+		<script type="text/javascript" src="/static/jidiv2/js/self_adaption.js" ></script>
+		<style>
+		
+		/*经验值*/
+		div.grade-experienceValue{
+			width: 100%;
+			height: 3.6rem;
+			background: url(/static/jidiv2/pages/img/grade/10_bg_02.png)  center;
+			background-size: 100%;
+			margin: 0 auto;
+			border-top: 1px solid transparent;
+			position: relative;
+			border-bottom: 1px solid transparent;
+		}
+		div.grade-experienceValue .user_headerAndValue{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			margin-top: 0.45rem;
+			border-top: 1px solid transparent;
+			position: relative;
+		}
+		div.grade-experienceValue .user_headerAndValue .headerImg{
+			width: 1.18rem;
+			height: 1.18rem;
+			border-radius: 100%;
+			margin: 0 auto;
+			border: 2px solid #1dee7f;
+		}
+		.user_headerAndValue .headerImg img{
+			width: 100%;
+			height: 100%;
+			border-radius: 100%;
+		}
+		.user_headerAndValue div.userGrade{
+			display: block;
+			width: 2.28rem;
+			height: 0.5rem;
+			margin: 0 auto;
+			line-height: 0.46rem;
+			text-align: center;
+			position: relative;
+			top: -0.2rem;
+		}
+		.user_headerAndValue div.userGrade>span{
+			text-align: center;
+			display: inline-block;
+			width: 2.28rem;
+			height: 0.5rem;
+			line-height: 0.46rem;
+			color: #fff;
+			font-size: 0.24rem;
+			position: absolute;
+		}
+		.user_headerAndValue div.userGrade img{
+			width: 2.28rem;
+			height: 0.5rem;
+		}
+		.experienceValue{
+			text-align: center;
+			font-size: 0.28rem;
+		}
+		.progressBar{
+			display: block;
+			width: 30%;
+			height: 0.05rem;
+			margin: 0.2rem auto;
+			border-radius: 0.02rem;
+			background: #fff;
+			position: relative;
+		}
+		.progressBar>p{
+			display: inline-block;
+			width: 50%;
+			height: 100%;
+			border-radius: 0.02rem;
+			background: #1dee7f;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		/*经验值--//*/
+		
+		/*如何升级*/
+		.upgradeInfor-tit{
+			padding: 2%;
+			font-size: 0.26rem;
+			font-weight: 500;
+		}
+		.upgradeInfor{
+			width: 100%;
+			height: auto;
+			/*overflow: auto;*/
+			
+		}
+		.upgradeInfor img{
+			width: 100%;
+		}
+		
+		@media screen and (min-width: 768px) {
+		    .upgradeInfor img{
+		       height: 5.8rem;
+		    }
+		}
+		/*如何升级---///*/
+				</style>
+	</head>
+	
+	<body>
+		<!--头像-->
+		<div class="grade-experienceValue">
+			<div class="user_headerAndValue">
+				<div class="headerImg">
+					<img src="{{USER.Avatar}}" />
+				</div>
+				<div class="userGrade">
+					<span>LV{{USER.Level}}</span>
+					<img src="/static/jidiv2/pages/img/grade/10@ji2x.png" />
+				</div>
+			</div>
+			<div class="experienceValue">
+				当前经验值{{USER.Exp}}/30000
+			</div>
+			<div class="progressBar">
+				<p></p>
+			</div>
+		</div>
+		<!--头像--//-->
+		<!--如何升级-->
+		<h3 class="upgradeInfor-tit">如何升级</h3>
+		<section class="upgradeInfor">
+			<img src="/static/jidiv2/pages/img/grade/dengjiguize_02.png" />
+		</section>
+		<!--如何升级--//-->
+		<script>
+			var grade=20;
+			var gradeIndex;
+			var gradeColor={
+				'gradeBg':['10_bg_02','20_bg_02','30_bg_02','40_bg_02','50_bg_02','60_bg_02'],
+				'gradeImg':['10@ji2x','20@ji2x','30@ji2x','40@ji2x','50@ji2x','60@ji2x'],
+				'gradeBorder':['#1dee7f','#ff9900','#0a959e','#b420df','#dc19c7','#e3173e']
+			}
+			if(grade>=0 && grade<=10){gradeIndex=0;}
+			if(grade>10 && grade<=20){gradeIndex=1;}
+			if(grade>20 && grade<=30){gradeIndex=2;}
+			if(grade>30 && grade<=40){gradeIndex=3;}
+			if(grade>40 && grade<=50){gradeIndex=4;}
+			if(grade>50){gradeIndex=5;}
+			$(".grade-experienceValue").css("background","url(/static/jidiv2/pages/img/grade/"+gradeColor.gradeBg[gradeIndex]+".png)  center").css("background-size","100%");
+			$(".userGrade>img").attr("src","/static/jidiv2/pages/img/grade/"+gradeColor.gradeImg[gradeIndex]+".png");
+			$(".headerImg").css("border-color",gradeColor.gradeBorder[gradeIndex]);
+			$(".progressBar>p").css("background",gradeColor.gradeBorder[gradeIndex]);
+			
+		</script>
+
+	<script>
+        function is_weixn(){
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        (function($) {
+            if(is_weixn() == false){
+                alert('请用微信浏览器打开');
+                return;
+            }
+
+            token = GetQueryString('token');
+            url = window.location.href;
+            if(token == null){
+                token = localStorage['token'];
+                if(token == null || token == ""){
+                    window.location.href="http://www.ijyqc.com/jktwo.html?url="+url;
+                }
+                localStorage['token']=token;
+            }else{
+                localStorage['token']=token;
+            }
+
+
+
+
+
+        })(mui);
+	</script>
+	</body>
+</html>
