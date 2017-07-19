@@ -1,6 +1,3 @@
-//
-// Copyright 2014 Hong Miao (miaohong@miaohong.org). All Rights Reserved.
-//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -52,7 +49,7 @@ func init() {
 }
 
 func version() {
-	fmt.Printf("msg_server version %s Copyright (c) 2017 bat messager (miaohong@miaohong.org)  \n", VERSION)
+	fmt.Printf("msg_server version %s Copyright (c) 2017 bat messager \n", VERSION)
 }
 
 var InputConfFile = flag.String("conf_file", "msg_server.json", "input conf file name")   
@@ -103,6 +100,7 @@ func main() {
 
 	go ms.sendMonitorData()
 
+	//这种做法就是典型的来一个就go一下，分配一个协程
 	ms.server.Serve(func(session *libnet.Session) {
 		log.Info("a new client ", session.Conn().RemoteAddr().String(), " | come in")
 		go handleSession(ms, session)

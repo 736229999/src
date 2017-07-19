@@ -1,17 +1,3 @@
-//
-// Copyright 2014 Hong Miao (miaohong@miaohong.org). All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
 
 package main
 
@@ -42,6 +28,7 @@ func NewProtoProc(msgServer *MsgServer) *ProtoProc {
 	}
 }
 
+//订阅消息
 func (self *ProtoProc)procSubscribeChannel(cmd protocol.Cmd, session *libnet.Session) {
 	log.Info("procSubscribeChannel")
 	channelName := cmd.GetArgs()[0]
@@ -57,6 +44,7 @@ func (self *ProtoProc)procSubscribeChannel(cmd protocol.Cmd, session *libnet.Ses
 	log.Info(self.msgServer.channels)
 }
 
+//心跳包
 func (self *ProtoProc)procPing(cmd protocol.Cmd, session *libnet.Session) error {
 	//log.Info("procPing")
 	cid := session.State.(*base.SessionState).ClientID
@@ -67,6 +55,7 @@ func (self *ProtoProc)procPing(cmd protocol.Cmd, session *libnet.Session) error 
 	return nil
 }
 
+//离线消息
 func (self *ProtoProc)procOfflineMsg(session *libnet.Session, ID string) error {
 	var err error
 	exist, err := self.msgServer.offlineMsgCache.IsKeyExist(ID)
@@ -100,6 +89,7 @@ func (self *ProtoProc)procOfflineMsg(session *libnet.Session, ID string) error {
 	return err
 }
 
+//单聊
 func (self *ProtoProc)procClientID(cmd protocol.Cmd, session *libnet.Session) error {
 	log.Info("procClientID")
 	var err error
@@ -153,6 +143,7 @@ func (self *ProtoProc)procClientID(cmd protocol.Cmd, session *libnet.Session) er
 	return nil
 }
 
+//p2p隧道通信
 func (self *ProtoProc)procSendMessageP2P(cmd protocol.Cmd, session *libnet.Session) error {
 	log.Info("procSendMessageP2P")
 	var err error
@@ -232,6 +223,7 @@ func (self *ProtoProc)procSendMessageP2P(cmd protocol.Cmd, session *libnet.Sessi
 	return nil
 }
 
+//路由p2p消息
 func (self *ProtoProc)procRouteMessageP2P(cmd protocol.Cmd, session *libnet.Session) error {
 	log.Info("procRouteMessageP2P")
 	var err error
