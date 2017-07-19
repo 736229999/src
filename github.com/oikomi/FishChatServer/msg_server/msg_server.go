@@ -44,7 +44,7 @@ func BuildTime() string {
 	return buildTime
 }
 
-const VERSION string = "0.10"
+const VERSION string = "1.0"
 
 func init() {
 	flag.Set("alsologtostderr", "true")
@@ -52,7 +52,7 @@ func init() {
 }
 
 func version() {
-	fmt.Printf("msg_server version %s Copyright (c) 2014 Harold Miao (miaohong@miaohong.org)  \n", VERSION)
+	fmt.Printf("msg_server version %s Copyright (c) 2017 bat messager (miaohong@miaohong.org)  \n", VERSION)
 }
 
 var InputConfFile = flag.String("conf_file", "msg_server.json", "input conf file name")   
