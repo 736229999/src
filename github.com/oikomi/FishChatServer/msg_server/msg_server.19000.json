@@ -7,7 +7,7 @@
 	"Expire"                   : 100,
 
 	"MonitorBeatTime"          : 5,
-
+	
 	"SessionManagerServerList" : [
 		"127.0.0.1:18000"
 	],

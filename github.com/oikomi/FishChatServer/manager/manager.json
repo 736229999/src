@@ -16,7 +16,7 @@
 			"WriteTimeout" : 1000
 	},
 	
-	"Mongo"              : {
+	"Mongo"              : { 
 			"Addr"      : "127.0.0.1", 
 			"Port"      : ":27017",
 			"User"      : "",

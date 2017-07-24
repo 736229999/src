@@ -32,7 +32,7 @@ func DialTimeout(network, address string, timeout time.Duration) (*Session, erro
 	session := NewSession(id, conn, DefaultProtocol, DefaultSendChanSize, DefaultConnBufferSize)
 	return session, nil
 }
-//解决粘包拆包
+
 type Decoder func(*InBuffer) error
 type Encoder func(*OutBuffer) error
 
