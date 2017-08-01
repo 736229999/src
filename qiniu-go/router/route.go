@@ -10,7 +10,6 @@ import (
 	"qiniu-go/handler/api"
 	"qiniu-go/handler/pages/simplelive"
 	"qiniu-go/handler/ajax/simpleLiveAjax"
-	"qiniu-go/handler/rpc"
 )
 
 // Route register router in a tree style.
@@ -24,6 +23,7 @@ func Route(frame *faygo.Framework) {
 		//====================
 		frame.NewNamedAPI("test struct handler", "POST", "/test", &handler.Test{}).Use(middleware.Token),
 		frame.NewNamedAPI("login", "Get", "/login", &handler.Login{}),
+		frame.NewNamedAPI("encode", "Get", "/encode", &handler.Encode{}),
 
 
 		//页面层
@@ -62,8 +62,6 @@ func Route(frame *faygo.Framework) {
 		frame.NewNamedAPI("test", "POST", "/payNotify", handler.PayNotify),
 		frame.NewNamedAPI("test", "POST", "/testAjax", api.TestApi),
 
-		frame.NewNamedAPI("rpc", "Get", "/httpRpc", rpc.RegisterRpc),
-		frame.NewNamedAPI("rpc", "Get", "/rpcClient", rpc.RpcClient),
 
 		//api
 		frame.NewGroup("api",

@@ -18,9 +18,9 @@ package common
 import (
 	"time"
 	"math/rand"
-	"github.com/oikomi/FishChatServer/log"
-	"github.com/oikomi/FishChatServer/base"
-	"github.com/oikomi/FishChatServer/storage/redis_store"
+	"bat_messager/log"
+	"bat_messager/base"
+	"bat_messager/storage/redis_store"
 )
 
 const KeyPrefix string = base.COMM_PREFIX

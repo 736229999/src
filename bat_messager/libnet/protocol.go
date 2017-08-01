@@ -81,7 +81,6 @@ func PacketN(n int, byteOrder ByteOrder) Protocol {
 
 // The packet spliting protocol like Erlang's {packet, N}.
 // Each packet has a fix length packet header to present packet length.
-//粘包拆包协议
 type simpleProtocol struct {
 	n             int
 	bo            binary.ByteOrder

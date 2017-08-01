@@ -1,9 +1,11 @@
+
 package main
+
 import (
 	"os"
 	"encoding/json"
 	"time"
-	"github.com/oikomi/FishChatServer/log"
+	"bat_messager/log"
 )
 
 type MsgServerConfig struct {
@@ -16,14 +18,19 @@ type MsgServerConfig struct {
 	Expire                   time.Duration
 	MonitorBeatTime          time.Duration
 	SessionManagerServerList []string
-	Redis struct {
-		Addr string
+	Redis struct { 
+		Addr string 
 		Port string
 		ConnectTimeout time.Duration
 		ReadTimeout time.Duration
 		WriteTimeout time.Duration
-	}
-	//还有数据库配置
+	} 
+	Mongo struct { 
+		Addr           string 
+		Port           string
+		User           string
+		Password       string
+	} 
 }
 
 func NewMsgServerConfig(configfile string) *MsgServerConfig {
@@ -46,4 +53,9 @@ func (self *MsgServerConfig)LoadConfig() error {
 		return err
 	}
 	return nil
+}
+
+func (self *MsgServerConfig)DumpConfig() {
+	//fmt.Printf("Mode: %s\nListen: %s\nServer: %s\nLogfile: %s\n", 
+	//cfg.Mode, cfg.Listen, cfg.Server, cfg.Logfile)
 }

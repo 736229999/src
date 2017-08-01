@@ -23,6 +23,10 @@ type Login struct {
 	Unionid   string `param:"<in:query> <desc:微信unionid> "`
 
 }
+//编码
+type Encode struct {
+	Data   string `param:"<in:query> <desc:微信unionid> "`
+}
 
 /**
 	登录路由
@@ -31,7 +35,10 @@ func (l *Login) Serve(ctx *faygo.Context) error {
 
 	return ctx.JSON(200,"chenggong", true)
 }
+func (l *Encode) Serve(ctx *faygo.Context) error {
 
+	return ctx.JSON(200,"chenggong", true)
+}
 
 /**
    登录api的文档

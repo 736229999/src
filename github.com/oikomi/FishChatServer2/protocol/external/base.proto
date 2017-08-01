@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package external;
-
-message Base {
-    uint32 cmd = 1;
-}

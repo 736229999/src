@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -5,9 +6,9 @@ import (
 	"net"
 	"sync"
 	"time"
-	"github.com/oikomi/FishChatServer/log"
-	"github.com/oikomi/FishChatServer/libnet"
-	"github.com/oikomi/FishChatServer/protocol"
+	"bat_messager/log"
+	"bat_messager/libnet"
+	"bat_messager/protocol"
 )
 
 type MonitorBeat struct {
@@ -28,29 +29,38 @@ func NewMonitorBeat(name string, timeout time.Duration, expire time.Duration, li
 		threshold : limit,
 	}
 }
-func(self *MonitorBeat) ResetFailures() {
+
+func (self *MonitorBeat) ResetFailures() {
 	self.mu.Lock()
 	defer self.mu.Unlock()
 	self.fails = 0
 }
+
 func (self *MonitorBeat) ChangeThreshold(thres uint64) {
 	self.mu.Lock()
 	defer self.mu.Unlock()
 	self.threshold = thres
 }
-func (self *MonitorBeat)Beat(c *libnet.Channel,data *protocol.CmdMonitor)  {
-	timer := time.NewTicker(10* time.Second)
-	select {
-	case <-timer.C:
-		go func() {
-			log.Info("正在发送心跳包")
-			_, err := c.Broadcast(libnet.Json(data))
-			if err != nil {
-				log.Error(err.Error())
-				//return err
-			}
-		}()
-	}
+
+func (self *MonitorBeat) Beat(c *libnet.Channel, data *protocol.CmdMonitor) {
+	timer := time.NewTicker(self.timeout * time.Second)
+	//ttl := time.After(self.expire * time.Second)
+	//for {
+		select {
+		case <-timer.C:
+			go func() {
+				_, err := c.Broadcast(libnet.Json(data))
+				if err != nil {
+					log.Error(err.Error())
+					//return err
+				}
+			}()
+		//case <-ttl:
+			//break
+		}
+	//}
+
+	//return nil
 }
 
 func (self *MonitorBeat) Receive() {
@@ -65,3 +75,15 @@ func (self *MonitorBeat) Receive() {
 		}
 	}
 }
+
+// TODO : no use
+func getHostIP() {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		panic(err)
+	}
+	for _, addr := range addrs {
+		fmt.Println(addr.String())
+	}
+}
+

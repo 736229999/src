@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package external;
-
-message Error {
-    uint32 cmd     = 1;
-    uint32 errCode = 2;
-    string errStr  = 3;
-}

@@ -1,32 +1,28 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"net"
-	"time"
 )
 type Stu func(int) int
 func main() {
-	s := new(Stu)
-
-	a:= test(*s)
+	tcp()
 }
 func test(s Stu) int {
 	return 1
 
 }
 func tcp() {
-	var tcpAddr *net.TCPAddr
 
-	tcpAddr, _ = net.ResolveTCPAddr("tcp", "127.0.0.1:9999")
+	ln, err := net.Listen("tcp", ":17000")
+	if err != nil {
+		panic(err)
+	}
 
-	tcpListener, _ := net.ListenTCP("tcp", tcpAddr)
-
-	defer tcpListener.Close()
+	defer ln.Close()
 
 	for {
-		tcpConn, err := tcpListener.AcceptTCP()
+		tcpConn, err := ln.Accept()
 		if err != nil {
 			continue
 		}
@@ -41,23 +37,18 @@ func tcp() {
 
 }
 
-func tcpPipe(conn *net.TCPConn) {
+func tcpPipe(conn net.Conn) {
 	ipStr := conn.RemoteAddr().String()
 	defer func() {
 		fmt.Println("disconnected :" + ipStr)
-		conn.Close()
+		//conn.Close()
 	}()
-	reader := bufio.NewReader(conn)
-
-	for {
-		message, err := reader.ReadString('\n')
-		if err != nil {
-			return
-		}
-
-		fmt.Println(string(message))
-		msg := time.Now().String() + "\n"
-		b := []byte(msg)
-		conn.Write(b)
+	data:=make([]byte,1024)
+	_,err := conn.Read(data)
+	if err != nil {
+		fmt.Println("接收失败")
+		return
 	}
+	fmt.Println(string(data))
+	conn.Write([]byte("你好，我收到了消息"))
 }

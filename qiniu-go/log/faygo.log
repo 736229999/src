@@ -330,3 +330,111 @@ net/http.(*conn).serve(0xc420306aa0, 0x1a35760, 0xc420378fc0)
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.8.1/libexec/src/net/http/server.go:2668 +0x2ce
  <qiniu-go #github.com/henrylee2cn/faygo/faygo.go:494>
+[2017/07/27T11:52:28.202+08:00] APIdoc's URL path is '/myapidoc/' [check direct ip for filter] <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /                              <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /MP_verify_FfXgomWspAkznBQA.txt <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /MP_verify_Z2Q4pyfE628bSDwp.txt <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /addressList.html              <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /ajax/blingRecharge/getRechargeMoney <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /ajax/index/uploadImg          <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /ajax/isLogin                  <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /ajax/liveAuthentication/StoreIdCard <qiniu-go>
+[2017/07/27T11:52:28.202+08:00] [SYS]     GET | /ajax/liveAuthentication/uploadImg <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/addCategory          <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/addGoods             <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/addReceiptAddr       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/allCategory          <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/applyRefund          <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/createOrder          <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/delReceiptAddr       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/getDownsaleGoods     <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /api/shop/getOnsaleGoods       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/getUserReceiptAddr   <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/orderDetail          <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/refundProgress       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/salerAllOrders       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/setDefaultAddr       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/use   rAllOrders     <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /api/shop/userAllRefund        <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /blingRecharge.html            <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /dynamic.html                  <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /grade.html                    <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /index.html                    <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /invitation.html               <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /liveAuthentication.html       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /login                         <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /myConsumption.html            <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /myapidoc/*filepath            <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /myapidoc_swagger.json         <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /payNotify                     <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /personalCenter.html           <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /personalHome.html             <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /personalSet.html              <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /profit.html                   <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /simpleLive/index.html         <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /simpleLive/login.html         <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /simpleLive/passwordRretrieval.html <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /simpleLive/wxLogin.html       <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /simpleLiveAjax/wxLogin        <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /static/*filepath              <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /test                          <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]    POST | /testAjax                      <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /updatePassword.html           <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS]     GET | /upload/*filepath              <qiniu-go>
+[2017/07/27T11:52:28.203+08:00] [SYS] listen and serve HTTP on 0.0.0.0:9999 <qiniu-go>
+[2017/07/27T11:52:41.348+08:00] [I]       127.0.0.1     GET  302        239 521.639582ms /                              |  <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] APIdoc's URL path is '/myapidoc/' [check direct ip for filter] <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] [SYS]     GET | /                              <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] [SYS]     GET | /MP_verify_FfXgomWspAkznBQA.txt <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] [SYS]     GET | /MP_verify_Z2Q4pyfE628bSDwp.txt <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] [SYS]     GET | /addressList.html              <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] [SYS]     GET | /ajax/blingRecharge/getRechargeMoney <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] [SYS]     GET | /ajax/index/uploadImg          <qiniu-go>
+[2017/07/27T11:55:04.245+08:00] [SYS]     GET | /ajax/isLogin                  <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /ajax/liveAuthentication/StoreIdCard <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /ajax/liveAuthentication/uploadImg <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/addCategory          <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/addGoods             <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/addReceiptAddr       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/allCategory          <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/applyRefund          <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/createOrder          <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/delReceiptAddr       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/getDownsaleGoods     <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /api/shop/getOnsaleGoods       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/getUserReceiptAddr   <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/orderDetail          <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/refundProgress       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/salerAllOrders       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/setDefaultAddr       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/use   rAllOrders     <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /api/shop/userAllRefund        <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /blingRecharge.html            <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /dynamic.html                  <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /encode                        <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /grade.html                    <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /index.html                    <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /invitation.html               <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /liveAuthentication.html       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /login                         <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /myConsumption.html            <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /myapidoc/*filepath            <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /myapidoc_swagger.json         <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /payNotify                     <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /personalCenter.html           <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /personalHome.html             <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /personalSet.html              <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /profit.html                   <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /simpleLive/index.html         <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /simpleLive/login.html         <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /simpleLive/passwordRretrieval.html <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /simpleLive/wxLogin.html       <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /simpleLiveAjax/wxLogin        <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /static/*filepath              <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /test                          <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]    POST | /testAjax                      <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /updatePassword.html           <qiniu-go>
+[2017/07/27T11:55:04.246+08:00] [SYS]     GET | /upload/*filepath              <qiniu-go>
+[2017/07/27T11:55:04.247+08:00] [SYS] listen and serve HTTP on 0.0.0.0:9999 <qiniu-go>
+[2017/07/27T11:55:19.885+08:00] [I]       127.0.0.1     GET  200         11    138.209µs /encode                        |  <qiniu-go>
+[2017/07/27T11:55:19.995+08:00] [I]       127.0.0.1     GET  404        226     47.813µs /favicon.ico                   |  <qiniu-go>
